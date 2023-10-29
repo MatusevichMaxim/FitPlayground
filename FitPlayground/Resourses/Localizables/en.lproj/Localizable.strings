@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  FitPlayground
+
+  Created by Максим Матусевич on 10/28/23.
+  
+*/
+
+"trainingTabTitle" = "Training";
+
+"settingsTabTitle" = "Settings";
