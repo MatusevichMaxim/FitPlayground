@@ -8,5 +8,5 @@
 
 "dashboardTitle" = "Your\ndashboard";
 
-"dashboardTabTitle" = "Dashboard";
-"settingsTabTitle" = "Settings";
+"homeTabTitle" = "Dashboard";
+"calendarTabTitle" = "Calendar";

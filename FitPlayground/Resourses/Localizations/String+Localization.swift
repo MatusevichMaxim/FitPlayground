@@ -12,8 +12,8 @@ extension String {
     public static let dashboardTitle = localizedString(for: "dashboardTitle")
     
     // MARK: - Tabs
-    public static let dashboardTabTitle = localizedString(for: "dashboardTabTitle")
-    public static let settingsTabTitle = localizedString(for: "settingsTabTitle")
+    public static let homeTabTitle = localizedString(for: "homeTabTitle")
+    public static let calendarTabTitle = localizedString(for: "calendarTabTitle")
     
     private static func localizedString(for key: String) -> String {
         NSLocalizedString(String(describing: key), comment: "")

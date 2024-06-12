@@ -10,15 +10,16 @@ import SwiftUI
 struct MainTabView: View {
     var body: some View {
         TabView {
-            DashboardTabView()
+            HomeTabView()
                 .tabItem {
-                    Image(systemName: "figure.strengthtraining.traditional")
-                    Text("\(.dashboardTabTitle)")
+                    Image(systemName: "house")
+                    Text("\(.homeTabTitle)")
                 }
-            SettingsTabView()
+            
+            CalendarTabView()
                 .tabItem {
-                    Image(systemName: "gearshape")
-                    Text("\(.settingsTabTitle)")
+                    Image(systemName: "calendar")
+                    Text("\(.calendarTabTitle)")
                 }
         }
         .accentColor(.green)

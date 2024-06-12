@@ -1,5 +1,5 @@
 //
-//  DashboardItemView.swift
+//  CalendarItemView.swift
 //  FitPlayground
 //
 //  Created by Максим Матусевич on 11/2/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DashboardItemView: View {
+struct CalendarItemView: View {
     var title: String
     var color: Color
     
@@ -28,6 +28,6 @@ struct DashboardItemView: View {
 
 struct DashboardItemView_Previews: PreviewProvider {
     static var previews: some View {
-        DashboardItemView(title: "Some title", color: .yellow)
+        CalendarItemView(title: "Some title", color: .yellow)
     }
 }

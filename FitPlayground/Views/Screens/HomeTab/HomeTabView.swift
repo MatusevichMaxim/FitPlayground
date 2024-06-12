@@ -1,5 +1,5 @@
 //
-//  SettingsTabView.swift
+//  HomeTabView.swift
 //  FitPlayground
 //
 //  Created by Максим Матусевич on 10/28/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SettingsTabView: View {
+struct HomeTabView: View {
     var body: some View {
         ZStack {
             Color.appBackground
@@ -24,6 +24,6 @@ struct SettingsTabView: View {
 
 struct SettingsTabView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsTabView()
+        HomeTabView()
     }
 }
