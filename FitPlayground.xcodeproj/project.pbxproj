@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		565BA4632AF445D700A1E4AA /* Font+Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BA4622AF445D700A1E4AA /* Font+Fonts.swift */; };
 		565BA4652AF44E6900A1E4AA /* CalendarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BA4642AF44E6900A1E4AA /* CalendarItemView.swift */; };
+		566C0B8E2C1A38B600C4AF95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 566C0B8D2C1A38B600C4AF95 /* Assets.xcassets */; };
 		566D86372AEE158300293167 /* FitPlaygroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D86362AEE158300293167 /* FitPlaygroundApp.swift */; };
 		566D86392AEE158300293167 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D86382AEE158300293167 /* MainTabView.swift */; };
 		566D863B2AEE158500293167 /* ColorPalette.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 566D863A2AEE158500293167 /* ColorPalette.xcassets */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		565BA4622AF445D700A1E4AA /* Font+Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Fonts.swift"; sourceTree = "<group>"; };
 		565BA4642AF44E6900A1E4AA /* CalendarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItemView.swift; sourceTree = "<group>"; };
+		566C0B8D2C1A38B600C4AF95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		566D86332AEE158300293167 /* FitPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		566D86362AEE158300293167 /* FitPlaygroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitPlaygroundApp.swift; sourceTree = "<group>"; };
 		566D86382AEE158300293167 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				565BA4612AF445C600A1E4AA /* Fonts */,
 				566D865A2AF07E9200293167 /* ColorPalette */,
 				566D86512AEE21D300293167 /* Localizations */,
+				566C0B8D2C1A38B600C4AF95 /* Assets.xcassets */,
 			);
 			path = Resourses;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			files = (
 				566D863E2AEE158500293167 /* Preview Assets.xcassets in Resources */,
 				566D86562AEE256400293167 /* Localizable.strings in Resources */,
+				566C0B8E2C1A38B600C4AF95 /* Assets.xcassets in Resources */,
 				566D863B2AEE158500293167 /* ColorPalette.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
