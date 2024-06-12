@@ -6,6 +6,7 @@
   
 */
 
-"trainingTabTitle" = "Training";
+"dashboardTitle" = "Your\ndashboard";
 
+"dashboardTabTitle" = "Dashboard";
 "settingsTabTitle" = "Settings";

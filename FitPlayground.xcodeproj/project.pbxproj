@@ -7,26 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		565BA4632AF445D700A1E4AA /* Font+Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BA4622AF445D700A1E4AA /* Font+Fonts.swift */; };
+		565BA4652AF44E6900A1E4AA /* DashboardItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BA4642AF44E6900A1E4AA /* DashboardItemView.swift */; };
+		565BA4682AF4568600A1E4AA /* WorkoutBuilderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BA4672AF4568600A1E4AA /* WorkoutBuilderView.swift */; };
 		566D86372AEE158300293167 /* FitPlaygroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D86362AEE158300293167 /* FitPlaygroundApp.swift */; };
 		566D86392AEE158300293167 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D86382AEE158300293167 /* MainTabView.swift */; };
-		566D863B2AEE158500293167 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 566D863A2AEE158500293167 /* Assets.xcassets */; };
+		566D863B2AEE158500293167 /* ColorPalette.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 566D863A2AEE158500293167 /* ColorPalette.xcassets */; };
 		566D863E2AEE158500293167 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 566D863D2AEE158500293167 /* Preview Assets.xcassets */; };
-		566D86472AEE1E5800293167 /* TrainingTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D86462AEE1E5800293167 /* TrainingTabView.swift */; };
+		566D86472AEE1E5800293167 /* DashboardTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D86462AEE1E5800293167 /* DashboardTabView.swift */; };
 		566D864A2AEE1E7000293167 /* SettingsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D86492AEE1E7000293167 /* SettingsTabView.swift */; };
 		566D86532AEE224900293167 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D86522AEE224800293167 /* String+Localization.swift */; };
 		566D86562AEE256400293167 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 566D86582AEE256400293167 /* Localizable.strings */; };
+		566D865C2AF07EA700293167 /* Color+ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D865B2AF07EA700293167 /* Color+ColorPalette.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		565BA4622AF445D700A1E4AA /* Font+Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Fonts.swift"; sourceTree = "<group>"; };
+		565BA4642AF44E6900A1E4AA /* DashboardItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardItemView.swift; sourceTree = "<group>"; };
+		565BA4672AF4568600A1E4AA /* WorkoutBuilderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutBuilderView.swift; sourceTree = "<group>"; };
 		566D86332AEE158300293167 /* FitPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		566D86362AEE158300293167 /* FitPlaygroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitPlaygroundApp.swift; sourceTree = "<group>"; };
 		566D86382AEE158300293167 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
-		566D863A2AEE158500293167 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		566D863A2AEE158500293167 /* ColorPalette.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorPalette.xcassets; sourceTree = "<group>"; };
 		566D863D2AEE158500293167 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		566D86462AEE1E5800293167 /* TrainingTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingTabView.swift; sourceTree = "<group>"; };
+		566D86462AEE1E5800293167 /* DashboardTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTabView.swift; sourceTree = "<group>"; };
 		566D86492AEE1E7000293167 /* SettingsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabView.swift; sourceTree = "<group>"; };
 		566D86522AEE224800293167 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		566D86572AEE256400293167 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		566D865B2AF07EA700293167 /* Color+ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+ColorPalette.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +48,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		565BA4612AF445C600A1E4AA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				565BA4622AF445D700A1E4AA /* Font+Fonts.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		565BA4662AF4563A00A1E4AA /* WorkoutBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				565BA4672AF4568600A1E4AA /* WorkoutBuilderView.swift */,
+			);
+			path = WorkoutBuilder;
+			sourceTree = "<group>";
+		};
 		566D862A2AEE158300293167 = {
 			isa = PBXGroup;
 			children = (
@@ -62,7 +86,6 @@
 				566D864B2AEE209E00293167 /* Resourses */,
 				566D86442AEE1C8B00293167 /* Views */,
 				566D86362AEE158300293167 /* FitPlaygroundApp.swift */,
-				566D863A2AEE158500293167 /* Assets.xcassets */,
 				566D863C2AEE158500293167 /* Preview Content */,
 			);
 			path = FitPlayground;
@@ -79,19 +102,21 @@
 		566D86442AEE1C8B00293167 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				565BA4662AF4563A00A1E4AA /* WorkoutBuilder */,
 				566D86482AEE1E6300293167 /* SettingsTab */,
-				566D86452AEE1D8700293167 /* TrainingTab */,
+				566D86452AEE1D8700293167 /* DashboardTab */,
 				566D86382AEE158300293167 /* MainTabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		566D86452AEE1D8700293167 /* TrainingTab */ = {
+		566D86452AEE1D8700293167 /* DashboardTab */ = {
 			isa = PBXGroup;
 			children = (
-				566D86462AEE1E5800293167 /* TrainingTabView.swift */,
+				566D86462AEE1E5800293167 /* DashboardTabView.swift */,
+				565BA4642AF44E6900A1E4AA /* DashboardItemView.swift */,
 			);
-			path = TrainingTab;
+			path = DashboardTab;
 			sourceTree = "<group>";
 		};
 		566D86482AEE1E6300293167 /* SettingsTab */ = {
@@ -105,6 +130,8 @@
 		566D864B2AEE209E00293167 /* Resourses */ = {
 			isa = PBXGroup;
 			children = (
+				565BA4612AF445C600A1E4AA /* Fonts */,
+				566D865A2AF07E9200293167 /* ColorPalette */,
 				566D86512AEE21D300293167 /* Localizables */,
 			);
 			path = Resourses;
@@ -117,6 +144,15 @@
 				566D86582AEE256400293167 /* Localizable.strings */,
 			);
 			path = Localizables;
+			sourceTree = "<group>";
+		};
+		566D865A2AF07E9200293167 /* ColorPalette */ = {
+			isa = PBXGroup;
+			children = (
+				566D863A2AEE158500293167 /* ColorPalette.xcassets */,
+				566D865B2AF07EA700293167 /* Color+ColorPalette.swift */,
+			);
+			path = ColorPalette;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,7 +215,7 @@
 			files = (
 				566D863E2AEE158500293167 /* Preview Assets.xcassets in Resources */,
 				566D86562AEE256400293167 /* Localizable.strings in Resources */,
-				566D863B2AEE158500293167 /* Assets.xcassets in Resources */,
+				566D863B2AEE158500293167 /* ColorPalette.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,9 +228,13 @@
 			files = (
 				566D86532AEE224900293167 /* String+Localization.swift in Sources */,
 				566D86392AEE158300293167 /* MainTabView.swift in Sources */,
+				565BA4632AF445D700A1E4AA /* Font+Fonts.swift in Sources */,
 				566D86372AEE158300293167 /* FitPlaygroundApp.swift in Sources */,
-				566D86472AEE1E5800293167 /* TrainingTabView.swift in Sources */,
+				565BA4652AF44E6900A1E4AA /* DashboardItemView.swift in Sources */,
+				565BA4682AF4568600A1E4AA /* WorkoutBuilderView.swift in Sources */,
+				566D86472AEE1E5800293167 /* DashboardTabView.swift in Sources */,
 				566D864A2AEE1E7000293167 /* SettingsTabView.swift in Sources */,
+				566D865C2AF07EA700293167 /* Color+ColorPalette.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,8 +382,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -371,8 +411,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

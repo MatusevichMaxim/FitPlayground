@@ -9,10 +9,11 @@ import Foundation
 
 extension String {
     // MARK: - Training tab
-    public static let trainingTabTitle: String = localizedString(for: "trainingTabTitle")
+    public static let dashboardTitle = localizedString(for: "dashboardTitle")
     
-    // MARK: - Settings tab
-    public static let settingsTabTitle: String = localizedString(for: "settingsTabTitle")
+    // MARK: - Tabs
+    public static let dashboardTabTitle = localizedString(for: "dashboardTabTitle")
+    public static let settingsTabTitle = localizedString(for: "settingsTabTitle")
     
     private static func localizedString(for key: String) -> String {
         NSLocalizedString(String(describing: key), comment: "")

@@ -10,6 +10,8 @@ import SwiftUI
 struct SettingsTabView: View {
     var body: some View {
         ZStack {
+            Color.appBackground
+                .ignoresSafeArea()
             Circle()
                 .frame(width: 200, height: 200)
                 .foregroundColor(.yellow)
