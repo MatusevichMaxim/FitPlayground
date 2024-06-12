@@ -2,7 +2,7 @@
 //  String+Localization.swift
 //  FitPlayground
 //
-//  Created by Максим Матусевич on 10/28/23.
+//  Created by Maksim Matusevich on 10/28/23.
 //
 
 import Foundation

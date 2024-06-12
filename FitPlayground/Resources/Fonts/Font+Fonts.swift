@@ -2,7 +2,7 @@
 //  Font+Fonts.swift
 //  FitPlayground
 //
-//  Created by Максим Матусевич on 11/2/23.
+//  Created by Maksim Matusevich on 11/2/23.
 //
 
 import SwiftUI
