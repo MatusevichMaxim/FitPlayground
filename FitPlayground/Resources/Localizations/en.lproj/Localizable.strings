@@ -8,5 +8,11 @@
 
 "dashboardTitle" = "Your\ndashboard";
 
+/* Common */
+"today" = "Today";
+
+/* Tabs */
 "homeTabTitle" = "Home";
 "calendarTabTitle" = "Calendar";
+"workoutsTabTitle" = "Workouts";
+

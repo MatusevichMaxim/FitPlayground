@@ -16,7 +16,6 @@ struct CalendarTabView: View {
                 ScrollView {
                     VStack(alignment: .leading) {
                         Text("\(.dashboardTitle)")
-                            .font(.appTextHeadline1)
                             .foregroundColor(Color(.appSecondary))
                             .padding(.top, 50)
                     }

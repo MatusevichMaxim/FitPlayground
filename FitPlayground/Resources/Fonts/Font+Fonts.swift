@@ -8,7 +8,15 @@
 import SwiftUI
 
 extension Font {
-    public static let appTextHeadline1: Font = .system(size: 46, weight: .bold)
+    public static let appTextHeader: Font = .custom(.montserrat_extraBold, size: 22)
+}
+
+extension Font {
+    fileprivate enum CustomFontResource: String {
+        case montserrat_extraBold = "Montserrat-ExtraBold"
+    }
     
-    public static let appTextSubtitle1: Font = .system(size: 24, weight: .bold)
+    fileprivate static func custom(_ resource: CustomFontResource, size: CGFloat) -> Font {
+        .custom(resource.rawValue, size: size)
+    }
 }

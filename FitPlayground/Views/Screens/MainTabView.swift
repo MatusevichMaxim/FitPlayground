@@ -13,14 +13,20 @@ struct MainTabView: View {
             Group {
                 HomeTabView()
                     .tabItem {
-                        Image(.home_icon)
+                        Image(systemName: "house")
                         Text("\(.homeTabTitle)")
                     }
                 
                 CalendarTabView()
                     .tabItem {
-                        Image(.calendar_icon)
+                        Image(systemName: "calendar")
                         Text("\(.calendarTabTitle)")
+                    }
+                
+                WorkoutsTabView()
+                    .tabItem {
+                        Image(systemName: "dumbbell")
+                        Text("\(.workoutsTabTitle)")
                     }
             }
             .toolbarBackground(.visible, for: .tabBar)

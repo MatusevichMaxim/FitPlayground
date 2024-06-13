@@ -19,6 +19,7 @@
 		566D86472AEE1E5800293167 /* CalendarTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D86462AEE1E5800293167 /* CalendarTabView.swift */; };
 		566D86532AEE224900293167 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D86522AEE224800293167 /* String+Localization.swift */; };
 		566D86562AEE256400293167 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 566D86582AEE256400293167 /* Localizable.strings */; };
+		56BE88692C1B86AC005EFED9 /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56BE88682C1B86AC005EFED9 /* Montserrat-ExtraBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		566D86492AEE1E7000293167 /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
 		566D86522AEE224800293167 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		566D86572AEE256400293167 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		56BE88682C1B86AC005EFED9 /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		56BE886A2C1B86CD005EFED9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				565BA4622AF445D700A1E4AA /* Font+Fonts.swift */,
+				56BE88682C1B86AC005EFED9 /* Montserrat-ExtraBold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -200,6 +204,7 @@
 		566D86352AEE158300293167 /* FitPlayground */ = {
 			isa = PBXGroup;
 			children = (
+				56BE886A2C1B86CD005EFED9 /* Info.plist */,
 				566C0B7E2C1A248E00C4AF95 /* App */,
 				566D864B2AEE209E00293167 /* Resources */,
 				566C0B7F2C1A24C300C4AF95 /* Models */,
@@ -333,6 +338,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56BE88692C1B86AC005EFED9 /* Montserrat-ExtraBold.ttf in Resources */,
 				566D863E2AEE158500293167 /* Preview Assets.xcassets in Resources */,
 				566D86562AEE256400293167 /* Localizable.strings in Resources */,
 				566C0B8E2C1A38B600C4AF95 /* Assets.xcassets in Resources */,
@@ -499,6 +505,7 @@
 				DEVELOPMENT_TEAM = 9845B57J4C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FitPlayground/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -528,6 +535,7 @@
 				DEVELOPMENT_TEAM = 9845B57J4C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FitPlayground/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
