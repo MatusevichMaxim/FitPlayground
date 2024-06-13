@@ -20,6 +20,10 @@
 		566D86532AEE224900293167 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D86522AEE224800293167 /* String+Localization.swift */; };
 		566D86562AEE256400293167 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 566D86582AEE256400293167 /* Localizable.strings */; };
 		56BE88692C1B86AC005EFED9 /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56BE88682C1B86AC005EFED9 /* Montserrat-ExtraBold.ttf */; };
+		56BE886D2C1B8D36005EFED9 /* WorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE886C2C1B8D36005EFED9 /* WorkoutCell.swift */; };
+		56BE886F2C1B9231005EFED9 /* Cabin-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56BE886E2C1B9231005EFED9 /* Cabin-Medium.ttf */; };
+		56BE88712C1B9FD4005EFED9 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88702C1B9FD3005EFED9 /* Workout.swift */; };
+		56BE88732C1BA035005EFED9 /* MuscleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88722C1BA035005EFED9 /* MuscleGroup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +41,11 @@
 		566D86522AEE224800293167 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		566D86572AEE256400293167 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		56BE88682C1B86AC005EFED9 /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
-		56BE886A2C1B86CD005EFED9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		56BE886A2C1B86CD005EFED9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56BE886C2C1B8D36005EFED9 /* WorkoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCell.swift; sourceTree = "<group>"; };
+		56BE886E2C1B9231005EFED9 /* Cabin-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Medium.ttf"; sourceTree = "<group>"; };
+		56BE88702C1B9FD3005EFED9 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		56BE88722C1BA035005EFED9 /* MuscleGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleGroup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 			children = (
 				565BA4622AF445D700A1E4AA /* Font+Fonts.swift */,
 				56BE88682C1B86AC005EFED9 /* Montserrat-ExtraBold.ttf */,
+				56BE886E2C1B9231005EFED9 /* Cabin-Medium.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -87,6 +96,8 @@
 		566C0B812C1A24D900C4AF95 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
+				56BE88702C1B9FD3005EFED9 /* Workout.swift */,
+				56BE88722C1BA035005EFED9 /* MuscleGroup.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -94,6 +105,7 @@
 		566C0B822C1A24EB00C4AF95 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				56BE886B2C1B8D0B005EFED9 /* Cells */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -204,7 +216,6 @@
 		566D86352AEE158300293167 /* FitPlayground */ = {
 			isa = PBXGroup;
 			children = (
-				56BE886A2C1B86CD005EFED9 /* Info.plist */,
 				566C0B7E2C1A248E00C4AF95 /* App */,
 				566D864B2AEE209E00293167 /* Resources */,
 				566C0B7F2C1A24C300C4AF95 /* Models */,
@@ -259,6 +270,7 @@
 				566D865A2AF07E9200293167 /* ColorPalette */,
 				566D86512AEE21D300293167 /* Localizations */,
 				566C0B8D2C1A38B600C4AF95 /* Assets.xcassets */,
+				56BE886A2C1B86CD005EFED9 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -278,6 +290,14 @@
 				566D863A2AEE158500293167 /* ColorPalette.xcassets */,
 			);
 			path = ColorPalette;
+			sourceTree = "<group>";
+		};
+		56BE886B2C1B8D0B005EFED9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				56BE886C2C1B8D36005EFED9 /* WorkoutCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +361,7 @@
 				56BE88692C1B86AC005EFED9 /* Montserrat-ExtraBold.ttf in Resources */,
 				566D863E2AEE158500293167 /* Preview Assets.xcassets in Resources */,
 				566D86562AEE256400293167 /* Localizable.strings in Resources */,
+				56BE886F2C1B9231005EFED9 /* Cabin-Medium.ttf in Resources */,
 				566C0B8E2C1A38B600C4AF95 /* Assets.xcassets in Resources */,
 				566D863B2AEE158500293167 /* ColorPalette.xcassets in Resources */,
 			);
@@ -353,9 +374,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56BE886D2C1B8D36005EFED9 /* WorkoutCell.swift in Sources */,
 				566D86532AEE224900293167 /* String+Localization.swift in Sources */,
 				566D86392AEE158300293167 /* MainTabView.swift in Sources */,
+				56BE88712C1B9FD4005EFED9 /* Workout.swift in Sources */,
 				565BA4632AF445D700A1E4AA /* Font+Fonts.swift in Sources */,
+				56BE88732C1BA035005EFED9 /* MuscleGroup.swift in Sources */,
 				566C0B932C1A40AE00C4AF95 /* HomeTabView.swift in Sources */,
 				566C0B952C1A420700C4AF95 /* WorkoutsTabView.swift in Sources */,
 				566D86372AEE158300293167 /* FitPlaygroundApp.swift in Sources */,
@@ -505,7 +529,7 @@
 				DEVELOPMENT_TEAM = 9845B57J4C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FitPlayground/Info.plist;
+				INFOPLIST_FILE = FitPlayground/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -535,7 +559,7 @@
 				DEVELOPMENT_TEAM = 9845B57J4C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FitPlayground/Info.plist;
+				INFOPLIST_FILE = FitPlayground/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

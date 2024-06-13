@@ -6,13 +6,19 @@
   
 */
 
-"dashboardTitle" = "Your\ndashboard";
-
 /* Common */
 "today" = "Today";
+"minutes_short" = "Min";
 
 /* Tabs */
-"homeTabTitle" = "Home";
-"calendarTabTitle" = "Calendar";
-"workoutsTabTitle" = "Workouts";
+"home_tab_title" = "Home";
+"calendar_tab_title" = "Calendar";
+"workouts_tab_title" = "Workouts";
 
+/* Muscle Groups */
+"mg_abs" = "Abs";
+"mg_arms" = "Arms";
+"mg_back" = "Back";
+"mg_chest" = "Chest";
+"mg_legs" = "Legs";
+"mg_shoulders" = "Shoulders";

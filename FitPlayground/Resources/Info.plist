@@ -5,6 +5,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Montserrat-ExtraBold.ttf</string>
+		<string>Cabin-Medium.ttf</string>
 	</array>
 </dict>
 </plist>

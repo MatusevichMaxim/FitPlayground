@@ -15,8 +15,7 @@ struct CalendarTabView: View {
                     .ignoresSafeArea()
                 ScrollView {
                     VStack(alignment: .leading) {
-                        Text("\(.dashboardTitle)")
-                            .foregroundColor(Color(.appSecondary))
+                        Text("")
                             .padding(.top, 50)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)

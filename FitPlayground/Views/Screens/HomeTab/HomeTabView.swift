@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct HomeTabView: View {
-    private let workouts = Array(1...3)
+    private let workoutsInfo: [Workout] = [
+        .init(name: "Core Engager 🎯", duration: 27, muscleGroups: [.abs, .back, .chest]),
+        .init(name: "Chair Rounds!", duration: 11, muscleGroups: [.legs, .back]),
+        .init(name: "Leg Day", duration: 39, muscleGroups: [.legs])
+    ]
     
     var body: some View {
         ZStack {
@@ -18,17 +22,15 @@ struct HomeTabView: View {
             ScrollView {
                 VStack(spacing: 18) {
                     Text("\(.today)")
-                        .font(.appTextHeader)
+                        .font(.appTextHeader1)
                         .foregroundStyle(Color(.textPrimary))
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal, 16)
                 
-                LazyVStack(alignment: .leading) {
-                    ForEach(workouts, id: \.self) { item in
-                        Text("List Item \(item)")
-                            .background(Color.blue)
-                            .cornerRadius(8)
+                LazyVStack(alignment: .leading, spacing: 10) {
+                    ForEach(workoutsInfo, id: \.self) { info in
+                        WorkoutCell(data: info)
                     }
                 }
                 .padding(.horizontal, 16)
