@@ -9,8 +9,9 @@ struct Workout: Hashable {
     let name: String
     let duration: Int
     let muscleGroups: [MuscleGroup]
+    let status: WorkoutStatus
     
-    var muscleGroupsString: String {
+    var localizedMuscleGroups: String {
         muscleGroups
             .map { $0.description }
             .joined(separator: ", ")

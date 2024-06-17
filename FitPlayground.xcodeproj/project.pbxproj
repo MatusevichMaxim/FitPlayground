@@ -24,6 +24,10 @@
 		56BE886F2C1B9231005EFED9 /* Cabin-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56BE886E2C1B9231005EFED9 /* Cabin-Medium.ttf */; };
 		56BE88712C1B9FD4005EFED9 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88702C1B9FD3005EFED9 /* Workout.swift */; };
 		56BE88732C1BA035005EFED9 /* MuscleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88722C1BA035005EFED9 /* MuscleGroup.swift */; };
+		56BE88752C1CC92A005EFED9 /* WorkoutStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88742C1CC92A005EFED9 /* WorkoutStatus.swift */; };
+		56BE88772C1CCAE4005EFED9 /* WorkoutStatus+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88762C1CCAE4005EFED9 /* WorkoutStatus+Extension.swift */; };
+		56BE88792C1CCBB3005EFED9 /* Color+Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88782C1CCBB3005EFED9 /* Color+Resources.swift */; };
+		56BE887B2C20C622005EFED9 /* AddWorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE887A2C20C622005EFED9 /* AddWorkoutCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,10 @@
 		56BE886E2C1B9231005EFED9 /* Cabin-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Medium.ttf"; sourceTree = "<group>"; };
 		56BE88702C1B9FD3005EFED9 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		56BE88722C1BA035005EFED9 /* MuscleGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleGroup.swift; sourceTree = "<group>"; };
+		56BE88742C1CC92A005EFED9 /* WorkoutStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutStatus.swift; sourceTree = "<group>"; };
+		56BE88762C1CCAE4005EFED9 /* WorkoutStatus+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WorkoutStatus+Extension.swift"; sourceTree = "<group>"; };
+		56BE88782C1CCBB3005EFED9 /* Color+Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Resources.swift"; sourceTree = "<group>"; };
+		56BE887A2C20C622005EFED9 /* AddWorkoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +106,8 @@
 			children = (
 				56BE88702C1B9FD3005EFED9 /* Workout.swift */,
 				56BE88722C1BA035005EFED9 /* MuscleGroup.swift */,
+				56BE88742C1CC92A005EFED9 /* WorkoutStatus.swift */,
+				56BE88762C1CCAE4005EFED9 /* WorkoutStatus+Extension.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -287,6 +297,7 @@
 		566D865A2AF07E9200293167 /* ColorPalette */ = {
 			isa = PBXGroup;
 			children = (
+				56BE88782C1CCBB3005EFED9 /* Color+Resources.swift */,
 				566D863A2AEE158500293167 /* ColorPalette.xcassets */,
 			);
 			path = ColorPalette;
@@ -296,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				56BE886C2C1B8D36005EFED9 /* WorkoutCell.swift */,
+				56BE887A2C20C622005EFED9 /* AddWorkoutCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -375,15 +387,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				56BE886D2C1B8D36005EFED9 /* WorkoutCell.swift in Sources */,
+				56BE88792C1CCBB3005EFED9 /* Color+Resources.swift in Sources */,
+				56BE88752C1CC92A005EFED9 /* WorkoutStatus.swift in Sources */,
 				566D86532AEE224900293167 /* String+Localization.swift in Sources */,
 				566D86392AEE158300293167 /* MainTabView.swift in Sources */,
 				56BE88712C1B9FD4005EFED9 /* Workout.swift in Sources */,
 				565BA4632AF445D700A1E4AA /* Font+Fonts.swift in Sources */,
 				56BE88732C1BA035005EFED9 /* MuscleGroup.swift in Sources */,
 				566C0B932C1A40AE00C4AF95 /* HomeTabView.swift in Sources */,
+				56BE887B2C20C622005EFED9 /* AddWorkoutCell.swift in Sources */,
 				566C0B952C1A420700C4AF95 /* WorkoutsTabView.swift in Sources */,
 				566D86372AEE158300293167 /* FitPlaygroundApp.swift in Sources */,
 				566D86472AEE1E5800293167 /* CalendarTabView.swift in Sources */,
+				56BE88772C1CCAE4005EFED9 /* WorkoutStatus+Extension.swift in Sources */,
 				566C0B912C1A3C3E00C4AF95 /* Image+Resources.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

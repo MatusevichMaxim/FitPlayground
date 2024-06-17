@@ -9,21 +9,20 @@ import SwiftUI
 
 struct HomeTabView: View {
     private let workoutsInfo: [Workout] = [
-        .init(name: "Core Engager 🎯", duration: 27, muscleGroups: [.abs, .back, .chest]),
-        .init(name: "Chair Rounds!", duration: 11, muscleGroups: [.legs, .back]),
-        .init(name: "Leg Day", duration: 39, muscleGroups: [.legs])
+        .init(name: "Core Engager 🎯", duration: 27, muscleGroups: [.abs, .back, .chest], status: .completed),
+        .init(name: "Chair Rounds!", duration: 11, muscleGroups: [.legs, .back], status: .active),
+        .init(name: "Leg Day", duration: 39, muscleGroups: [.legs], status: .active)
     ]
     
     var body: some View {
         ZStack {
-            Color(.appPrimary)
-                .ignoresSafeArea()
+            Color.appPrimary.ignoresSafeArea()
             
             ScrollView {
                 VStack(spacing: 18) {
                     Text("\(.today)")
                         .font(.appTextHeader1)
-                        .foregroundStyle(Color(.textPrimary))
+                        .foregroundStyle(Color.textPrimary)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal, 16)

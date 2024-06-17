@@ -14,23 +14,23 @@ struct MainTabView: View {
                 HomeTabView()
                     .tabItem {
                         Image(systemName: "house")
-                        Text("\(.homeTabTitle)")
+                        Text(String.homeTabTitle)
                     }
                 
                 CalendarTabView()
                     .tabItem {
                         Image(systemName: "calendar")
-                        Text("\(.calendarTabTitle)")
+                        Text(String.calendarTabTitle)
                     }
                 
                 WorkoutsTabView()
                     .tabItem {
                         Image(systemName: "dumbbell")
-                        Text("\(.workoutsTabTitle)")
+                        Text(String.workoutsTabTitle)
                     }
             }
             .toolbarBackground(.visible, for: .tabBar)
-            .toolbarBackground(Color(.appPrimary), for: .tabBar)
+            .toolbarBackground(Color.appPrimary, for: .tabBar)
             .toolbarColorScheme(.dark, for: .tabBar)
         }
     }
