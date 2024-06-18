@@ -31,6 +31,7 @@
 		56BE88802C20D207005EFED9 /* StyleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE887F2C20D207005EFED9 /* StyleManager.swift */; };
 		56BE88822C21F522005EFED9 /* Cabin-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56BE88812C21F522005EFED9 /* Cabin-Regular.ttf */; };
 		56BE88842C21F66F005EFED9 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56BE88832C21F66F005EFED9 /* Montserrat-Bold.ttf */; };
+		56BE888A2C221F56005EFED9 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88892C221F56005EFED9 /* View+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		56BE887F2C20D207005EFED9 /* StyleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleManager.swift; sourceTree = "<group>"; };
 		56BE88812C21F522005EFED9 /* Cabin-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Regular.ttf"; sourceTree = "<group>"; };
 		56BE88832C21F66F005EFED9 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		56BE88892C221F56005EFED9 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 		566C0B892C1A255C00C4AF95 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				56BE88892C221F56005EFED9 /* View+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				566D86392AEE158300293167 /* MainTabView.swift in Sources */,
 				56BE88712C1B9FD4005EFED9 /* Workout.swift in Sources */,
 				565BA4632AF445D700A1E4AA /* Font+Fonts.swift in Sources */,
+				56BE888A2C221F56005EFED9 /* View+Extensions.swift in Sources */,
 				56BE88732C1BA035005EFED9 /* MuscleGroup.swift in Sources */,
 				566C0B932C1A40AE00C4AF95 /* HomeTabView.swift in Sources */,
 				56BE88802C20D207005EFED9 /* StyleManager.swift in Sources */,
