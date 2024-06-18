@@ -16,13 +16,16 @@ struct WorkoutCell: View {
     
     var body: some View {
         HStack() {
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: 12) {
                 Text(data.name)
                     .foregroundStyle(Color.textPrimary)
                     .font(.appTextHeader2)
+                    .frame(height: 18)
+                
                 Text(workoutDescription)
                     .foregroundStyle(Color.textSecondary)
                     .font(.appTextCaption1)
+                    .frame(height: 10)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             
@@ -35,7 +38,7 @@ struct WorkoutCell: View {
         }
         .padding(.init(top: 20, leading: 24, bottom: 20, trailing: 8))
         .background(data.status.backgroundColor)
-        .clipShape(.rect(cornerRadius: 18, style: .continuous))
+        .clipShape(.rect(cornerRadius: StyleManager.cellRadius, style: .continuous))
     }
 }
 

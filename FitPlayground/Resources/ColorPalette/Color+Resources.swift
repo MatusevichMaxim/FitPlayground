@@ -15,6 +15,7 @@ extension Color {
     public static let appAccent = Color(.appAccent)
     
     public static let appPrimary900 = Color(.appPrimary900)
+    public static let appPrimary800 = Color(.appPrimary800)
     
     // MARK: - Accents
     public static let appBlue = Color(.appBlue)

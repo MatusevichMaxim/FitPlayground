@@ -22,3 +22,6 @@
 "mg_chest" = "Chest";
 "mg_legs" = "Legs";
 "mg_shoulders" = "Shoulders";
+
+/* Greetings */
+"greetings_morning" = "Good morning";

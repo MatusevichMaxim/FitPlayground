@@ -25,6 +25,9 @@ extension String {
     public static let legs = localizedString(for: "mg_legs")
     public static let shoulders = localizedString(for: "mg_shoulders")
     
+    // MARK: - Greetings
+    public static let greetingsMorning = localizedString(for: "greetings_morning")
+    
     private static func localizedString(for key: String) -> String {
         NSLocalizedString(String(describing: key), comment: "")
     }
