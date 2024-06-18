@@ -2,7 +2,7 @@
 //  MainTabView.swift
 //  FitPlayground
 //
-//  Created by Максим Матусевич on 10/28/23.
+//  Created by Maksim Matusevich on 10/28/23.
 //
 
 import SwiftUI
@@ -10,24 +10,32 @@ import SwiftUI
 struct MainTabView: View {
     var body: some View {
         TabView {
-            HomeTabView()
-                .tabItem {
-                    Image(systemName: "house")
-                    Text("\(.homeTabTitle)")
-                }
-            
-            CalendarTabView()
-                .tabItem {
-                    Image(systemName: "calendar")
-                    Text("\(.calendarTabTitle)")
-                }
+            Group {
+                HomeTabView()
+                    .tabItem {
+                        Image(systemName: "house")
+                        Text(String.homeTabTitle)
+                    }
+                
+                CalendarTabView()
+                    .tabItem {
+                        Image(systemName: "calendar")
+                        Text(String.calendarTabTitle)
+                    }
+                
+                WorkoutsTabView()
+                    .tabItem {
+                        Image(systemName: "dumbbell")
+                        Text(String.workoutsTabTitle)
+                    }
+            }
+            .toolbarBackground(.visible, for: .tabBar)
+            .toolbarBackground(Color.appPrimary, for: .tabBar)
+            .toolbarColorScheme(.dark, for: .tabBar)
         }
-        .accentColor(.green)
     }
 }
 
-struct MainTabView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainTabView()
-    }
+#Preview {
+    MainTabView()
 }
