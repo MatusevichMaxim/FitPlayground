@@ -10,18 +10,7 @@ import SwiftUI
 struct HomeTabView: View {
     private let workoutsInfo: [Workout] = [
         .init(name: "Core Engager 🎯", duration: 27, muscleGroups: [.abs, .back, .chest], status: .completed),
-        .init(name: "Chair Rounds1!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-        .init(name: "Chair Rounds2!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-        .init(name: "Chair Rounds3!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-        .init(name: "Chair Rounds4!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-        .init(name: "Chair Rounds5!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-        .init(name: "Chair Rounds6!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-        .init(name: "Chair Rounds7!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-        .init(name: "Chair Rounds8!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-        .init(name: "Chair Rounds9!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-        .init(name: "Chair Rounds10!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-        .init(name: "Chair Rounds11!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-        .init(name: "Chair Rounds12!", duration: 11, muscleGroups: [.legs, .back], status: .active),
+        .init(name: "Chair Rounds!", duration: 11, muscleGroups: [.legs, .back], status: .active),
         .init(name: "Leg Day", duration: 39, muscleGroups: [.legs], status: .active)
     ]
     
@@ -30,9 +19,8 @@ struct HomeTabView: View {
             Color.appPrimary.ignoresSafeArea()
             
             VStack {
-                Rectangle()
-                    .fill(Color.appAccent)
-                    .frame(height: headerHeight * 2)
+                AnimatedGradientView()
+                    .frame(height: Constants.headerHeight * 2)
                 
                 Spacer()
             }
@@ -41,7 +29,7 @@ struct HomeTabView: View {
             ScrollView {
                 VStack {
                     Spacer()
-                        .frame(height: headerHeight)
+                        .frame(height: Constants.headerHeight)
                     
                     VStack(alignment: .leading, spacing: 18) {
                         Text("\(.today)")
@@ -66,13 +54,15 @@ struct HomeTabView: View {
                 }
             }
             .scrollIndicators(.hidden)
+            .shadow(color: .appPrimary, radius: 10, y: 5)
         }
     }
 }
 
-// MARK: - Constants
-fileprivate extension HomeTabView {
-    var headerHeight: CGFloat { 160.0 }
+extension HomeTabView {
+    private enum Constants {
+        static let headerHeight: CGFloat = 160.0
+    }
 }
 
 #Preview {
