@@ -27,31 +27,45 @@ struct HomeTabView: View {
     
     var body: some View {
         ZStack {
-            Color.orange.ignoresSafeArea()
+            Color.appPrimary.ignoresSafeArea()
+            
+            VStack {
+                Rectangle()
+                    .fill(Color.appAccent)
+                    .frame(height: headerHeight * 2)
+                
+                Spacer()
+            }
+            .ignoresSafeArea()
             
             ScrollView {
-                VStack(alignment: .leading, spacing: 18) {
-                    Text("\(.today)")
-                        .font(.appTextHeader1)
-                        .foregroundStyle(Color.textPrimary)
-                        .padding(.top, 24)
-                        .padding(.horizontal, 32)
+                VStack {
+                    Spacer()
+                        .frame(height: headerHeight)
                     
-                    LazyVStack(alignment: .leading, spacing: 10) {
-                        ForEach(workoutsInfo, id: \.self) { info in
-                            WorkoutCell(data: info)
+                    VStack(alignment: .leading, spacing: 18) {
+                        Text("\(.today)")
+                            .font(.appTextHeader1)
+                            .foregroundStyle(Color.textPrimary)
+                            .padding(.top, 24)
+                            .padding(.horizontal, 32)
+                        
+                        LazyVStack(alignment: .leading, spacing: 10) {
+                            ForEach(workoutsInfo, id: \.self) { info in
+                                WorkoutCell(data: info)
+                            }
+                            
+                            AddWorkoutCell()
                         }
-                    
-                        AddWorkoutCell()
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, 32)
                     }
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 64)
+                    .background(Color.appPrimary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .cornerRadius(StyleManager.dialogRadius, for: [.topLeft, .topRight])
                 }
-                .background(Color.appPrimary)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .cornerRadius(StyleManager.dialogRadius, for: [.topLeft, .topRight])
-                .offset(y: headerHeight)
             }
+            .scrollIndicators(.hidden)
         }
     }
 }
