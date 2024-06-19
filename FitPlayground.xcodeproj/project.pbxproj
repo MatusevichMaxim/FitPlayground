@@ -32,6 +32,7 @@
 		56BE88822C21F522005EFED9 /* Cabin-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56BE88812C21F522005EFED9 /* Cabin-Regular.ttf */; };
 		56BE88842C21F66F005EFED9 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56BE88832C21F66F005EFED9 /* Montserrat-Bold.ttf */; };
 		56BE888A2C221F56005EFED9 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88892C221F56005EFED9 /* View+Extensions.swift */; };
+		56BE888D2C2366C1005EFED9 /* AnimatedGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE888C2C2366C1005EFED9 /* AnimatedGradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		56BE88812C21F522005EFED9 /* Cabin-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Regular.ttf"; sourceTree = "<group>"; };
 		56BE88832C21F66F005EFED9 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		56BE88892C221F56005EFED9 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		56BE888C2C2366C1005EFED9 /* AnimatedGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedGradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 		566C0B822C1A24EB00C4AF95 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				56BE888B2C236695005EFED9 /* Views */,
 				56BE886B2C1B8D0B005EFED9 /* Cells */,
 			);
 			path = Components;
@@ -332,6 +335,14 @@
 			path = Styles;
 			sourceTree = "<group>";
 		};
+		56BE888B2C236695005EFED9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				56BE888C2C2366C1005EFED9 /* AnimatedGradientView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -421,6 +432,7 @@
 				56BE88802C20D207005EFED9 /* StyleManager.swift in Sources */,
 				56BE887B2C20C622005EFED9 /* AddWorkoutCell.swift in Sources */,
 				566C0B952C1A420700C4AF95 /* WorkoutsTabView.swift in Sources */,
+				56BE888D2C2366C1005EFED9 /* AnimatedGradientView.swift in Sources */,
 				566D86372AEE158300293167 /* FitPlaygroundApp.swift in Sources */,
 				566D86472AEE1E5800293167 /* CalendarTabView.swift in Sources */,
 				56BE88772C1CCAE4005EFED9 /* WorkoutStatus+Extension.swift in Sources */,

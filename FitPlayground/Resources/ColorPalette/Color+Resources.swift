@@ -31,4 +31,9 @@ extension Color {
     public static let textSecondaryReversed = Color(.textSecondaryReversed)
     public static let textTertiary = Color(.textTertiary)
     public static let textTertiaryReversed = Color(.textTertiaryReversed)
+    
+    // MARK: - Gradient Animation
+    public static let gradientAnimationRed = Color(.gradientAnimRed)
+    public static let gradientAnimationYellow = Color(.gradientAnimYellow)
+    public static let gradientAnimationBlue = Color(.gradientAnimBlue)
 }
