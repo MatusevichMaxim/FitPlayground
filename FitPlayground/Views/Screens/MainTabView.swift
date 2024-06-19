@@ -11,7 +11,7 @@ struct MainTabView: View {
     var body: some View {
         TabView {
             Group {
-                HomeTabView()
+                HomeTabView(workoutsInfo: [])
                     .tabItem {
                         Image(systemName: "house")
                         Text(String.homeTabTitle)

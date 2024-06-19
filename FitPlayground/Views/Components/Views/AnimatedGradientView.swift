@@ -12,7 +12,7 @@ struct AnimatedGradientView: View {
         .publish(every: Constants.timerDuration, on: .main, in: .common)
         .autoconnect()
     
-    @ObservedObject private var animator = GradientAnimator(colors:
+    @StateObject private var animator = GradientAnimator(colors:
         [
             Color.gradientAnimationRed,
             Color.gradientAnimationYellow,

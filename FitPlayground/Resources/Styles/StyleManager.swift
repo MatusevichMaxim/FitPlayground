@@ -14,4 +14,7 @@ public struct StyleManager {
     
     // MARK: - Dialogs
     static let dialogRadius: CGFloat = 36.0
+    
+    // MARK: - Paddings
+    static let contentExternalOffset: CGFloat = 16.0
 }

@@ -8,11 +8,9 @@
 import SwiftUI
 
 struct HomeTabView: View {
-    private let workoutsInfo: [Workout] = [
-        .init(name: "Core Engager 🎯", duration: 27, muscleGroups: [.abs, .back, .chest], status: .completed),
-        .init(name: "Chair Rounds!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-        .init(name: "Leg Day", duration: 39, muscleGroups: [.legs], status: .active)
-    ]
+    @State private var headerOpacity: CGFloat = 0
+    
+    let workoutsInfo: [Workout]
     
     var body: some View {
         ZStack {
@@ -52,19 +50,61 @@ struct HomeTabView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .cornerRadius(StyleManager.dialogRadius, for: [.topLeft, .topRight])
                 }
+                .background(GeometryReader { proxy in
+                    Color.clear.preference(
+                        key: ScrollOffsetPreferenceKey.self,
+                        value: proxy.frame(in: .named("scroll")).origin
+                    )
+                })
+                .onPreferenceChange(ScrollOffsetPreferenceKey.self, perform: { value in
+                    self.updateHeaderOpacity(for: value.y)
+                })
             }
             .scrollIndicators(.hidden)
+            .coordinateSpace(name: "scroll")
             .shadow(color: .appPrimary, radius: 10, y: 5)
+            .overlay {
+                ZStack {
+                    Color.clear
+                        .frame(height: Constants.navigationBarHeight)
+                        .background(.ultraThinMaterial)
+                        .opacity(headerOpacity)
+                        .blur(radius: Constants.navigationBarBlurRadius)
+                        .ignoresSafeArea(edges: .top)
+                    
+                    HStack {
+                        Image(systemName: "person.circle.fill")
+                            .font(.largeTitle)
+                        
+                        Text("Good morning,")
+                            .font(.appTextCaption2)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    .padding(.horizontal, StyleManager.contentExternalOffset )
+                }
+                .frame(maxHeight: .infinity, alignment: .top )
+            }
         }
+    }
+    
+    private func updateHeaderOpacity(for scrollPositionY: CGFloat) {
+        let position = max(min(-scrollPositionY, Constants.headerHeight), 0)
+        headerOpacity = position / Constants.headerHeight
     }
 }
 
 extension HomeTabView {
     private enum Constants {
-        static let headerHeight: CGFloat = 160.0
+        static let headerHeight: CGFloat = 160
+        static let navigationBarHeight: CGFloat = 52
+        static let navigationBarBlurRadius: CGFloat = 0.5
     }
 }
 
 #Preview {
-    HomeTabView()
+    HomeTabView(workoutsInfo: [
+        .init(name: "Core Engager 🎯", duration: 27, muscleGroups: [.abs, .back, .chest], status: .completed),
+        .init(name: "Chair Rounds!", duration: 11, muscleGroups: [.legs, .back], status: .active),
+        .init(name: "Leg Day", duration: 39, muscleGroups: [.legs], status: .active)
+    ])
 }
