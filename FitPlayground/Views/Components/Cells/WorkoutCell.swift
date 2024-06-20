@@ -39,6 +39,7 @@ struct WorkoutCell: View {
         .padding(.init(top: 20, leading: 24, bottom: 20, trailing: 8))
         .background(data.status.backgroundColor)
         .clipShape(.rect(cornerRadius: StyleManager.cellRadius, style: .continuous))
+        .pressable()
     }
 }
 
