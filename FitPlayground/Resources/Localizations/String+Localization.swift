@@ -11,7 +11,12 @@ extension String {
     // MARK: - Common
     public static let potential = localizedString(for: "potential")
     public static let today = localizedString(for: "today")
+    public static let cancel = localizedString(for: "cancel")
     public static let min = localizedString(for: "minutes_short")
+    
+    public static let newWorkout = localizedString(for: "new_wrkt")
+    public static let existingWorkout = localizedString(for: "existing_wrkt")
+    public static let instantActivity = localizedString(for: "instant_act")
     
     // MARK: - Tabs
     public static let homeTabTitle = localizedString(for: "home_tab_title")
@@ -32,6 +37,11 @@ extension String {
     // MARK: - Slogans
     public static let firstSloganTitle = localizedString(for: "slogan_1_ln1")
     public static let firstSloganSubtitle = localizedString(for: "slogan_1_ln2")
+    
+    // MARK: - Actions
+    public static let newWorkoutActionDesc = localizedString(for: "btn_desc_new_wrkt")
+    public static let instantActivityActionDesc = localizedString(for: "btn_desc_instant_act")
+    public static let existingWorkoutActionDesc = localizedString(for: "btn_desc_existing_wrkt")
     
     private static func localizedString(for key: String) -> String {
         NSLocalizedString(String(describing: key), comment: "")

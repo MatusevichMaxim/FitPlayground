@@ -20,6 +20,10 @@ extension View {
         )
         return clipShape(rect)
     }
+    
+    func cornerRadius(_ radius: CGFloat) -> some View {
+        return clipShape(.rect(cornerRadius: radius, style: .continuous))
+    }
 }
 
 // MARK: Behavior

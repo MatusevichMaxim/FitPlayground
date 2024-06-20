@@ -35,6 +35,10 @@
 		56BE888D2C2366C1005EFED9 /* AnimatedGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE888C2C2366C1005EFED9 /* AnimatedGradientView.swift */; };
 		56BE88932C238D53005EFED9 /* ScrollOffsetPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88922C238D53005EFED9 /* ScrollOffsetPreferenceKey.swift */; };
 		56BE88952C24A532005EFED9 /* ButtonPress+Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88942C24A532005EFED9 /* ButtonPress+Modifier.swift */; };
+		56BE889A2C24AE9B005EFED9 /* ActionMultilineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88992C24AE9B005EFED9 /* ActionMultilineButton.swift */; };
+		56BE889D2C24BCDC005EFED9 /* ActionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE889C2C24BCDC005EFED9 /* ActionSheetView.swift */; };
+		56BE889F2C24C5B4005EFED9 /* ActionCancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE889E2C24C5B4005EFED9 /* ActionCancelButton.swift */; };
+		56BE88A12C24C6ED005EFED9 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88A02C24C6ED005EFED9 /* ActionButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +72,10 @@
 		56BE888C2C2366C1005EFED9 /* AnimatedGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedGradientView.swift; sourceTree = "<group>"; };
 		56BE88922C238D53005EFED9 /* ScrollOffsetPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOffsetPreferenceKey.swift; sourceTree = "<group>"; };
 		56BE88942C24A532005EFED9 /* ButtonPress+Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ButtonPress+Modifier.swift"; sourceTree = "<group>"; };
+		56BE88992C24AE9B005EFED9 /* ActionMultilineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionMultilineButton.swift; sourceTree = "<group>"; };
+		56BE889C2C24BCDC005EFED9 /* ActionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetView.swift; sourceTree = "<group>"; };
+		56BE889E2C24C5B4005EFED9 /* ActionCancelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCancelButton.swift; sourceTree = "<group>"; };
+		56BE88A02C24C6ED005EFED9 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +139,10 @@
 		566C0B822C1A24EB00C4AF95 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				56BE888B2C236695005EFED9 /* Views */,
+				56BE88982C24AE7A005EFED9 /* Buttons */,
 				56BE886B2C1B8D0B005EFED9 /* Cells */,
+				56BE889B2C24BAB7005EFED9 /* Dialogs */,
+				56BE888B2C236695005EFED9 /* Views */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -357,6 +367,24 @@
 			path = Modifiers;
 			sourceTree = "<group>";
 		};
+		56BE88982C24AE7A005EFED9 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				56BE88992C24AE9B005EFED9 /* ActionMultilineButton.swift */,
+				56BE889E2C24C5B4005EFED9 /* ActionCancelButton.swift */,
+				56BE88A02C24C6ED005EFED9 /* ActionButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		56BE889B2C24BAB7005EFED9 /* Dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				56BE889C2C24BCDC005EFED9 /* ActionSheetView.swift */,
+			);
+			path = Dialogs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -433,6 +461,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56BE889D2C24BCDC005EFED9 /* ActionSheetView.swift in Sources */,
 				56BE886D2C1B8D36005EFED9 /* WorkoutCell.swift in Sources */,
 				56BE88792C1CCBB3005EFED9 /* Color+Resources.swift in Sources */,
 				56BE88752C1CC92A005EFED9 /* WorkoutStatus.swift in Sources */,
@@ -440,6 +469,8 @@
 				566D86532AEE224900293167 /* String+Localization.swift in Sources */,
 				566D86392AEE158300293167 /* MainTabView.swift in Sources */,
 				56BE88712C1B9FD4005EFED9 /* Workout.swift in Sources */,
+				56BE889F2C24C5B4005EFED9 /* ActionCancelButton.swift in Sources */,
+				56BE889A2C24AE9B005EFED9 /* ActionMultilineButton.swift in Sources */,
 				565BA4632AF445D700A1E4AA /* Font+Fonts.swift in Sources */,
 				56BE888A2C221F56005EFED9 /* View+Extensions.swift in Sources */,
 				56BE88732C1BA035005EFED9 /* MuscleGroup.swift in Sources */,
@@ -453,6 +484,7 @@
 				566D86472AEE1E5800293167 /* CalendarTabView.swift in Sources */,
 				56BE88772C1CCAE4005EFED9 /* WorkoutStatus+Extension.swift in Sources */,
 				566C0B912C1A3C3E00C4AF95 /* Image+Resources.swift in Sources */,
+				56BE88A12C24C6ED005EFED9 /* ActionButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

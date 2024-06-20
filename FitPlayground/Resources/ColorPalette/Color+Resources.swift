@@ -16,6 +16,7 @@ extension Color {
     
     public static let appPrimary900 = Color(.appPrimary900)
     public static let appPrimary800 = Color(.appPrimary800)
+    public static let appPrimary300 = Color(.appPrimary300)
     
     public static let appAccent100 = Color(.appAccent100)
     

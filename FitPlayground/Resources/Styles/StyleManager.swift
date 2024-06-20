@@ -15,6 +15,10 @@ public struct StyleManager {
     // MARK: - Dialogs
     static let dialogRadius: CGFloat = 36.0
     
+    // MARK: - Buttons
+    static let actionButtonHeight: CGFloat = 56.0
+    static let extendedActionButtonHeight: CGFloat = 72.0
+    
     // MARK: - Paddings
     static let contentExternalOffset: CGFloat = 16.0
 }
