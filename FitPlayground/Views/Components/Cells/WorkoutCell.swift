@@ -19,7 +19,7 @@ struct WorkoutCell: View {
             VStack(alignment: .leading, spacing: 12) {
                 Text(data.name)
                     .foregroundStyle(Color.textPrimary)
-                    .font(.appTextHeader2)
+                    .font(.appTextHeader3)
                     .frame(height: 18)
                 
                 Text(workoutDescription)

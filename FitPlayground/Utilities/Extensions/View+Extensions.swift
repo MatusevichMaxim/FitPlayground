@@ -8,6 +8,7 @@
 import SwiftUI
 import UIKit
 
+// MARK: - Appearance
 extension View {
     func cornerRadius(_ radius: CGFloat, for corners: [UIRectCorner]) -> some View {
         let rect = UnevenRoundedRectangle(
@@ -18,5 +19,12 @@ extension View {
             style: .continuous
         )
         return clipShape(rect)
+    }
+}
+
+// MARK: Behavior
+extension View {
+    func pressEvent(onPress: @escaping () -> Void, onRelease: @escaping () -> Void) -> some View {
+        modifier(ButtonPressModifier(onPress: onPress, onRelease: onRelease))
     }
 }

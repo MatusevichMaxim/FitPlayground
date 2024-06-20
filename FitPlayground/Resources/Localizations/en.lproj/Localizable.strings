@@ -7,6 +7,7 @@
 */
 
 /* Common */
+"potential" = "Potential";
 "today" = "Today";
 "minutes_short" = "Min";
 
@@ -25,3 +26,7 @@
 
 /* Greetings */
 "greetings_morning" = "Good morning";
+
+/* Slogans */
+"slogan_1_ln1" = "Discover your";
+"slogan_1_ln2" = "Strength";
