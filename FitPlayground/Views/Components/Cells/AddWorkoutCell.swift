@@ -15,7 +15,7 @@ struct AddWorkoutCell: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .foregroundStyle(.clear)
+                .foregroundStyle(Color.appBg)
                 .clipShape(RoundedRectangle(cornerRadius: StyleManager.cellRadius, style: .continuous))
                 .overlay(
                     RoundedRectangle(cornerRadius: StyleManager.cellRadius)
