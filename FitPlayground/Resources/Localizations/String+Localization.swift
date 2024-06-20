@@ -9,6 +9,7 @@ import Foundation
 
 extension String {
     // MARK: - Common
+    public static let potential = localizedString(for: "potential")
     public static let today = localizedString(for: "today")
     public static let min = localizedString(for: "minutes_short")
     
@@ -27,6 +28,10 @@ extension String {
     
     // MARK: - Greetings
     public static let greetingsMorning = localizedString(for: "greetings_morning")
+    
+    // MARK: - Slogans
+    public static let firstSloganTitle = localizedString(for: "slogan_1_ln1")
+    public static let firstSloganSubtitle = localizedString(for: "slogan_1_ln2")
     
     private static func localizedString(for key: String) -> String {
         NSLocalizedString(String(describing: key), comment: "")

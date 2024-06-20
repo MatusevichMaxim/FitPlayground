@@ -12,7 +12,7 @@ struct AnimatedGradientView: View {
         .publish(every: Constants.timerDuration, on: .main, in: .common)
         .autoconnect()
     
-    @ObservedObject private var animator = GradientAnimator(colors:
+    @StateObject private var animator = GradientAnimator(colors:
         [
             Color.gradientAnimationRed,
             Color.gradientAnimationYellow,
@@ -32,6 +32,7 @@ struct AnimatedGradientView: View {
         .background(Color.appBg)
         .blur(radius: Constants.blurRadius)
         .ignoresSafeArea()
+        .clipped()
         .onAppear {
             startAnimation()
             timer = Timer
@@ -57,7 +58,7 @@ extension AnimatedGradientView {
     private enum Constants {
         static let animationSpeed: Double = 4.0
         static let timerDuration: TimeInterval = 3
-        static let blurRadius: CGFloat = 130.0
+        static let blurRadius: CGFloat = 70.0
     }
 }
 
@@ -86,7 +87,7 @@ private struct MovingCircle: Shape {
         var path = Path()
         path.addArc(
             center: .init(x: adjustedX, y: adjustedY),
-            radius: smallestDimention / 2,
+            radius: smallestDimention / 3,
             startAngle: .zero,
             endAngle: .degrees(360),
             clockwise: true

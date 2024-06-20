@@ -8,31 +8,41 @@
 import SwiftUI
 
 struct HomeTabView: View {
-    private let workoutsInfo: [Workout] = [
-        .init(name: "Core Engager 🎯", duration: 27, muscleGroups: [.abs, .back, .chest], status: .completed),
-        .init(name: "Chair Rounds1!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-        .init(name: "Chair Rounds2!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-        .init(name: "Chair Rounds3!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-        .init(name: "Chair Rounds4!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-        .init(name: "Chair Rounds5!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-        .init(name: "Chair Rounds6!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-        .init(name: "Chair Rounds7!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-        .init(name: "Chair Rounds8!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-        .init(name: "Chair Rounds9!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-        .init(name: "Chair Rounds10!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-        .init(name: "Chair Rounds11!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-        .init(name: "Chair Rounds12!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-        .init(name: "Leg Day", duration: 39, muscleGroups: [.legs], status: .active)
-    ]
+    @State private var headerOpacity: CGFloat = 0
+    
+    let workoutsInfo: [Workout]
     
     var body: some View {
         ZStack {
             Color.appPrimary.ignoresSafeArea()
             
             VStack {
-                Rectangle()
-                    .fill(Color.appAccent)
-                    .frame(height: headerHeight * 2)
+                ZStack {
+                    AnimatedGradientView()
+                    
+                    VStack {
+                        Text(String.firstSloganTitle)
+                            .font(.appTextAltHeader1)
+                            .foregroundStyle(Color.textPrimary)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        HStack(spacing: 8) {
+                            Text(String.firstSloganSubtitle)
+                                .font(.appTextHeader1)
+                                .foregroundStyle(Color.textPrimary)
+                                .scaledToFit()
+                            
+                            Text(String.potential.lowercased())
+                                .font(.appTextHeader1)
+                                .foregroundStyle(Color.appAccent100)
+                                .scaledToFit()
+                            
+                            Spacer()
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                }
+                .frame(height: Constants.headerHeight * 2)
                 
                 Spacer()
             }
@@ -41,11 +51,11 @@ struct HomeTabView: View {
             ScrollView {
                 VStack {
                     Spacer()
-                        .frame(height: headerHeight)
+                        .frame(height: Constants.headerHeight)
                     
                     VStack(alignment: .leading, spacing: 18) {
                         Text("\(.today)")
-                            .font(.appTextHeader1)
+                            .font(.appTextHeader2)
                             .foregroundStyle(Color.textPrimary)
                             .padding(.top, 24)
                             .padding(.horizontal, 32)
@@ -64,17 +74,72 @@ struct HomeTabView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .cornerRadius(StyleManager.dialogRadius, for: [.topLeft, .topRight])
                 }
+                .background(GeometryReader { proxy in
+                    Color.clear.preference(
+                        key: ScrollOffsetPreferenceKey.self,
+                        value: proxy.frame(in: .named("scroll")).origin
+                    )
+                })
+                .onPreferenceChange(ScrollOffsetPreferenceKey.self, perform: { value in
+                    self.updateHeaderOpacity(for: value.y)
+                })
             }
             .scrollIndicators(.hidden)
+            .coordinateSpace(name: "scroll")
+            .shadow(color: .appPrimary, radius: 10, y: 5)
+            .overlay {
+                ZStack {
+                    GeometryReader { proxy in
+                        Color.appBg.opacity(0.5)
+                            .frame(height: Constants.navigationBarHeight + proxy.safeAreaInsets.top)
+                            .background(.ultraThinMaterial)
+                            .opacity(headerOpacity)
+                            .blur(radius: Constants.navigationBarBlurRadius)
+                            .ignoresSafeArea(edges: .top)
+                        
+                        HStack {
+                            Image(systemName: "person.crop.circle.fill")
+                                .font(.largeTitle)
+                                .foregroundStyle(Color.textPrimary)
+                            
+                            VStack {
+                                Text("\(String.greetingsMorning),")
+                                    .font(.appTextCaption2)
+                                    .foregroundStyle(Color.textSecondary)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                
+                                Text("User Name")
+                                    .font(.appTextHeader4)
+                                    .foregroundStyle(Color.textPrimary)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            }
+                        }
+                        .padding(.horizontal, StyleManager.contentExternalOffset )
+                    }
+                }
+                .frame(maxHeight: .infinity, alignment: .top )
+            }
         }
+    }
+    
+    private func updateHeaderOpacity(for scrollPositionY: CGFloat) {
+        let position = max(min(-scrollPositionY, Constants.headerHeight), 0)
+        headerOpacity = position / Constants.headerHeight
     }
 }
 
-// MARK: - Constants
-fileprivate extension HomeTabView {
-    var headerHeight: CGFloat { 160.0 }
+extension HomeTabView {
+    private enum Constants {
+        static let headerHeight: CGFloat = 160
+        static let navigationBarHeight: CGFloat = 52
+        static let navigationBarBlurRadius: CGFloat = 0.5
+    }
 }
 
 #Preview {
-    HomeTabView()
+    HomeTabView(workoutsInfo: [
+//        .init(name: "Core Engager 🎯", duration: 27, muscleGroups: [.abs, .back, .chest], status: .completed),
+//        .init(name: "Chair Rounds!", duration: 11, muscleGroups: [.legs, .back], status: .active),
+//        .init(name: "Leg Day", duration: 39, muscleGroups: [.legs], status: .active)
+    ])
 }

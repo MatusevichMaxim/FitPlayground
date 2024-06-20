@@ -10,6 +10,8 @@ import SwiftUI
 struct AddWorkoutCell: View {
     private let cornerRadius: CGFloat = 18
     
+    @State private var isPressed = false
+    
     var body: some View {
         ZStack {
             Rectangle()
@@ -25,6 +27,8 @@ struct AddWorkoutCell: View {
                 .font(.system(size: 16, weight: .black))
         }
         .frame(height: 82)
+        .opacity(isPressed ? 0.6 : 1.0)
+        .pressable()
     }
 }
 

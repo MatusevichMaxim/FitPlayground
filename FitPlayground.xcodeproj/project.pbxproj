@@ -33,6 +33,8 @@
 		56BE88842C21F66F005EFED9 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56BE88832C21F66F005EFED9 /* Montserrat-Bold.ttf */; };
 		56BE888A2C221F56005EFED9 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88892C221F56005EFED9 /* View+Extensions.swift */; };
 		56BE888D2C2366C1005EFED9 /* AnimatedGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE888C2C2366C1005EFED9 /* AnimatedGradientView.swift */; };
+		56BE88932C238D53005EFED9 /* ScrollOffsetPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88922C238D53005EFED9 /* ScrollOffsetPreferenceKey.swift */; };
+		56BE88952C24A532005EFED9 /* ButtonPress+Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88942C24A532005EFED9 /* ButtonPress+Modifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		56BE88832C21F66F005EFED9 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		56BE88892C221F56005EFED9 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		56BE888C2C2366C1005EFED9 /* AnimatedGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedGradientView.swift; sourceTree = "<group>"; };
+		56BE88922C238D53005EFED9 /* ScrollOffsetPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOffsetPreferenceKey.swift; sourceTree = "<group>"; };
+		56BE88942C24A532005EFED9 /* ButtonPress+Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ButtonPress+Modifier.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +181,7 @@
 		566C0B882C1A255400C4AF95 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				56BE88962C24A53D005EFED9 /* Modifiers */,
 				566C0B892C1A255C00C4AF95 /* Extensions */,
 				566C0B8A2C1A256500C4AF95 /* Helpers */,
 			);
@@ -194,6 +199,7 @@
 		566C0B8A2C1A256500C4AF95 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				56BE88922C238D53005EFED9 /* ScrollOffsetPreferenceKey.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -343,6 +349,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		56BE88962C24A53D005EFED9 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				56BE88942C24A532005EFED9 /* ButtonPress+Modifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -422,6 +436,7 @@
 				56BE886D2C1B8D36005EFED9 /* WorkoutCell.swift in Sources */,
 				56BE88792C1CCBB3005EFED9 /* Color+Resources.swift in Sources */,
 				56BE88752C1CC92A005EFED9 /* WorkoutStatus.swift in Sources */,
+				56BE88932C238D53005EFED9 /* ScrollOffsetPreferenceKey.swift in Sources */,
 				566D86532AEE224900293167 /* String+Localization.swift in Sources */,
 				566D86392AEE158300293167 /* MainTabView.swift in Sources */,
 				56BE88712C1B9FD4005EFED9 /* Workout.swift in Sources */,
@@ -434,6 +449,7 @@
 				566C0B952C1A420700C4AF95 /* WorkoutsTabView.swift in Sources */,
 				56BE888D2C2366C1005EFED9 /* AnimatedGradientView.swift in Sources */,
 				566D86372AEE158300293167 /* FitPlaygroundApp.swift in Sources */,
+				56BE88952C24A532005EFED9 /* ButtonPress+Modifier.swift in Sources */,
 				566D86472AEE1E5800293167 /* CalendarTabView.swift in Sources */,
 				56BE88772C1CCAE4005EFED9 /* WorkoutStatus+Extension.swift in Sources */,
 				566C0B912C1A3C3E00C4AF95 /* Image+Resources.swift in Sources */,

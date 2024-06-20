@@ -19,7 +19,7 @@ struct WorkoutCell: View {
             VStack(alignment: .leading, spacing: 12) {
                 Text(data.name)
                     .foregroundStyle(Color.textPrimary)
-                    .font(.appTextHeader2)
+                    .font(.appTextHeader3)
                     .frame(height: 18)
                 
                 Text(workoutDescription)
@@ -39,6 +39,7 @@ struct WorkoutCell: View {
         .padding(.init(top: 20, leading: 24, bottom: 20, trailing: 8))
         .background(data.status.backgroundColor)
         .clipShape(.rect(cornerRadius: StyleManager.cellRadius, style: .continuous))
+        .pressable()
     }
 }
 

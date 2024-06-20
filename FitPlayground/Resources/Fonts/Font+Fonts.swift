@@ -8,9 +8,12 @@
 import SwiftUI
 
 extension Font {
-    public static let appTextHeader1: Font = .custom(.montserrat_extraBold, size: 22)
-    public static let appTextHeader2: Font = .custom(.montserrat_extraBold, size: 20)
-    public static let appTextHeader3: Font = .custom(.montserrat_bold, size: 14)
+    public static let appTextHeader1: Font = .custom(.montserrat_extraBold, size: 34)
+    public static let appTextHeader2: Font = .custom(.montserrat_extraBold, size: 22)
+    public static let appTextHeader3: Font = .custom(.montserrat_extraBold, size: 20)
+    public static let appTextHeader4: Font = .custom(.montserrat_bold, size: 14)
+    
+    public static let appTextAltHeader1: Font = .custom(.cabin_regular, size: 26)
     
     public static let appTextCaption1: Font = .custom(.cabin_medium, size: 14)
     public static let appTextCaption2: Font = .custom(.cabin_regular, size: 14)
