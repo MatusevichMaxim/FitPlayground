@@ -24,7 +24,7 @@ extension View {
 
 // MARK: Behavior
 extension View {
-    func pressEvent(onPress: @escaping () -> Void, onRelease: @escaping () -> Void) -> some View {
+    func pressEvents(onPress: @escaping () -> Void, onRelease: @escaping () -> Void) -> some View {
         modifier(ButtonPressModifier(onPress: onPress, onRelease: onRelease))
     }
     

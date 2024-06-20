@@ -28,7 +28,7 @@ struct PressableModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .opacity(isPressed ? 0.7 : 1.0)
-            .pressEvent(
+            .pressEvents(
                 onPress: { isPressed = true },
                 onRelease: { isPressed = false }
             )
