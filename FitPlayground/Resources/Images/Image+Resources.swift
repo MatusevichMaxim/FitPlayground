@@ -14,6 +14,7 @@ enum AppImageResourse: String {
     case square_pencil_icon = "square_pencil_ic"
     case bolt_icon = "bolt_ic"
     case folder_icon = "folder_ic"
+    case bin_icon = "bin_ic"
 }
 
 extension Image {

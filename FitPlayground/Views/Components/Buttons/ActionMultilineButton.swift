@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct MultilineButtonModel: Hashable {
+struct ActionMultilineButtonModel: Hashable {
     let title: String
     let subtitle: String
     let icon: AppImageResourse
 }
 
 struct ActionMultilineButton: View {
-    let data: MultilineButtonModel
+    let data: ActionMultilineButtonModel
     
     var body: some View {
         ActionButton(action: {}) {
@@ -48,11 +48,7 @@ struct ActionMultilineButton: View {
 }
 
 #Preview {
-    ActionMultilineButton(data: .init(
-        title: "New workout",
-        subtitle: "Create a new workout from scratch",
-        icon: .square_pencil_icon
-    ))
-    .previewLayout(.sizeThatFits)
-    .padding()
+    ActionMultilineButton(data: PreviewData.actionMultilineButtonModel)
+        .previewLayout(.sizeThatFits)
+        .padding()
 }
