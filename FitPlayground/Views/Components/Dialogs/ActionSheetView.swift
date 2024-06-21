@@ -28,38 +28,47 @@ struct ActionSheetModel {
 }
 
 struct ActionSheetView: View {
+    @Binding var isShowing: Bool
     let data: ActionSheetModel
     
     var body: some View {
-        VStack(spacing: 10) {
-            ForEach(data.elements, id: \.self) { element in
-                switch element {
-                case .defaultButton(let model):
-                    ActionDialogButton(data: model)
-                    
-                case .multilineButton(let model):
-                    ActionMultilineButton(data: model)
-                    
-                case .cancelButton(let model):
-                    ActionCancelButton(data: model)
-                    
-                case .separator:
-                    Divider()
-                        .overlay(Color.appPrimary800)
-                        .padding(.horizontal, 16)
-                        .frame(height: 8)
+        ZStack(alignment: .bottom) {
+            if isShowing {
+                OverlayView()
+                
+                VStack(spacing: 10) {
+                    ForEach(data.elements, id: \.self) { element in
+                        switch element {
+                        case .defaultButton(let model):
+                            ActionDialogButton(data: model)
+                            
+                        case .multilineButton(let model):
+                            ActionMultilineButton(data: model)
+                            
+                        case .cancelButton(let model):
+                            ActionCancelButton(data: model)
+                            
+                        case .separator:
+                            Divider()
+                                .overlay(Color.appPrimary800)
+                                .padding(.horizontal, 16)
+                                .frame(height: 8)
+                        }
+                    }
                 }
+                .padding(32)
+                .background(Color.appPrimary900)
+                .cornerRadius(StyleManager.dialogRadius)
+                .transition(.move(edge: .bottom))
             }
         }
-        .padding(32)
-        .background(Color.appPrimary900)
-        .cornerRadius(StyleManager.dialogRadius)
-        .frame(maxWidth: .infinity)
-        .scaledToFit()
+        .frame(alignment: .bottom)
+        .ignoresSafeArea()
+        .animation(.easeInOut, value: isShowing)
     }
 }
 
 #Preview {
-    ActionSheetView(data: PreviewData.actionSheetCreateNew)
-    .previewLayout(.sizeThatFits)
+    ActionSheetView(isShowing: .constant(true), data: PreviewData.actionSheetCreateNew)
+        .previewLayout(.sizeThatFits)
 }

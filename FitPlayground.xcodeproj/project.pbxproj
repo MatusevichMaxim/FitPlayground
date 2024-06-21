@@ -41,6 +41,7 @@
 		56BE88A32C25FBA4005EFED9 /* ActionDialogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88A22C25FBA4005EFED9 /* ActionDialogButton.swift */; };
 		56BE88A52C260C3E005EFED9 /* Alignment+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88A42C260C3E005EFED9 /* Alignment+Hashable.swift */; };
 		56BE88A72C260E22005EFED9 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88A62C260E22005EFED9 /* PreviewData.swift */; };
+		56BE88A92C262A59005EFED9 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88A82C262A59005EFED9 /* OverlayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		56BE88A22C25FBA4005EFED9 /* ActionDialogButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDialogButton.swift; sourceTree = "<group>"; };
 		56BE88A42C260C3E005EFED9 /* Alignment+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alignment+Hashable.swift"; sourceTree = "<group>"; };
 		56BE88A62C260E22005EFED9 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
+		56BE88A82C262A59005EFED9 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -361,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				56BE888C2C2366C1005EFED9 /* AnimatedGradientView.swift */,
+				56BE88A82C262A59005EFED9 /* OverlayView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				56BE88802C20D207005EFED9 /* StyleManager.swift in Sources */,
 				56BE88A52C260C3E005EFED9 /* Alignment+Hashable.swift in Sources */,
 				56BE887B2C20C622005EFED9 /* AddWorkoutCell.swift in Sources */,
+				56BE88A92C262A59005EFED9 /* OverlayView.swift in Sources */,
 				566C0B952C1A420700C4AF95 /* WorkoutsTabView.swift in Sources */,
 				56BE888D2C2366C1005EFED9 /* AnimatedGradientView.swift in Sources */,
 				566D86372AEE158300293167 /* FitPlaygroundApp.swift in Sources */,

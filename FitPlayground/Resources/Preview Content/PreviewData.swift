@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+#if DEBUG
 struct PreviewData {
     // MARK: - Dialogs
     static let actionSheetCreateNew = ActionSheetModel(elements: [
@@ -25,3 +26,4 @@ struct PreviewData {
     // MARK: - Cells
     static let workout = Workout(name: "Core Engager 🎯", duration: 55, muscleGroups: [.arms, .back, .shoulders], status: .active)
 }
+#endif

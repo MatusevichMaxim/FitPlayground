@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct AddWorkoutCell: View {
+    let action: () -> Void
+    
     var body: some View {
-        ActionButton(action: {}) {
+        ActionButton(action: action) {
             ZStack {
                 Rectangle()
                     .foregroundStyle(Color.appBg)
@@ -29,7 +31,7 @@ struct AddWorkoutCell: View {
 }
 
 #Preview {
-    AddWorkoutCell()
+    AddWorkoutCell(action: {})
         .previewLayout(.sizeThatFits)
         .padding()
 }
