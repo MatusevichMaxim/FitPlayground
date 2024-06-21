@@ -45,7 +45,7 @@ extension ActionCancelButton {
 }
 
 #Preview {
-    ActionCancelButton(data: .init(title: String.cancel, showsDeleteOption: true))
+    ActionCancelButton(data: PreviewData.actionCancelModel)
         .previewLayout(.sizeThatFits)
         .padding()
 }

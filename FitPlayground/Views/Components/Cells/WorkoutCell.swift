@@ -45,12 +45,7 @@ struct WorkoutCell: View {
 }
 
 #Preview {
-    WorkoutCell(data: .init(
-        name: "Core Engager 🎯",
-        duration: 55,
-        muscleGroups: [.arms, .back, .shoulders],
-        status: .active
-    ))
+    WorkoutCell(data: PreviewData.workout)
     .previewLayout(.sizeThatFits)
     .padding()
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 enum ActionSheetElement: Hashable {
     case defaultButton(ActionDialogButtonModel)
-    case multilineButton(MultilineButtonModel)
+    case multilineButton(ActionMultilineButtonModel)
     case cancelButton(ActionCancelModel)
     case separator
     
@@ -46,6 +46,8 @@ struct ActionSheetView: View {
                 case .separator:
                     Divider()
                         .overlay(Color.appPrimary800)
+                        .padding(.horizontal, 16)
+                        .frame(height: 8)
                 }
             }
         }
@@ -58,20 +60,6 @@ struct ActionSheetView: View {
 }
 
 #Preview {
-    ActionSheetView(data: .init(
-        elements: [
-            .multilineButton(
-                .init(title: .newWorkout, subtitle: .newWorkoutActionDesc, icon: .square_pencil_icon)
-            ),
-            .multilineButton(
-                .init(title: .instantActivity, subtitle: .instantActivityActionDesc, icon: .bolt_icon)
-            ),
-            .multilineButton(
-                .init(title: .existingWorkout, subtitle: .existingWorkoutActionDesc, icon: .folder_icon)
-            ),
-            .separator,
-            .cancelButton(.init(title: .cancel, showsDeleteOption: false))
-        ]
-    ))
+    ActionSheetView(data: PreviewData.actionSheetCreateNew)
     .previewLayout(.sizeThatFits)
 }

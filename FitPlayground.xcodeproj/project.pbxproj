@@ -40,6 +40,7 @@
 		56BE88A12C24C6ED005EFED9 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88A02C24C6ED005EFED9 /* ActionButton.swift */; };
 		56BE88A32C25FBA4005EFED9 /* ActionDialogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88A22C25FBA4005EFED9 /* ActionDialogButton.swift */; };
 		56BE88A52C260C3E005EFED9 /* Alignment+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88A42C260C3E005EFED9 /* Alignment+Hashable.swift */; };
+		56BE88A72C260E22005EFED9 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88A62C260E22005EFED9 /* PreviewData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		56BE88A02C24C6ED005EFED9 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		56BE88A22C25FBA4005EFED9 /* ActionDialogButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDialogButton.swift; sourceTree = "<group>"; };
 		56BE88A42C260C3E005EFED9 /* Alignment+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alignment+Hashable.swift"; sourceTree = "<group>"; };
+		56BE88A62C260E22005EFED9 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				566D863D2AEE158500293167 /* Preview Assets.xcassets */,
+				56BE88A62C260E22005EFED9 /* PreviewData.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				56BE886D2C1B8D36005EFED9 /* WorkoutCell.swift in Sources */,
 				56BE88792C1CCBB3005EFED9 /* Color+Resources.swift in Sources */,
 				56BE88752C1CC92A005EFED9 /* WorkoutStatus.swift in Sources */,
+				56BE88A72C260E22005EFED9 /* PreviewData.swift in Sources */,
 				56BE88932C238D53005EFED9 /* ScrollOffsetPreferenceKey.swift in Sources */,
 				566D86532AEE224900293167 /* String+Localization.swift in Sources */,
 				566D86392AEE158300293167 /* MainTabView.swift in Sources */,

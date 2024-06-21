@@ -52,10 +52,7 @@ struct ActionDialogButton: View {
 }
 
 #Preview {
-    ActionDialogButton(data: .init(
-        title: "Button title",
-        background: .default
-    ))
-    .previewLayout(.sizeThatFits)
-    .padding()
+    ActionDialogButton(data: PreviewData.actionDialogButtonModel)
+        .previewLayout(.sizeThatFits)
+        .padding()
 }
