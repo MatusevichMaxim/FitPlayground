@@ -34,11 +34,11 @@
 		56BE888A2C221F56005EFED9 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88892C221F56005EFED9 /* View+Extensions.swift */; };
 		56BE888D2C2366C1005EFED9 /* AnimatedGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE888C2C2366C1005EFED9 /* AnimatedGradientView.swift */; };
 		56BE88932C238D53005EFED9 /* ScrollOffsetPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88922C238D53005EFED9 /* ScrollOffsetPreferenceKey.swift */; };
-		56BE88952C24A532005EFED9 /* ButtonPress+Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88942C24A532005EFED9 /* ButtonPress+Modifier.swift */; };
 		56BE889A2C24AE9B005EFED9 /* ActionMultilineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88992C24AE9B005EFED9 /* ActionMultilineButton.swift */; };
 		56BE889D2C24BCDC005EFED9 /* ActionSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE889C2C24BCDC005EFED9 /* ActionSheetView.swift */; };
 		56BE889F2C24C5B4005EFED9 /* ActionCancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE889E2C24C5B4005EFED9 /* ActionCancelButton.swift */; };
 		56BE88A12C24C6ED005EFED9 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88A02C24C6ED005EFED9 /* ActionButton.swift */; };
+		56BE88A32C25FBA4005EFED9 /* ActionDialogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88A22C25FBA4005EFED9 /* ActionDialogButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,11 +71,11 @@
 		56BE88892C221F56005EFED9 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		56BE888C2C2366C1005EFED9 /* AnimatedGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedGradientView.swift; sourceTree = "<group>"; };
 		56BE88922C238D53005EFED9 /* ScrollOffsetPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollOffsetPreferenceKey.swift; sourceTree = "<group>"; };
-		56BE88942C24A532005EFED9 /* ButtonPress+Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ButtonPress+Modifier.swift"; sourceTree = "<group>"; };
 		56BE88992C24AE9B005EFED9 /* ActionMultilineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionMultilineButton.swift; sourceTree = "<group>"; };
 		56BE889C2C24BCDC005EFED9 /* ActionSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetView.swift; sourceTree = "<group>"; };
 		56BE889E2C24C5B4005EFED9 /* ActionCancelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCancelButton.swift; sourceTree = "<group>"; };
 		56BE88A02C24C6ED005EFED9 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		56BE88A22C25FBA4005EFED9 /* ActionDialogButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDialogButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -362,7 +362,6 @@
 		56BE88962C24A53D005EFED9 /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
-				56BE88942C24A532005EFED9 /* ButtonPress+Modifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -370,9 +369,10 @@
 		56BE88982C24AE7A005EFED9 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				56BE88A02C24C6ED005EFED9 /* ActionButton.swift */,
+				56BE88A22C25FBA4005EFED9 /* ActionDialogButton.swift */,
 				56BE88992C24AE9B005EFED9 /* ActionMultilineButton.swift */,
 				56BE889E2C24C5B4005EFED9 /* ActionCancelButton.swift */,
-				56BE88A02C24C6ED005EFED9 /* ActionButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -480,9 +480,9 @@
 				566C0B952C1A420700C4AF95 /* WorkoutsTabView.swift in Sources */,
 				56BE888D2C2366C1005EFED9 /* AnimatedGradientView.swift in Sources */,
 				566D86372AEE158300293167 /* FitPlaygroundApp.swift in Sources */,
-				56BE88952C24A532005EFED9 /* ButtonPress+Modifier.swift in Sources */,
 				566D86472AEE1E5800293167 /* CalendarTabView.swift in Sources */,
 				56BE88772C1CCAE4005EFED9 /* WorkoutStatus+Extension.swift in Sources */,
+				56BE88A32C25FBA4005EFED9 /* ActionDialogButton.swift in Sources */,
 				566C0B912C1A3C3E00C4AF95 /* Image+Resources.swift in Sources */,
 				56BE88A12C24C6ED005EFED9 /* ActionButton.swift in Sources */,
 			);

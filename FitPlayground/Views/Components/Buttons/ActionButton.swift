@@ -7,36 +7,26 @@
 
 import SwiftUI
 
-struct ActionButtonModel {
-    enum ActionType {
-        case `default`
-        case green
-    }
+struct ActionButton<Content: View>: View {
+    let action: () -> Void
+    let content: Content
     
-    let title: String
-    let background: ActionType
-}
-
-struct ActionButton: View {
-    let data: ActionButtonModel
+    init(action: @escaping () -> Void, @ViewBuilder content: () -> Content) {
+        self.action = action
+        self.content = content()
+    }
     
     var body: some View {
-        ZStack {
-            Text(data.title)
-                .foregroundStyle(Color.textPrimary)
-                .font(.appTextHeader5)
-                .scaledToFit()
-                .frame(maxWidth: .infinity)
+        Button(action: action) {
+            content
         }
-        .frame(height: StyleManager.actionButtonHeight)
-        .padding(.horizontal, 22)
-        .background(Color.appPrimary800)
-        .cornerRadius(StyleManager.cellRadius)
+        .buttonStyle(ActionButtonStyle())
     }
 }
 
-#Preview {
-    ActionButton(data: .init(title: "Button title", background: .default))
-        .previewLayout(.sizeThatFits)
-        .padding()
+struct ActionButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .opacity(configuration.isPressed ? 0.7 : 1.0)
+    }
 }
