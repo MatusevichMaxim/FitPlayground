@@ -13,7 +13,7 @@ struct AddWorkoutCell: View {
             ZStack {
                 Rectangle()
                     .foregroundStyle(Color.appBg)
-                    .clipShape(RoundedRectangle(cornerRadius: StyleManager.cellRadius, style: .continuous))
+                    .cornerRadius(StyleManager.cellRadius)
                     .overlay(
                         RoundedRectangle(cornerRadius: StyleManager.cellRadius)
                             .stroke(Color.appPrimary900, lineWidth: 4)

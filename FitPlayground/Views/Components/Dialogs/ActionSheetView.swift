@@ -7,8 +7,24 @@
 
 import SwiftUI
 
+enum ActionSheetElement: Hashable {
+    case defaultButton(ActionDialogButtonModel)
+    case multilineButton(MultilineButtonModel)
+    case cancelButton(ActionCancelModel)
+    case separator
+    
+    func hash(into hasher: inout Hasher) {
+        switch self {
+        case .defaultButton(let model): hasher.combine(model)
+        case .multilineButton(let model): hasher.combine(model)
+        case .cancelButton(let model): hasher.combine(model)
+        case .separator: hasher.combine("separator")
+        }
+    }
+}
+
 struct ActionSheetModel {
-    let buttonModels: [MultilineButtonModel]
+    let elements: [ActionSheetElement]
 }
 
 struct ActionSheetView: View {
@@ -16,18 +32,22 @@ struct ActionSheetView: View {
     
     var body: some View {
         VStack(spacing: 10) {
-            ForEach(data.buttonModels, id: \.self) { model in
-                ActionMultilineButton(data: .init(
-                    title: model.title,
-                    subtitle: model.subtitle,
-                    icon: model.icon
-                ))
+            ForEach(data.elements, id: \.self) { element in
+                switch element {
+                case .defaultButton(let model):
+                    ActionDialogButton(data: model)
+                    
+                case .multilineButton(let model):
+                    ActionMultilineButton(data: model)
+                    
+                case .cancelButton(let model):
+                    ActionCancelButton(data: model)
+                    
+                case .separator:
+                    Divider()
+                        .overlay(Color.appPrimary800)
+                }
             }
-            
-            Divider()
-                .overlay(Color.appPrimary800)
-            
-            
         }
         .padding(32)
         .background(Color.appPrimary900)
@@ -39,11 +59,19 @@ struct ActionSheetView: View {
 
 #Preview {
     ActionSheetView(data: .init(
-        buttonModels: [
-            .init(title: .newWorkout, subtitle: .newWorkoutActionDesc, icon: .square_pencil_icon),
-            .init(title: .instantActivity, subtitle: .instantActivityActionDesc, icon: .bolt_icon),
-            .init(title: .existingWorkout, subtitle: .existingWorkoutActionDesc, icon: .folder_icon)
+        elements: [
+            .multilineButton(
+                .init(title: .newWorkout, subtitle: .newWorkoutActionDesc, icon: .square_pencil_icon)
+            ),
+            .multilineButton(
+                .init(title: .instantActivity, subtitle: .instantActivityActionDesc, icon: .bolt_icon)
+            ),
+            .multilineButton(
+                .init(title: .existingWorkout, subtitle: .existingWorkoutActionDesc, icon: .folder_icon)
+            ),
+            .separator,
+            .cancelButton(.init(title: .cancel, showsDeleteOption: false))
         ]
     ))
-        .previewLayout(.sizeThatFits)
+    .previewLayout(.sizeThatFits)
 }

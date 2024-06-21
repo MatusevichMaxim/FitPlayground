@@ -39,6 +39,7 @@
 		56BE889F2C24C5B4005EFED9 /* ActionCancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE889E2C24C5B4005EFED9 /* ActionCancelButton.swift */; };
 		56BE88A12C24C6ED005EFED9 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88A02C24C6ED005EFED9 /* ActionButton.swift */; };
 		56BE88A32C25FBA4005EFED9 /* ActionDialogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88A22C25FBA4005EFED9 /* ActionDialogButton.swift */; };
+		56BE88A52C260C3E005EFED9 /* Alignment+Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88A42C260C3E005EFED9 /* Alignment+Hashable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		56BE889E2C24C5B4005EFED9 /* ActionCancelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCancelButton.swift; sourceTree = "<group>"; };
 		56BE88A02C24C6ED005EFED9 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		56BE88A22C25FBA4005EFED9 /* ActionDialogButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDialogButton.swift; sourceTree = "<group>"; };
+		56BE88A42C260C3E005EFED9 /* Alignment+Hashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alignment+Hashable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				56BE88922C238D53005EFED9 /* ScrollOffsetPreferenceKey.swift */,
+				56BE88A42C260C3E005EFED9 /* Alignment+Hashable.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				56BE88732C1BA035005EFED9 /* MuscleGroup.swift in Sources */,
 				566C0B932C1A40AE00C4AF95 /* HomeTabView.swift in Sources */,
 				56BE88802C20D207005EFED9 /* StyleManager.swift in Sources */,
+				56BE88A52C260C3E005EFED9 /* Alignment+Hashable.swift in Sources */,
 				56BE887B2C20C622005EFED9 /* AddWorkoutCell.swift in Sources */,
 				566C0B952C1A420700C4AF95 /* WorkoutsTabView.swift in Sources */,
 				56BE888D2C2366C1005EFED9 /* AnimatedGradientView.swift in Sources */,

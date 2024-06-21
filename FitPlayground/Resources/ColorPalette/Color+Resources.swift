@@ -20,12 +20,13 @@ extension Color {
     
     public static let appAccent100 = Color(.appAccent100)
     
-    // MARK: - Accents
+    // MARK: - Accents+Tints
     public static let appBlue = Color(.appBlue)
     
     public static let appGreen = Color(.appGreen)
     
     public static let appRed = Color(.appRed)
+    public static let appRed200 = Color(.appRed200)
     
     // MARK: - Text
     public static let textPrimary = Color(.textPrimary)
