@@ -11,6 +11,13 @@ struct ActionDialogButtonModel {
     enum ActionType {
         case `default`
         case green
+        
+        var color: Color {
+            switch self {
+            case .default: .appPrimary800
+            case .green: .appGreen
+            }
+        }
     }
 
     let title: String
@@ -22,16 +29,15 @@ struct ActionDialogButton: View {
     
     var body: some View {
         ActionButton(action: {}) {
-            ZStack {
+            HStack {
                 Text(data.title)
                     .foregroundStyle(Color.textPrimary)
                     .font(.appTextHeader5)
-                    .scaledToFit()
-                    .frame(maxWidth: .infinity)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
             .frame(height: StyleManager.actionButtonHeight)
             .padding(.horizontal, 22)
-            .background(Color.appPrimary800)
+            .background(data.background.color)
             .cornerRadius(StyleManager.cellRadius)
         }
     }
