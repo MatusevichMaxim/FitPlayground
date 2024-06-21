@@ -20,15 +20,8 @@ extension View {
         )
         return clipShape(rect)
     }
-}
-
-// MARK: Behavior
-extension View {
-    func pressEvent(onPress: @escaping () -> Void, onRelease: @escaping () -> Void) -> some View {
-        modifier(ButtonPressModifier(onPress: onPress, onRelease: onRelease))
-    }
     
-    func pressable() -> some View {
-        modifier(PressableModifier())
+    func cornerRadius(_ radius: CGFloat) -> some View {
+        return clipShape(.rect(cornerRadius: radius, style: .continuous))
     }
 }

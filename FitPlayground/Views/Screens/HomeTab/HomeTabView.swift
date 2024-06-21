@@ -109,7 +109,7 @@ struct HomeTabView: View {
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                 
                                 Text("User Name")
-                                    .font(.appTextHeader4)
+                                    .font(.appTextHeader6)
                                     .foregroundStyle(Color.textPrimary)
                                     .frame(maxWidth: .infinity, alignment: .leading)
                             }
@@ -138,8 +138,8 @@ extension HomeTabView {
 
 #Preview {
     HomeTabView(workoutsInfo: [
-//        .init(name: "Core Engager 🎯", duration: 27, muscleGroups: [.abs, .back, .chest], status: .completed),
-//        .init(name: "Chair Rounds!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-//        .init(name: "Leg Day", duration: 39, muscleGroups: [.legs], status: .active)
+        .init(name: "Core Engager 🎯", duration: 27, muscleGroups: [.abs, .back, .chest], status: .completed),
+        .init(name: "Chair Rounds!", duration: 11, muscleGroups: [.legs, .back], status: .active),
+        .init(name: "Leg Day", duration: 39, muscleGroups: [.legs], status: .active)
     ])
 }

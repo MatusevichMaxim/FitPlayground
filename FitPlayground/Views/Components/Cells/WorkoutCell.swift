@@ -15,31 +15,32 @@ struct WorkoutCell: View {
     let data: Workout
     
     var body: some View {
-        HStack() {
-            VStack(alignment: .leading, spacing: 12) {
-                Text(data.name)
-                    .foregroundStyle(Color.textPrimary)
-                    .font(.appTextHeader3)
-                    .frame(height: 18)
+        ActionButton(action: {}) {
+            HStack() {
+                VStack(alignment: .leading, spacing: 12) {
+                    Text(data.name)
+                        .foregroundStyle(Color.textPrimary)
+                        .font(.appTextHeader3)
+                        .frame(height: 18)
+                    
+                    Text(workoutDescription)
+                        .foregroundStyle(Color.textSecondary)
+                        .font(.appTextCaption1)
+                        .frame(height: 10)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
                 
-                Text(workoutDescription)
+                Image(systemName: "ellipsis")
+                    .symbolRenderingMode(.hierarchical)
                     .foregroundStyle(Color.textSecondary)
-                    .font(.appTextCaption1)
-                    .frame(height: 10)
+                    .font(.system(size: 20))
+                    .contentShape(Rectangle())
+                    .frame(minWidth: 50)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            
-            Image(systemName: "ellipsis")
-                .symbolRenderingMode(.hierarchical)
-                .foregroundStyle(Color.textSecondary)
-                .font(.system(size: 20))
-                .contentShape(Rectangle())
-                .frame(minWidth: 50)
+            .padding(.init(top: 20, leading: 24, bottom: 20, trailing: 8))
+            .background(data.status.backgroundColor)
+            .cornerRadius(StyleManager.cellRadius)
         }
-        .padding(.init(top: 20, leading: 24, bottom: 20, trailing: 8))
-        .background(data.status.backgroundColor)
-        .clipShape(.rect(cornerRadius: StyleManager.cellRadius, style: .continuous))
-        .pressable()
     }
 }
 

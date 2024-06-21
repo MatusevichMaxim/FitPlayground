@@ -9,7 +9,12 @@
 /* Common */
 "potential" = "Potential";
 "today" = "Today";
+"cancel" = "Cancel";
 "minutes_short" = "Min";
+
+"new_wrkt" = "New workout";
+"existing_wrkt" = "Existing workout";
+"instant_act" = "Instant activity";
 
 /* Tabs */
 "home_tab_title" = "Home";
@@ -30,3 +35,8 @@
 /* Slogans */
 "slogan_1_ln1" = "Discover your";
 "slogan_1_ln2" = "Strength";
+
+/* Actions */
+"btn_desc_new_wrkt" = "Create a new workout from scratch.";
+"btn_desc_instant_act" = "Add a quick activity to your schedule.";
+"btn_desc_existing_wrkt" = "Select a workout from your library.";
