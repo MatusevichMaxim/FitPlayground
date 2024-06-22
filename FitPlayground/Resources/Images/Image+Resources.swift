@@ -10,6 +10,7 @@ import SwiftUI
 enum AppImageResourse: String {
     case home_icon = "home_ic"
     case calendar_icon = "calendar_ic"
+    case dumbbell_icon = "dumbbell_ic"
     
     case square_pencil_icon = "square_pencil_ic"
     case bolt_icon = "bolt_ic"

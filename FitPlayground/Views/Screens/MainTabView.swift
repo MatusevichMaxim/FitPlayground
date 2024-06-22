@@ -11,21 +11,21 @@ struct MainTabView: View {
     var body: some View {
         TabView {
             Group {
-                HomeTabView(workoutsInfo: [])
+                HomeTabView(workoutsInfo: PreviewData.workoutsPreset)
                     .tabItem {
-                        Image(systemName: "house")
+                        Image(.home_icon)
                         Text(String.homeTabTitle)
                     }
                 
                 CalendarTabView()
                     .tabItem {
-                        Image(systemName: "calendar")
+                        Image(.calendar_icon)
                         Text(String.calendarTabTitle)
                     }
                 
                 WorkoutsTabView()
                     .tabItem {
-                        Image(systemName: "dumbbell")
+                        Image(.dumbbell_icon)
                         Text(String.workoutsTabTitle)
                     }
             }
