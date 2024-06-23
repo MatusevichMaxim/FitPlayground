@@ -34,7 +34,8 @@ struct ActionSheetView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             if isShowing {
-                OverlayView()
+                OverlayView(isShowing: $isShowing)
+                    .zIndex(1)
                 
                 VStack(spacing: 10) {
                     ForEach(data.elements, id: \.self) { element in
@@ -60,6 +61,7 @@ struct ActionSheetView: View {
                 .background(Color.appPrimary900)
                 .cornerRadius(StyleManager.dialogRadius)
                 .transition(.move(edge: .bottom))
+                .zIndex(2)
             }
         }
         .frame(alignment: .bottom)

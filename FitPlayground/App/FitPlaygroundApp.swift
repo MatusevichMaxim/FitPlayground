@@ -11,7 +11,7 @@ import SwiftUI
 struct FitPlaygroundApp: App {
     var body: some Scene {
         WindowGroup {
-            MainTabView()
+            MainTabView(selectedTab: .home)
         }
     }
 }

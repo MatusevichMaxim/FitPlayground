@@ -8,34 +8,41 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @State var selectedTab: TabItem
+    
     var body: some View {
-        TabView {
-            Group {
-                HomeTabView(workoutsInfo: [])
-                    .tabItem {
-                        Image(systemName: "house")
-                        Text(String.homeTabTitle)
+        ZStack(alignment: .bottom) {
+            TabView(selection: $selectedTab) {
+                Group {
+                    ForEach(TabItem.allCases, id: \.self) { item in
+                        switch item {
+                        case .home:
+                            HomeTabView(workoutsInfo: PreviewData.workoutsPreset)
+                                .tag(item.rawValue)
+                            
+                        case .calendar:
+                            CalendarTabView()
+                                .tag(item.rawValue)
+                            
+                        case .workouts:
+                            WorkoutsTabView()
+                                .tag(item.rawValue)
+                        }
                     }
-                
-                CalendarTabView()
-                    .tabItem {
-                        Image(systemName: "calendar")
-                        Text(String.calendarTabTitle)
-                    }
-                
-                WorkoutsTabView()
-                    .tabItem {
-                        Image(systemName: "dumbbell")
-                        Text(String.workoutsTabTitle)
-                    }
+                }
+                .toolbarBackground(.visible, for: .tabBar)
+                .toolbarBackground(Color.appPrimary, for: .tabBar)
+                .toolbarColorScheme(.dark, for: .tabBar)
             }
-            .toolbarBackground(.visible, for: .tabBar)
-            .toolbarBackground(Color.appPrimary, for: .tabBar)
-            .toolbarColorScheme(.dark, for: .tabBar)
+            .onChange(of: selectedTab) { _, newSelection in
+                selectedTab = newSelection
+            }
+            
+            TabBarView(selectedTab: $selectedTab)
         }
     }
 }
 
 #Preview {
-    MainTabView()
+    MainTabView(selectedTab: .home)
 }
