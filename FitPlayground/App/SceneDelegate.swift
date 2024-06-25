@@ -10,6 +10,8 @@ import SwiftUI
 import UIKit
 
 final class SceneDelegate: NSObject, UIWindowSceneDelegate {
+    private var appCoordinator: AppCoordinator?
+    
     var window: UIWindow?
     
     func scene(
@@ -20,11 +22,10 @@ final class SceneDelegate: NSObject, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        let mainTabView = MainTabView(selectedTab: .calendar)
-        window.rootViewController = UIHostingController(rootView: mainTabView)
-        window.makeKeyAndVisible()
-
         self.window = window
+        
+        appCoordinator = AppCoordinator(window: window)
+        appCoordinator?.launch()
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

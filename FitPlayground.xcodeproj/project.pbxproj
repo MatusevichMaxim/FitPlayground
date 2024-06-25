@@ -46,6 +46,10 @@
 		56FAD6152C27C554006CD568 /* TabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6142C27C554006CD568 /* TabItemView.swift */; };
 		56FAD63D2C2A52D7006CD568 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD63C2C2A52D7006CD568 /* AppDelegate.swift */; };
 		56FAD63F2C2A566D006CD568 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD63E2C2A566D006CD568 /* SceneDelegate.swift */; };
+		56FAD6422C2A6385006CD568 /* Coordination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6412C2A6385006CD568 /* Coordination.swift */; };
+		56FAD6442C2A63B6006CD568 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6432C2A63B6006CD568 /* AppCoordinator.swift */; };
+		56FAD6462C2A64B7006CD568 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6452C2A64B7006CD568 /* OnboardingCoordinator.swift */; };
+		56FAD6482C2A64E3006CD568 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6472C2A64E3006CD568 /* MainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +94,10 @@
 		56FAD6142C27C554006CD568 /* TabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemView.swift; sourceTree = "<group>"; };
 		56FAD63C2C2A52D7006CD568 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56FAD63E2C2A566D006CD568 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		56FAD6412C2A6385006CD568 /* Coordination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordination.swift; sourceTree = "<group>"; };
+		56FAD6432C2A63B6006CD568 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		56FAD6452C2A64B7006CD568 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		56FAD6472C2A64E3006CD568 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +126,7 @@
 		566C0B7E2C1A248E00C4AF95 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				56FAD6402C2A6378006CD568 /* Coordination */,
 				56FAD63C2C2A52D7006CD568 /* AppDelegate.swift */,
 				56FAD63E2C2A566D006CD568 /* SceneDelegate.swift */,
 			);
@@ -406,6 +415,25 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		56FAD6402C2A6378006CD568 /* Coordination */ = {
+			isa = PBXGroup;
+			children = (
+				56FAD6492C2A64F9006CD568 /* API */,
+				56FAD6432C2A63B6006CD568 /* AppCoordinator.swift */,
+				56FAD6452C2A64B7006CD568 /* OnboardingCoordinator.swift */,
+				56FAD6472C2A64E3006CD568 /* MainCoordinator.swift */,
+			);
+			path = Coordination;
+			sourceTree = "<group>";
+		};
+		56FAD6492C2A64F9006CD568 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				56FAD6412C2A6385006CD568 /* Coordination.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -482,6 +510,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56FAD6442C2A63B6006CD568 /* AppCoordinator.swift in Sources */,
 				56BE889D2C24BCDC005EFED9 /* ActionSheetView.swift in Sources */,
 				56BE886D2C1B8D36005EFED9 /* WorkoutCell.swift in Sources */,
 				56BE88792C1CCBB3005EFED9 /* Color+Resources.swift in Sources */,
@@ -489,6 +518,7 @@
 				56BE88752C1CC92A005EFED9 /* WorkoutStatus.swift in Sources */,
 				56BE88A72C260E22005EFED9 /* PreviewData.swift in Sources */,
 				56BE88932C238D53005EFED9 /* ScrollOffsetPreferenceKey.swift in Sources */,
+				56FAD6482C2A64E3006CD568 /* MainCoordinator.swift in Sources */,
 				566D86532AEE224900293167 /* String+Localization.swift in Sources */,
 				566D86392AEE158300293167 /* MainTabView.swift in Sources */,
 				56BE88712C1B9FD4005EFED9 /* Workout.swift in Sources */,
@@ -504,6 +534,7 @@
 				56BE88A92C262A59005EFED9 /* OverlayView.swift in Sources */,
 				566C0B952C1A420700C4AF95 /* WorkoutsTabView.swift in Sources */,
 				56FAD6132C27C446006CD568 /* TabItem.swift in Sources */,
+				56FAD6422C2A6385006CD568 /* Coordination.swift in Sources */,
 				56FAD63D2C2A52D7006CD568 /* AppDelegate.swift in Sources */,
 				56FAD63F2C2A566D006CD568 /* SceneDelegate.swift in Sources */,
 				56BE888D2C2366C1005EFED9 /* AnimatedGradientView.swift in Sources */,
@@ -513,6 +544,7 @@
 				566C0B912C1A3C3E00C4AF95 /* Image+Resources.swift in Sources */,
 				56BE88A12C24C6ED005EFED9 /* ActionButton.swift in Sources */,
 				56FAD6102C27C3A2006CD568 /* TabBarView.swift in Sources */,
+				56FAD6462C2A64B7006CD568 /* OnboardingCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
