@@ -17,7 +17,7 @@ struct MainTabView: View {
                     ForEach(TabItem.allCases, id: \.self) { item in
                         switch item {
                         case .home:
-                            HomeTabView(viewModel: .init())
+                            HomeTabView(viewModel: viewModel.homeTabViewModel)
                                 .tag(item.rawValue)
                             
                         case .calendar:
@@ -41,5 +41,10 @@ struct MainTabView: View {
 }
 
 #Preview {
-    MainTabView(viewModel: .init())
+    MainTabView(viewModel: .init(
+        defaultSelectedTab: .home,
+        homeTabViewModel: .init(),
+        calendarTabViewModel: .init(),
+        workoutsTabViewModel: .init()
+    ))
 }
