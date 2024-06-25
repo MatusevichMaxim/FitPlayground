@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct MainTabView: View {
-    @State var selectedTab: TabItem
+    @ObservedObject var viewModel: MainTabViewModel
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            TabView(selection: $selectedTab) {
+            TabView(selection: $viewModel.selectedTab) {
                 Group {
                     ForEach(TabItem.allCases, id: \.self) { item in
                         switch item {
                         case .home:
-                            HomeTabView(workoutsInfo: PreviewData.workoutsPreset)
+                            HomeTabView(viewModel: viewModel.homeTabViewModel)
                                 .tag(item.rawValue)
                             
                         case .calendar:
@@ -34,15 +34,17 @@ struct MainTabView: View {
                 .toolbarBackground(Color.appPrimary, for: .tabBar)
                 .toolbarColorScheme(.dark, for: .tabBar)
             }
-            .onChange(of: selectedTab) { _, newSelection in
-                selectedTab = newSelection
-            }
             
-            TabBarView(selectedTab: $selectedTab)
+            TabBarView(selectedTab: $viewModel.selectedTab)
         }
     }
 }
 
 #Preview {
-    MainTabView(selectedTab: .home)
+    MainTabView(viewModel: .init(
+        defaultSelectedTab: .home,
+        homeTabViewModel: .init(),
+        calendarTabViewModel: .init(),
+        workoutsTabViewModel: .init()
+    ))
 }

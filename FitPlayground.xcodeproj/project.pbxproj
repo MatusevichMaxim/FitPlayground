@@ -12,7 +12,6 @@
 		566C0B912C1A3C3E00C4AF95 /* Image+Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566C0B902C1A3C3E00C4AF95 /* Image+Resources.swift */; };
 		566C0B932C1A40AE00C4AF95 /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D86492AEE1E7000293167 /* HomeTabView.swift */; };
 		566C0B952C1A420700C4AF95 /* WorkoutsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566C0B942C1A420700C4AF95 /* WorkoutsTabView.swift */; };
-		566D86372AEE158300293167 /* FitPlaygroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D86362AEE158300293167 /* FitPlaygroundApp.swift */; };
 		566D86392AEE158300293167 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D86382AEE158300293167 /* MainTabView.swift */; };
 		566D863B2AEE158500293167 /* ColorPalette.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 566D863A2AEE158500293167 /* ColorPalette.xcassets */; };
 		566D863E2AEE158500293167 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 566D863D2AEE158500293167 /* Preview Assets.xcassets */; };
@@ -45,6 +44,16 @@
 		56FAD6102C27C3A2006CD568 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD60F2C27C3A2006CD568 /* TabBarView.swift */; };
 		56FAD6132C27C446006CD568 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6122C27C446006CD568 /* TabItem.swift */; };
 		56FAD6152C27C554006CD568 /* TabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6142C27C554006CD568 /* TabItemView.swift */; };
+		56FAD63D2C2A52D7006CD568 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD63C2C2A52D7006CD568 /* AppDelegate.swift */; };
+		56FAD63F2C2A566D006CD568 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD63E2C2A566D006CD568 /* SceneDelegate.swift */; };
+		56FAD6422C2A6385006CD568 /* Coordination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6412C2A6385006CD568 /* Coordination.swift */; };
+		56FAD6442C2A63B6006CD568 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6432C2A63B6006CD568 /* AppCoordinator.swift */; };
+		56FAD6462C2A64B7006CD568 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6452C2A64B7006CD568 /* OnboardingCoordinator.swift */; };
+		56FAD6482C2A64E3006CD568 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6472C2A64E3006CD568 /* MainCoordinator.swift */; };
+		56FAD64E2C2A6BB6006CD568 /* HomeTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD64D2C2A6BB6006CD568 /* HomeTabViewModel.swift */; };
+		56FAD6512C2A6E18006CD568 /* MainTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6502C2A6E18006CD568 /* MainTabViewModel.swift */; };
+		56FAD6532C2B4CF0006CD568 /* CalendarTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6522C2B4CF0006CD568 /* CalendarTabViewModel.swift */; };
+		56FAD6552C2B4D12006CD568 /* WorkoutsTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6542C2B4D12006CD568 /* WorkoutsTabViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +62,6 @@
 		566C0B902C1A3C3E00C4AF95 /* Image+Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Resources.swift"; sourceTree = "<group>"; };
 		566C0B942C1A420700C4AF95 /* WorkoutsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsTabView.swift; sourceTree = "<group>"; };
 		566D86332AEE158300293167 /* FitPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		566D86362AEE158300293167 /* FitPlaygroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitPlaygroundApp.swift; sourceTree = "<group>"; };
 		566D86382AEE158300293167 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		566D863A2AEE158500293167 /* ColorPalette.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorPalette.xcassets; sourceTree = "<group>"; };
 		566D863D2AEE158500293167 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -88,6 +96,16 @@
 		56FAD60F2C27C3A2006CD568 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		56FAD6122C27C446006CD568 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		56FAD6142C27C554006CD568 /* TabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemView.swift; sourceTree = "<group>"; };
+		56FAD63C2C2A52D7006CD568 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		56FAD63E2C2A566D006CD568 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		56FAD6412C2A6385006CD568 /* Coordination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordination.swift; sourceTree = "<group>"; };
+		56FAD6432C2A63B6006CD568 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		56FAD6452C2A64B7006CD568 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		56FAD6472C2A64E3006CD568 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		56FAD64D2C2A6BB6006CD568 /* HomeTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabViewModel.swift; sourceTree = "<group>"; };
+		56FAD6502C2A6E18006CD568 /* MainTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewModel.swift; sourceTree = "<group>"; };
+		56FAD6522C2B4CF0006CD568 /* CalendarTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTabViewModel.swift; sourceTree = "<group>"; };
+		56FAD6542C2B4D12006CD568 /* WorkoutsTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsTabViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +134,9 @@
 		566C0B7E2C1A248E00C4AF95 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				566D86362AEE158300293167 /* FitPlaygroundApp.swift */,
+				56FAD6402C2A6378006CD568 /* Coordination */,
+				56FAD63C2C2A52D7006CD568 /* AppDelegate.swift */,
+				56FAD63E2C2A566D006CD568 /* SceneDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -163,19 +183,12 @@
 		566C0B832C1A24F800C4AF95 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				56FAD64F2C2A6E02006CD568 /* MainTab */,
 				566D86482AEE1E6300293167 /* HomeTab */,
 				566D86452AEE1D8700293167 /* CalendarTab */,
 				566C0B922C1A3F9D00C4AF95 /* WorkoutsTab */,
-				566D86382AEE158300293167 /* MainTabView.swift */,
 			);
 			path = Screens;
-			sourceTree = "<group>";
-		};
-		566C0B842C1A251000C4AF95 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		566C0B852C1A252B00C4AF95 /* Services */ = {
@@ -274,7 +287,7 @@
 				566D864B2AEE209E00293167 /* Resources */,
 				566C0B7F2C1A24C300C4AF95 /* Models */,
 				566D86442AEE1C8B00293167 /* Views */,
-				566C0B842C1A251000C4AF95 /* ViewModels */,
+				56FAD64C2C2A6BA3006CD568 /* ViewModels */,
 				566C0B852C1A252B00C4AF95 /* Services */,
 				566C0B882C1A255400C4AF95 /* Utilities */,
 				566C0B8B2C1A256F00C4AF95 /* Tests */,
@@ -411,6 +424,44 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		56FAD6402C2A6378006CD568 /* Coordination */ = {
+			isa = PBXGroup;
+			children = (
+				56FAD6492C2A64F9006CD568 /* API */,
+				56FAD6432C2A63B6006CD568 /* AppCoordinator.swift */,
+				56FAD6452C2A64B7006CD568 /* OnboardingCoordinator.swift */,
+				56FAD6472C2A64E3006CD568 /* MainCoordinator.swift */,
+			);
+			path = Coordination;
+			sourceTree = "<group>";
+		};
+		56FAD6492C2A64F9006CD568 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				56FAD6412C2A6385006CD568 /* Coordination.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		56FAD64C2C2A6BA3006CD568 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				56FAD6502C2A6E18006CD568 /* MainTabViewModel.swift */,
+				56FAD64D2C2A6BB6006CD568 /* HomeTabViewModel.swift */,
+				56FAD6522C2B4CF0006CD568 /* CalendarTabViewModel.swift */,
+				56FAD6542C2B4D12006CD568 /* WorkoutsTabViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		56FAD64F2C2A6E02006CD568 /* MainTab */ = {
+			isa = PBXGroup;
+			children = (
+				566D86382AEE158300293167 /* MainTabView.swift */,
+			);
+			path = MainTab;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -487,13 +538,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56FAD6442C2A63B6006CD568 /* AppCoordinator.swift in Sources */,
 				56BE889D2C24BCDC005EFED9 /* ActionSheetView.swift in Sources */,
 				56BE886D2C1B8D36005EFED9 /* WorkoutCell.swift in Sources */,
 				56BE88792C1CCBB3005EFED9 /* Color+Resources.swift in Sources */,
+				56FAD6532C2B4CF0006CD568 /* CalendarTabViewModel.swift in Sources */,
 				56FAD6152C27C554006CD568 /* TabItemView.swift in Sources */,
 				56BE88752C1CC92A005EFED9 /* WorkoutStatus.swift in Sources */,
 				56BE88A72C260E22005EFED9 /* PreviewData.swift in Sources */,
 				56BE88932C238D53005EFED9 /* ScrollOffsetPreferenceKey.swift in Sources */,
+				56FAD6482C2A64E3006CD568 /* MainCoordinator.swift in Sources */,
 				566D86532AEE224900293167 /* String+Localization.swift in Sources */,
 				566D86392AEE158300293167 /* MainTabView.swift in Sources */,
 				56BE88712C1B9FD4005EFED9 /* Workout.swift in Sources */,
@@ -506,17 +560,23 @@
 				56BE88802C20D207005EFED9 /* StyleManager.swift in Sources */,
 				56BE88A52C260C3E005EFED9 /* Alignment+Hashable.swift in Sources */,
 				56BE887B2C20C622005EFED9 /* AddWorkoutCell.swift in Sources */,
+				56FAD64E2C2A6BB6006CD568 /* HomeTabViewModel.swift in Sources */,
+				56FAD6512C2A6E18006CD568 /* MainTabViewModel.swift in Sources */,
 				56BE88A92C262A59005EFED9 /* OverlayView.swift in Sources */,
 				566C0B952C1A420700C4AF95 /* WorkoutsTabView.swift in Sources */,
 				56FAD6132C27C446006CD568 /* TabItem.swift in Sources */,
+				56FAD6422C2A6385006CD568 /* Coordination.swift in Sources */,
+				56FAD63D2C2A52D7006CD568 /* AppDelegate.swift in Sources */,
+				56FAD63F2C2A566D006CD568 /* SceneDelegate.swift in Sources */,
 				56BE888D2C2366C1005EFED9 /* AnimatedGradientView.swift in Sources */,
-				566D86372AEE158300293167 /* FitPlaygroundApp.swift in Sources */,
 				566D86472AEE1E5800293167 /* CalendarTabView.swift in Sources */,
 				56BE88772C1CCAE4005EFED9 /* WorkoutStatus+Extension.swift in Sources */,
 				56BE88A32C25FBA4005EFED9 /* ActionDialogButton.swift in Sources */,
 				566C0B912C1A3C3E00C4AF95 /* Image+Resources.swift in Sources */,
+				56FAD6552C2B4D12006CD568 /* WorkoutsTabViewModel.swift in Sources */,
 				56BE88A12C24C6ED005EFED9 /* ActionButton.swift in Sources */,
 				56FAD6102C27C3A2006CD568 /* TabBarView.swift in Sources */,
+				56FAD6462C2A64B7006CD568 /* OnboardingCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,7 +722,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FitPlayground/Resources/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
@@ -693,7 +752,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FitPlayground/Resources/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;

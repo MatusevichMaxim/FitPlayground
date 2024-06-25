@@ -9,9 +9,9 @@ import SwiftUI
 
 struct HomeTabView: View {
     @State private var headerOpacity: CGFloat = 0
-    @State private var isShowingCreationSheet = false
+    @State private var isShowingCreationSheet = false // TODO: move to VM
     
-    let workoutsInfo: [Workout]
+    @ObservedObject var viewModel: HomeTabViewModel
     
     var body: some View {
         ZStack {
@@ -62,7 +62,7 @@ struct HomeTabView: View {
                             .padding(.horizontal, 32)
                         
                         LazyVStack(alignment: .leading, spacing: 10) {
-                            ForEach(workoutsInfo, id: \.self) { info in
+                            ForEach(viewModel.workouts, id: \.self) { info in
                                 WorkoutCell(data: info)
                             }
                             
@@ -142,9 +142,5 @@ extension HomeTabView {
 }
 
 #Preview {
-    HomeTabView(workoutsInfo: [
-        .init(name: "Core Engager 🎯", duration: 27, muscleGroups: [.abs, .back, .chest], status: .completed),
-        .init(name: "Chair Rounds!", duration: 11, muscleGroups: [.legs, .back], status: .active),
-        .init(name: "Leg Day", duration: 39, muscleGroups: [.legs], status: .active)
-    ])
+    HomeTabView(viewModel: .init())
 }
