@@ -8,15 +8,18 @@
 import SwiftUI
 
 final class MainCoordinator {
-    private let setRootView: (AnyView) -> Void
-    
     init(setRootView: @escaping (AnyView) -> Void) {
         self.setRootView = setRootView
     }
+    
+    private let setRootView: (AnyView) -> Void
+    private var actionSheetViewModel: ActionSheetViewModel?
 }
 
 extension MainCoordinator: Coordination {
     func launch() {
+        actionSheetViewModel = ActionSheetViewModel(elements: PreviewData.actionSheetCreateNew)
+        
         let homeTabViewModel = HomeTabViewModel()
         let calendarTabViewModel = CalendarTabViewModel()
         let workoutsTabViewModel = WorkoutsTabViewModel()
@@ -25,9 +28,20 @@ extension MainCoordinator: Coordination {
             defaultSelectedTab: .home,
             homeTabViewModel: homeTabViewModel,
             calendarTabViewModel: calendarTabViewModel,
-            workoutsTabViewModel: workoutsTabViewModel
+            workoutsTabViewModel: workoutsTabViewModel,
+            actionSheetViewModel: actionSheetViewModel!
         )
         let mainTabView = MainTabView(viewModel: viewModel)
         setRootView(AnyView(mainTabView))
+    }
+}
+
+extension MainCoordinator: DialogCoordination {
+    func showCreateDialog() {
+        actionSheetViewModel?.isVisible = true
+    }
+    
+    func hideDialog() {
+        actionSheetViewModel?.isVisible = false
     }
 }

@@ -36,6 +36,8 @@ struct MainTabView: View {
             }
             
             TabBarView(selectedTab: $viewModel.selectedTab)
+            
+            ActionSheetView(viewModel: viewModel.actionSheetViewModel)
         }
     }
 }
@@ -45,6 +47,7 @@ struct MainTabView: View {
         defaultSelectedTab: .home,
         homeTabViewModel: .init(),
         calendarTabViewModel: .init(),
-        workoutsTabViewModel: .init()
+        workoutsTabViewModel: .init(),
+        actionSheetViewModel: .init(elements: PreviewData.actionSheetCreateNew)
     ))
 }

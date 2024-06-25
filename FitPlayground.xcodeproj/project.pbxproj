@@ -55,6 +55,7 @@
 		56FAD6532C2B4CF0006CD568 /* CalendarTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6522C2B4CF0006CD568 /* CalendarTabViewModel.swift */; };
 		56FAD6552C2B4D12006CD568 /* WorkoutsTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6542C2B4D12006CD568 /* WorkoutsTabViewModel.swift */; };
 		56FAD65D2C2B5C7B006CD568 /* ActionSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD65C2C2B5C7B006CD568 /* ActionSheetViewModel.swift */; };
+		56FAD65F2C2B7B1D006CD568 /* DialogCoordination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD65E2C2B7B1D006CD568 /* DialogCoordination.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 		56FAD6522C2B4CF0006CD568 /* CalendarTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTabViewModel.swift; sourceTree = "<group>"; };
 		56FAD6542C2B4D12006CD568 /* WorkoutsTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsTabViewModel.swift; sourceTree = "<group>"; };
 		56FAD65C2C2B5C7B006CD568 /* ActionSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetViewModel.swift; sourceTree = "<group>"; };
+		56FAD65E2C2B7B1D006CD568 /* DialogCoordination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogCoordination.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -441,6 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				56FAD6412C2A6385006CD568 /* Coordination.swift */,
+				56FAD65E2C2B7B1D006CD568 /* DialogCoordination.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				56BE889D2C24BCDC005EFED9 /* ActionSheetView.swift in Sources */,
 				56BE886D2C1B8D36005EFED9 /* WorkoutCell.swift in Sources */,
 				56BE88792C1CCBB3005EFED9 /* Color+Resources.swift in Sources */,
+				56FAD65F2C2B7B1D006CD568 /* DialogCoordination.swift in Sources */,
 				56FAD6532C2B4CF0006CD568 /* CalendarTabViewModel.swift in Sources */,
 				56FAD6152C27C554006CD568 /* TabItemView.swift in Sources */,
 				56BE88752C1CC92A005EFED9 /* WorkoutStatus.swift in Sources */,
