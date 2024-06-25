@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import SwiftUI
 import UIKit
 
-class SceneDelegate: NSObject, UIWindowSceneDelegate {
+final class SceneDelegate: NSObject, UIWindowSceneDelegate {
     var window: UIWindow?
     
     func scene(
@@ -16,8 +17,14 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
         willConnectTo session: UISceneSession, 
         options connectionOptions: UIScene.ConnectionOptions
     ) {
-        guard let _ = (scene as? UIWindowScene) else { return }
-        print("SceneDelegate is connected!")
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        let window = UIWindow(windowScene: windowScene)
+        let mainTabView = MainTabView(selectedTab: .calendar)
+        window.rootViewController = UIHostingController(rootView: mainTabView)
+        window.makeKeyAndVisible()
+
+        self.window = window
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

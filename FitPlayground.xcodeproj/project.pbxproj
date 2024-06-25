@@ -12,7 +12,6 @@
 		566C0B912C1A3C3E00C4AF95 /* Image+Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566C0B902C1A3C3E00C4AF95 /* Image+Resources.swift */; };
 		566C0B932C1A40AE00C4AF95 /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D86492AEE1E7000293167 /* HomeTabView.swift */; };
 		566C0B952C1A420700C4AF95 /* WorkoutsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566C0B942C1A420700C4AF95 /* WorkoutsTabView.swift */; };
-		566D86372AEE158300293167 /* FitPlaygroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D86362AEE158300293167 /* FitPlaygroundApp.swift */; };
 		566D86392AEE158300293167 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D86382AEE158300293167 /* MainTabView.swift */; };
 		566D863B2AEE158500293167 /* ColorPalette.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 566D863A2AEE158500293167 /* ColorPalette.xcassets */; };
 		566D863E2AEE158500293167 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 566D863D2AEE158500293167 /* Preview Assets.xcassets */; };
@@ -55,7 +54,6 @@
 		566C0B902C1A3C3E00C4AF95 /* Image+Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Resources.swift"; sourceTree = "<group>"; };
 		566C0B942C1A420700C4AF95 /* WorkoutsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsTabView.swift; sourceTree = "<group>"; };
 		566D86332AEE158300293167 /* FitPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		566D86362AEE158300293167 /* FitPlaygroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitPlaygroundApp.swift; sourceTree = "<group>"; };
 		566D86382AEE158300293167 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		566D863A2AEE158500293167 /* ColorPalette.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorPalette.xcassets; sourceTree = "<group>"; };
 		566D863D2AEE158500293167 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 		566C0B7E2C1A248E00C4AF95 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				566D86362AEE158300293167 /* FitPlaygroundApp.swift */,
 				56FAD63C2C2A52D7006CD568 /* AppDelegate.swift */,
 				56FAD63E2C2A566D006CD568 /* SceneDelegate.swift */,
 			);
@@ -510,7 +507,6 @@
 				56FAD63D2C2A52D7006CD568 /* AppDelegate.swift in Sources */,
 				56FAD63F2C2A566D006CD568 /* SceneDelegate.swift in Sources */,
 				56BE888D2C2366C1005EFED9 /* AnimatedGradientView.swift in Sources */,
-				566D86372AEE158300293167 /* FitPlaygroundApp.swift in Sources */,
 				566D86472AEE1E5800293167 /* CalendarTabView.swift in Sources */,
 				56BE88772C1CCAE4005EFED9 /* WorkoutStatus+Extension.swift in Sources */,
 				56BE88A32C25FBA4005EFED9 /* ActionDialogButton.swift in Sources */,
@@ -662,7 +658,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FitPlayground/Resources/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
@@ -693,7 +688,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FitPlayground/Resources/Info.plist;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
