@@ -123,7 +123,7 @@ struct HomeTabView: View {
                 .frame(maxHeight: .infinity, alignment: .top )
             }
             
-            ActionSheetView(isShowing: $isShowingCreationSheet, data: PreviewData.actionSheetCreateNew)
+//            ActionSheetView(isShowing: $isShowingCreationSheet, data: PreviewData.actionSheetCreateNew)
         }
     }
     

@@ -7,38 +7,17 @@
 
 import SwiftUI
 
-enum ActionSheetElement: Hashable {
-    case defaultButton(ActionDialogButtonModel)
-    case multilineButton(ActionMultilineButtonModel)
-    case cancelButton(ActionCancelModel)
-    case separator
-    
-    func hash(into hasher: inout Hasher) {
-        switch self {
-        case .defaultButton(let model): hasher.combine(model)
-        case .multilineButton(let model): hasher.combine(model)
-        case .cancelButton(let model): hasher.combine(model)
-        case .separator: hasher.combine("separator")
-        }
-    }
-}
-
-struct ActionSheetModel {
-    let elements: [ActionSheetElement]
-}
-
 struct ActionSheetView: View {
-    @Binding var isShowing: Bool
-    let data: ActionSheetModel
+    @ObservedObject var viewModel: ActionSheetViewModel
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            if isShowing {
-                OverlayView(isShowing: $isShowing)
+            if viewModel.isVisible {
+                OverlayView(isShowing: $viewModel.isVisible)
                     .zIndex(1)
                 
                 VStack(spacing: 10) {
-                    ForEach(data.elements, id: \.self) { element in
+                    ForEach(viewModel.elements, id: \.self) { element in
                         switch element {
                         case .defaultButton(let model):
                             ActionDialogButton(data: model)
@@ -66,11 +45,10 @@ struct ActionSheetView: View {
         }
         .frame(alignment: .bottom)
         .ignoresSafeArea()
-        .animation(.easeInOut, value: isShowing)
+        .animation(.easeInOut, value: viewModel.isVisible)
     }
 }
 
 #Preview {
-    ActionSheetView(isShowing: .constant(true), data: PreviewData.actionSheetCreateNew)
-        .previewLayout(.sizeThatFits)
+    ActionSheetView(viewModel: ActionSheetViewModel(elements: PreviewData.actionSheetCreateNew))
 }
