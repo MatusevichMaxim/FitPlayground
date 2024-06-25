@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct FitPlaygroundApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     var body: some Scene {
         WindowGroup {
             MainTabView(selectedTab: .home)
