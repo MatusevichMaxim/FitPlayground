@@ -50,6 +50,8 @@
 		56FAD6442C2A63B6006CD568 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6432C2A63B6006CD568 /* AppCoordinator.swift */; };
 		56FAD6462C2A64B7006CD568 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6452C2A64B7006CD568 /* OnboardingCoordinator.swift */; };
 		56FAD6482C2A64E3006CD568 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6472C2A64E3006CD568 /* MainCoordinator.swift */; };
+		56FAD64E2C2A6BB6006CD568 /* HomeTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD64D2C2A6BB6006CD568 /* HomeTabViewModel.swift */; };
+		56FAD6512C2A6E18006CD568 /* MainTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6502C2A6E18006CD568 /* MainTabViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +100,8 @@
 		56FAD6432C2A63B6006CD568 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		56FAD6452C2A64B7006CD568 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		56FAD6472C2A64E3006CD568 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		56FAD64D2C2A6BB6006CD568 /* HomeTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabViewModel.swift; sourceTree = "<group>"; };
+		56FAD6502C2A6E18006CD568 /* MainTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,10 +179,10 @@
 		566C0B832C1A24F800C4AF95 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				56FAD64F2C2A6E02006CD568 /* MainTab */,
 				566D86482AEE1E6300293167 /* HomeTab */,
 				566D86452AEE1D8700293167 /* CalendarTab */,
 				566C0B922C1A3F9D00C4AF95 /* WorkoutsTab */,
-				566D86382AEE158300293167 /* MainTabView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -279,6 +283,7 @@
 				566D864B2AEE209E00293167 /* Resources */,
 				566C0B7F2C1A24C300C4AF95 /* Models */,
 				566D86442AEE1C8B00293167 /* Views */,
+				56FAD64C2C2A6BA3006CD568 /* ViewModels */,
 				566C0B852C1A252B00C4AF95 /* Services */,
 				566C0B882C1A255400C4AF95 /* Utilities */,
 				566C0B8B2C1A256F00C4AF95 /* Tests */,
@@ -434,6 +439,23 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		56FAD64C2C2A6BA3006CD568 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				56FAD64D2C2A6BB6006CD568 /* HomeTabViewModel.swift */,
+				56FAD6502C2A6E18006CD568 /* MainTabViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		56FAD64F2C2A6E02006CD568 /* MainTab */ = {
+			isa = PBXGroup;
+			children = (
+				566D86382AEE158300293167 /* MainTabView.swift */,
+			);
+			path = MainTab;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -531,6 +553,8 @@
 				56BE88802C20D207005EFED9 /* StyleManager.swift in Sources */,
 				56BE88A52C260C3E005EFED9 /* Alignment+Hashable.swift in Sources */,
 				56BE887B2C20C622005EFED9 /* AddWorkoutCell.swift in Sources */,
+				56FAD64E2C2A6BB6006CD568 /* HomeTabViewModel.swift in Sources */,
+				56FAD6512C2A6E18006CD568 /* MainTabViewModel.swift in Sources */,
 				56BE88A92C262A59005EFED9 /* OverlayView.swift in Sources */,
 				566C0B952C1A420700C4AF95 /* WorkoutsTabView.swift in Sources */,
 				56FAD6132C27C446006CD568 /* TabItem.swift in Sources */,

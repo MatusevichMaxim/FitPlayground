@@ -17,7 +17,8 @@ final class MainCoordinator {
 
 extension MainCoordinator: Coordination {
     func launch() {
-        let mainTabView = MainTabView(selectedTab: .home)
+        let viewModel = MainTabViewModel()
+        let mainTabView = MainTabView(viewModel: viewModel)
         setRootView(AnyView(mainTabView))
     }
 }
