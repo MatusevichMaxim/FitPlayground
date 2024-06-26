@@ -61,8 +61,8 @@ struct HomeTabView: View {
                             .padding(.horizontal, 32)
                         
                         LazyVStack(alignment: .leading, spacing: 10) {
-                            ForEach(viewModel.workouts, id: \.self) { info in
-                                WorkoutCell(data: info)
+                            ForEach(viewModel.workouts, id: \.self) { workout in
+                                WorkoutCell(data: workout, optionAction: viewModel.onItemTapped)
                             }
                             
                             AddWorkoutCell(action: viewModel.onAddNewWorkout)

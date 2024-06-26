@@ -8,11 +8,8 @@
 import SwiftUI
 
 struct WorkoutCell: View {
-    private var workoutDescription: String {
-        "\(data.duration) \(String.min.lowercased()) · \(data.localizedMuscleGroups)"
-    }
-    
     let data: Workout
+    let optionAction: () -> Void
     
     var body: some View {
         ActionButton(action: {}) {
@@ -23,7 +20,7 @@ struct WorkoutCell: View {
                         .font(.appTextHeader3)
                         .frame(height: 18)
                     
-                    Text(workoutDescription)
+                    Text(data.localizedDescription)
                         .foregroundStyle(Color.textSecondary)
                         .font(.appTextCaption1)
                         .frame(height: 10)
@@ -35,17 +32,18 @@ struct WorkoutCell: View {
                     .foregroundStyle(Color.textSecondary)
                     .font(.system(size: 20))
                     .contentShape(Rectangle())
-                    .frame(minWidth: 50)
+                    .frame(minWidth: 50, maxHeight: .infinity)
             }
             .padding(.init(top: 20, leading: 24, bottom: 20, trailing: 8))
             .background(data.status.backgroundColor)
             .cornerRadius(StyleManager.cellRadius)
         }
+        .frame(height: StyleManager.cellHeight)
     }
 }
 
 #Preview {
-    WorkoutCell(data: PreviewData.workout)
-    .previewLayout(.sizeThatFits)
-    .padding()
+    WorkoutCell(data: PreviewData.workout, optionAction: {})
+        .previewLayout(.sizeThatFits)
+        .padding()
 }
