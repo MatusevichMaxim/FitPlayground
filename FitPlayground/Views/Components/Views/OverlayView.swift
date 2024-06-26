@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct OverlayView: View {
-    @Binding var isShowing: Bool
+    @Binding var isVisible: Bool
     
     var body: some View {
         Color.black
             .opacity(0.4)
             .ignoresSafeArea()
             .onTapGesture {
-                guard isShowing else { return }
+                guard isVisible else { return }
                 
-                isShowing.toggle()
+                isVisible.toggle()
             }
     }
 }
 
 #Preview {
-    OverlayView(isShowing: .constant(true))
+    OverlayView(isVisible: .constant(true))
 }

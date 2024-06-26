@@ -13,7 +13,7 @@ struct ActionSheetView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             if viewModel.isVisible {
-                OverlayView(isShowing: $viewModel.isVisible)
+                OverlayView(isVisible: $viewModel.isVisible)
                     .zIndex(1)
                 
                 VStack(spacing: 10) {
@@ -50,5 +50,7 @@ struct ActionSheetView: View {
 }
 
 #Preview {
-    ActionSheetView(viewModel: ActionSheetViewModel(elements: PreviewData.actionSheetCreateNew))
+    var viewModel = ActionSheetViewModel(elements: PreviewData.actionSheetCreateNew)
+    viewModel.isVisible = true
+    return ActionSheetView(viewModel: viewModel)
 }

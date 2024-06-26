@@ -43,9 +43,11 @@ struct MainTabView: View {
 }
 
 #Preview {
-    MainTabView(viewModel: .init(
+    let coordinator = MainCoordinator(setRootView: {_ in })
+    
+    return MainTabView(viewModel: .init(
         defaultSelectedTab: .home,
-        homeTabViewModel: .init(),
+        homeTabViewModel: .init(dialogCoordinator: coordinator),
         calendarTabViewModel: .init(),
         workoutsTabViewModel: .init(),
         actionSheetViewModel: .init(elements: PreviewData.actionSheetCreateNew)

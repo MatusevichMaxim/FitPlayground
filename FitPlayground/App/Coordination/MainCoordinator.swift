@@ -20,7 +20,7 @@ extension MainCoordinator: Coordination {
     func launch() {
         actionSheetViewModel = ActionSheetViewModel(elements: PreviewData.actionSheetCreateNew)
         
-        let homeTabViewModel = HomeTabViewModel()
+        let homeTabViewModel = HomeTabViewModel(dialogCoordinator: self)
         let calendarTabViewModel = CalendarTabViewModel()
         let workoutsTabViewModel = WorkoutsTabViewModel()
         
@@ -38,6 +38,7 @@ extension MainCoordinator: Coordination {
 
 extension MainCoordinator: DialogCoordination {
     func showCreateDialog() {
+        // TODO: configure UI & Data
         actionSheetViewModel?.isVisible = true
     }
     
