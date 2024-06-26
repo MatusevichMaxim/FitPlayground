@@ -10,13 +10,13 @@ import SwiftUI
 #if DEBUG
 struct PreviewData {
     // MARK: - Dialogs
-    static let actionSheetCreateNew = ActionSheetModel(elements: [
+    static let actionSheetCreateNew: [ActionSheetElement] = [
         .multilineButton(.init(title: .newWorkout, subtitle: .newWorkoutActionDesc, icon: .square_pencil_icon)),
         .multilineButton(.init(title: .instantActivity, subtitle: .instantActivityActionDesc, icon: .bolt_icon)),
         .multilineButton(.init(title: .existingWorkout, subtitle: .existingWorkoutActionDesc, icon: .folder_icon)),
         .separator,
         .cancelButton(.init(title: .cancel, showsDeleteOption: false))
-    ])
+    ]
     
     // MARK: - Buttons
     static let actionDialogButtonModel = ActionDialogButtonModel(title: .cancel, background: .default, alignment: .center)

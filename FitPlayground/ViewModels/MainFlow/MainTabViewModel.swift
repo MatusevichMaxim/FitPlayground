@@ -13,16 +13,19 @@ final class MainTabViewModel: ObservableObject {
     let homeTabViewModel: HomeTabViewModel
     let calendarTabViewModel: CalendarTabViewModel
     let workoutsTabViewModel: WorkoutsTabViewModel
+    let actionSheetViewModel: ActionSheetViewModel
     
     init(
         defaultSelectedTab: TabItem,
         homeTabViewModel: HomeTabViewModel,
         calendarTabViewModel: CalendarTabViewModel,
-        workoutsTabViewModel: WorkoutsTabViewModel
+        workoutsTabViewModel: WorkoutsTabViewModel,
+        actionSheetViewModel: ActionSheetViewModel
     ) {
         self.selectedTab = defaultSelectedTab
         self.homeTabViewModel = homeTabViewModel
         self.calendarTabViewModel = calendarTabViewModel
         self.workoutsTabViewModel = workoutsTabViewModel
+        self.actionSheetViewModel = actionSheetViewModel
     }
 }

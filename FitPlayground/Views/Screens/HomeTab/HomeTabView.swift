@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HomeTabView: View {
     @State private var headerOpacity: CGFloat = 0
-    @State private var isShowingCreationSheet = false // TODO: move to VM
     
     @ObservedObject var viewModel: HomeTabViewModel
     
@@ -66,9 +65,7 @@ struct HomeTabView: View {
                                 WorkoutCell(data: info)
                             }
                             
-                            AddWorkoutCell(action: {
-                                isShowingCreationSheet = true
-                            })
+                            AddWorkoutCell(action: viewModel.onAddNewWorkout)
                         }
                         .padding(.horizontal, 16)
                         .padding(.bottom, 32)
@@ -122,8 +119,6 @@ struct HomeTabView: View {
                 }
                 .frame(maxHeight: .infinity, alignment: .top )
             }
-            
-            ActionSheetView(isShowing: $isShowingCreationSheet, data: PreviewData.actionSheetCreateNew)
         }
     }
     
@@ -142,5 +137,7 @@ extension HomeTabView {
 }
 
 #Preview {
-    HomeTabView(viewModel: .init())
+    let coordinator = MainCoordinator(setRootView: {_ in })
+    
+    return HomeTabView(viewModel: .init(dialogCoordinator: coordinator))
 }
