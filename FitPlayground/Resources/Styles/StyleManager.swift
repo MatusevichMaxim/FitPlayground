@@ -21,4 +21,7 @@ public struct StyleManager {
     
     // MARK: - Paddings
     static let contentExternalOffset: CGFloat = 16.0
+    
+    // MARK: - Animations
+    static let dialogAnimationDuration: TimeInterval = 0.2
 }
