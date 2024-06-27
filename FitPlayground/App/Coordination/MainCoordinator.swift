@@ -13,12 +13,13 @@ final class MainCoordinator {
     }
     
     private let setRootView: (AnyView) -> Void
+    private let actionSheetManager = ActionSheetManager()
     private var actionSheetViewModel: ActionSheetViewModel?
 }
 
 extension MainCoordinator: Coordination {
     func launch() {
-        actionSheetViewModel = ActionSheetViewModel(elements: PreviewData.actionSheetCreateNew)
+        actionSheetViewModel = ActionSheetViewModel()
         
         let homeTabViewModel = HomeTabViewModel(dialogCoordinator: self)
         let calendarTabViewModel = CalendarTabViewModel()
@@ -37,8 +38,17 @@ extension MainCoordinator: Coordination {
 }
 
 extension MainCoordinator: DialogCoordination {
-    func showCreateDialog() {
-        // TODO: configure UI & Data
+    func showDialog(type: DialogType) {
+        var builder: ActionSheetBuilder
+        
+        switch type {
+        case .createNew:
+            builder = CreateNewActionSheetBuilder()
+        case .activityOption(let isDone):
+            builder = ActivityOptionActionSheetBuilder(isDone: isDone)
+        }
+        
+        actionSheetViewModel?.elements = actionSheetManager.create(using: builder)
         actionSheetViewModel?.isVisible = true
     }
     

@@ -27,7 +27,8 @@ struct ActionCancelButton: View {
                     .cornerRadius(StyleManager.cellRadius)
                     .overlay(
                         RoundedRectangle(cornerRadius: StyleManager.cellRadius)
-                            .stroke(Color.appRed200, lineWidth: 4)
+                            .stroke(Color.appRed200, lineWidth: 3)
+                            .padding(1.5)
                     )
                 }
             }

@@ -50,7 +50,8 @@ struct ActionSheetView: View {
 }
 
 #Preview {
-    var viewModel = ActionSheetViewModel(elements: PreviewData.actionSheetCreateNew)
+    var viewModel = ActionSheetViewModel()
+    viewModel.elements = PreviewData.actionSheetCreateNew
     viewModel.isVisible = true
     return ActionSheetView(viewModel: viewModel)
 }

@@ -50,6 +50,6 @@ struct MainTabView: View {
         homeTabViewModel: .init(dialogCoordinator: coordinator),
         calendarTabViewModel: .init(),
         workoutsTabViewModel: .init(),
-        actionSheetViewModel: .init(elements: PreviewData.actionSheetCreateNew)
+        actionSheetViewModel: .init()
     ))
 }

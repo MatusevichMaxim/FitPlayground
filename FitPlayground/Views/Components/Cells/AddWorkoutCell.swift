@@ -25,7 +25,7 @@ struct AddWorkoutCell: View {
                     .foregroundStyle(Color.appPrimary800)
                     .font(.system(size: 16, weight: .black))
             }
-            .frame(height: 82)
+            .frame(height: StyleManager.cellHeight)
         }
     }
 }

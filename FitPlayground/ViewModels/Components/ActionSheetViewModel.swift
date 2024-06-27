@@ -25,9 +25,5 @@ enum ActionSheetElement: Hashable {
 
 final class ActionSheetViewModel: ObservableObject {
     @Published var isVisible: Bool = false
-    let elements: [ActionSheetElement]
-    
-    init(elements: [ActionSheetElement]) {
-        self.elements = elements
-    }
+    var elements: [ActionSheetElement] = []
 }

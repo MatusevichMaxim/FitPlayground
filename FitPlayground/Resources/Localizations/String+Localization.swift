@@ -42,6 +42,9 @@ extension String {
     public static let newWorkoutActionDesc = localizedString(for: "btn_desc_new_wrkt")
     public static let instantActivityActionDesc = localizedString(for: "btn_desc_instant_act")
     public static let existingWorkoutActionDesc = localizedString(for: "btn_desc_existing_wrkt")
+    public static let markDoneAction = localizedString(for: "btn_mark_done")
+    public static let markUndoneAction = localizedString(for: "btn_mark_undone")
+    public static let editWorkoutAction = localizedString(for: "btn_edit_wrkt")
     
     private static func localizedString(for key: String) -> String {
         NSLocalizedString(String(describing: key), comment: "")

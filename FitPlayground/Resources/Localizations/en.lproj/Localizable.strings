@@ -40,3 +40,6 @@
 "btn_desc_new_wrkt" = "Create a new workout from scratch.";
 "btn_desc_instant_act" = "Add a quick activity to your schedule.";
 "btn_desc_existing_wrkt" = "Select a workout from your library.";
+"btn_mark_done" = "Mark done";
+"btn_mark_undone" = "Mark undone";
+"btn_edit_wrkt" = "Edit workout";
