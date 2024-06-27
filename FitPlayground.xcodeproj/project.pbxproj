@@ -57,6 +57,8 @@
 		56FAD65D2C2B5C7B006CD568 /* ActionSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD65C2C2B5C7B006CD568 /* ActionSheetViewModel.swift */; };
 		56FAD65F2C2B7B1D006CD568 /* DialogCoordination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD65E2C2B7B1D006CD568 /* DialogCoordination.swift */; };
 		56FAD6642C2D0E68006CD568 /* ActionSheet+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6632C2D0E68006CD568 /* ActionSheet+Builder.swift */; };
+		56FAD6682C2DE514006CD568 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6672C2DE514006CD568 /* UserDefaultsKey.swift */; };
+		56FAD66A2C2DE54D006CD568 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6692C2DE54D006CD568 /* UserDefaults+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +114,8 @@
 		56FAD65C2C2B5C7B006CD568 /* ActionSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetViewModel.swift; sourceTree = "<group>"; };
 		56FAD65E2C2B7B1D006CD568 /* DialogCoordination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogCoordination.swift; sourceTree = "<group>"; };
 		56FAD6632C2D0E68006CD568 /* ActionSheet+Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActionSheet+Builder.swift"; sourceTree = "<group>"; };
+		56FAD6672C2DE514006CD568 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
+		56FAD6692C2DE54D006CD568 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +221,8 @@
 		566C0B872C1A254200C4AF95 /* UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
+				56FAD6672C2DE514006CD568 /* UserDefaultsKey.swift */,
+				56FAD6692C2DE54D006CD568 /* UserDefaults+Extension.swift */,
 			);
 			path = UserDefaults;
 			sourceTree = "<group>";
@@ -585,11 +591,13 @@
 				56FAD6482C2A64E3006CD568 /* MainCoordinator.swift in Sources */,
 				566D86532AEE224900293167 /* String+Localization.swift in Sources */,
 				566D86392AEE158300293167 /* MainTabView.swift in Sources */,
+				56FAD66A2C2DE54D006CD568 /* UserDefaults+Extension.swift in Sources */,
 				56BE88712C1B9FD4005EFED9 /* Workout.swift in Sources */,
 				56BE889F2C24C5B4005EFED9 /* ActionCancelButton.swift in Sources */,
 				56BE889A2C24AE9B005EFED9 /* ActionMultilineButton.swift in Sources */,
 				565BA4632AF445D700A1E4AA /* Font+Fonts.swift in Sources */,
 				56BE888A2C221F56005EFED9 /* View+Extensions.swift in Sources */,
+				56FAD6682C2DE514006CD568 /* UserDefaultsKey.swift in Sources */,
 				56BE88732C1BA035005EFED9 /* MuscleGroup.swift in Sources */,
 				566C0B932C1A40AE00C4AF95 /* HomeTabView.swift in Sources */,
 				56BE88802C20D207005EFED9 /* StyleManager.swift in Sources */,
