@@ -8,13 +8,25 @@
 import SwiftUI
 
 final class AppCoordinator {
-    private var window: UIWindow
-    private let isOnboardingCompleted = true
-    
     init(window: UIWindow) {
         self.window = window
     }
     
+    private var window: UIWindow
+    private let isOnboardingCompleted = true
+}
+
+extension AppCoordinator: Coordination {
+    func launch() {
+        if isOnboardingCompleted {
+            showMainFlow()
+        } else {
+            showOnboardingFlow()
+        }
+    }
+}
+
+extension AppCoordinator {
     private func showOnboardingFlow() {
         let onboardingCoordinator = OnboardingCoordinator(setRootView: setRootView)
         onboardingCoordinator.launch()
@@ -28,15 +40,5 @@ final class AppCoordinator {
     private func setRootView<V: View>(view: V) {
         window.rootViewController = UIHostingController(rootView: view)
         window.makeKeyAndVisible()
-    }
-}
-
-extension AppCoordinator: Coordination {
-    func launch() {
-        if isOnboardingCompleted {
-            showMainFlow()
-        } else {
-            showOnboardingFlow()
-        }
     }
 }

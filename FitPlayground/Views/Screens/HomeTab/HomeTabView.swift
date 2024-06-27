@@ -41,7 +41,9 @@ struct HomeTabView: View {
                         
                         LazyVStack(alignment: .leading, spacing: 10) {
                             ForEach(viewModel.workouts) { workout in
-                                WorkoutCell(data: workout, optionAction: viewModel.onItemTapped)
+                                WorkoutCell(data: workout) {
+                                    viewModel.onItemTapped(isDone: workout.status == .completed)
+                                }
                             }
                             
                             AddWorkoutCell(action: viewModel.onAddNewWorkout)

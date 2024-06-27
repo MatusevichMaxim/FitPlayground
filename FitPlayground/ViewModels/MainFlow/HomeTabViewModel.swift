@@ -21,12 +21,12 @@ final class HomeTabViewModel: ObservableObject {
 }
 
 extension HomeTabViewModel {
-    func onItemTapped() {
-        dialogCoordinator.showCreateDialog()
+    func onItemTapped(isDone: Bool) {
+        dialogCoordinator.showDialog(type: .activityOption(isDone: isDone))
     }
     
     func onAddNewWorkout() {
-        dialogCoordinator.showCreateDialog()
+        dialogCoordinator.showDialog(type: .createNew)
     }
 }
 
