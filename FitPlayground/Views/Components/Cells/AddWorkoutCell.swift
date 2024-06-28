@@ -19,6 +19,7 @@ struct AddWorkoutCell: View {
                     .overlay(
                         RoundedRectangle(cornerRadius: StyleManager.cellRadius)
                             .stroke(Color.appPrimary900, lineWidth: 4)
+                            .padding(2)
                     )
                 
                 Image(systemName: "plus")
