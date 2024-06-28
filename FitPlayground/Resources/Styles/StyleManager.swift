@@ -11,6 +11,7 @@ public struct StyleManager {
     // MARK: - Cells
     static let cellHeight: CGFloat = 82.0
     static let cellRadius: CGFloat = 18.0
+    static let cellSpacing: CGFloat = 10.0
     
     // MARK: - Dialogs
     static let dialogRadius: CGFloat = 36.0

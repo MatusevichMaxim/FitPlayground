@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5604D0512C2F4651006B8BE6 /* InfiniteScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5604D04F2C2F4651006B8BE6 /* InfiniteScroll.swift */; };
+		5604D0522C2F4651006B8BE6 /* AutoInfiniteScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5604D0502C2F4651006B8BE6 /* AutoInfiniteScroll.swift */; };
+		5604D0552C2F4B22006B8BE6 /* HuggingGeometryModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5604D0542C2F4B22006B8BE6 /* HuggingGeometryModifier.swift */; };
 		565BA4632AF445D700A1E4AA /* Font+Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BA4622AF445D700A1E4AA /* Font+Fonts.swift */; };
 		566C0B8E2C1A38B600C4AF95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 566C0B8D2C1A38B600C4AF95 /* Assets.xcassets */; };
 		566C0B912C1A3C3E00C4AF95 /* Image+Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566C0B902C1A3C3E00C4AF95 /* Image+Resources.swift */; };
@@ -62,6 +65,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5604D04F2C2F4651006B8BE6 /* InfiniteScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScroll.swift; sourceTree = "<group>"; };
+		5604D0502C2F4651006B8BE6 /* AutoInfiniteScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoInfiniteScroll.swift; sourceTree = "<group>"; };
+		5604D0542C2F4B22006B8BE6 /* HuggingGeometryModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuggingGeometryModifier.swift; sourceTree = "<group>"; };
 		565BA4622AF445D700A1E4AA /* Font+Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Fonts.swift"; sourceTree = "<group>"; };
 		566C0B8D2C1A38B600C4AF95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		566C0B902C1A3C3E00C4AF95 /* Image+Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Resources.swift"; sourceTree = "<group>"; };
@@ -129,6 +135,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5604D04E2C2F4604006B8BE6 /* InfiniteScroll */ = {
+			isa = PBXGroup;
+			children = (
+				5604D0502C2F4651006B8BE6 /* AutoInfiniteScroll.swift */,
+				5604D04F2C2F4651006B8BE6 /* InfiniteScroll.swift */,
+			);
+			path = InfiniteScroll;
+			sourceTree = "<group>";
+		};
+		5604D0532C2F4B0E006B8BE6 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				5604D0542C2F4B22006B8BE6 /* HuggingGeometryModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 		565BA4612AF445C600A1E4AA /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +205,7 @@
 		566C0B822C1A24EB00C4AF95 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				5604D04E2C2F4604006B8BE6 /* InfiniteScroll */,
 				56FAD6112C27C439006CD568 /* TabBar */,
 				56BE88982C24AE7A005EFED9 /* Buttons */,
 				56BE886B2C1B8D0B005EFED9 /* Cells */,
@@ -230,7 +254,7 @@
 		566C0B882C1A255400C4AF95 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				56BE88962C24A53D005EFED9 /* Modifiers */,
+				5604D0532C2F4B0E006B8BE6 /* Modifiers */,
 				566C0B892C1A255C00C4AF95 /* Extensions */,
 				566C0B8A2C1A256500C4AF95 /* Helpers */,
 			);
@@ -399,13 +423,6 @@
 				56BE88A82C262A59005EFED9 /* OverlayView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		56BE88962C24A53D005EFED9 /* Modifiers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Modifiers;
 			sourceTree = "<group>";
 		};
 		56BE88982C24AE7A005EFED9 /* Buttons */ = {
@@ -577,6 +594,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5604D0552C2F4B22006B8BE6 /* HuggingGeometryModifier.swift in Sources */,
 				56FAD6442C2A63B6006CD568 /* AppCoordinator.swift in Sources */,
 				56BE889D2C24BCDC005EFED9 /* ActionSheetView.swift in Sources */,
 				56BE886D2C1B8D36005EFED9 /* WorkoutCell.swift in Sources */,
@@ -594,6 +612,7 @@
 				56FAD66A2C2DE54D006CD568 /* UserDefaults+Extension.swift in Sources */,
 				56BE88712C1B9FD4005EFED9 /* Workout.swift in Sources */,
 				56BE889F2C24C5B4005EFED9 /* ActionCancelButton.swift in Sources */,
+				5604D0522C2F4651006B8BE6 /* AutoInfiniteScroll.swift in Sources */,
 				56BE889A2C24AE9B005EFED9 /* ActionMultilineButton.swift in Sources */,
 				565BA4632AF445D700A1E4AA /* Font+Fonts.swift in Sources */,
 				56BE888A2C221F56005EFED9 /* View+Extensions.swift in Sources */,
@@ -606,6 +625,7 @@
 				56BE887B2C20C622005EFED9 /* AddWorkoutCell.swift in Sources */,
 				56FAD64E2C2A6BB6006CD568 /* HomeTabViewModel.swift in Sources */,
 				56FAD6512C2A6E18006CD568 /* MainTabViewModel.swift in Sources */,
+				5604D0512C2F4651006B8BE6 /* InfiniteScroll.swift in Sources */,
 				56BE88A92C262A59005EFED9 /* OverlayView.swift in Sources */,
 				566C0B952C1A420700C4AF95 /* WorkoutsTabView.swift in Sources */,
 				56FAD6132C27C446006CD568 /* TabItem.swift in Sources */,
