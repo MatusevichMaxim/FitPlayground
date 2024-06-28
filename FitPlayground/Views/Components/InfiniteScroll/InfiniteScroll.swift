@@ -1,3 +1,10 @@
+//
+//  InfiniteScroll.swift
+//  FitPlayground
+//
+//  Created by Maksim Matusevich on 6/28/24.
+//
+
 import SwiftUI
 
 struct InfiniteScroll<Data, ID, Content, Loader>: View
