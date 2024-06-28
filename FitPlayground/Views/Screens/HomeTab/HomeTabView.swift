@@ -39,7 +39,7 @@ struct HomeTabView: View {
                             .padding(.top, 24)
                             .padding(.horizontal, 32)
                         
-                        LazyVStack(alignment: .leading, spacing: 10) {
+                        LazyVStack(alignment: .leading, spacing: StyleManager.cellSpacing) {
                             ForEach(viewModel.workouts) { workout in
                                 WorkoutCell(data: workout) {
                                     viewModel.onItemTapped(isDone: workout.status == .completed)
