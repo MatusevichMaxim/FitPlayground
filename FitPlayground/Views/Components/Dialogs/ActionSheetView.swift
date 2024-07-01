@@ -45,7 +45,7 @@ struct ActionSheetView: View {
         }
         .frame(alignment: .bottom)
         .ignoresSafeArea()
-        .animation(.easeInOut, value: viewModel.isVisible)
+        .animation(.easeOut(duration: StyleManager.dialogAnimationDuration), value: viewModel.isVisible)
     }
 }
 
