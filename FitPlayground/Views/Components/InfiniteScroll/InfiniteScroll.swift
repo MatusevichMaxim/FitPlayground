@@ -9,15 +9,14 @@ import SwiftUI
 
 struct InfiniteScroll<Data, ID, Content, Loader>: View
 where Data: RandomAccessCollection, ID: Hashable, Content: View, Loader: View {
-    
     let data: Data
     let id: KeyPath<Data.Element, ID>
     let initialFirstVisibleItem: ID?
     let onLoadPrev: () -> Void
-    let onLoadMore: () -> Void
+    let onLoadNext: () -> Void
     let spacing: CGFloat
-    let enableLoadPrev: Bool
-    let enableLoadMore: Bool
+    let enablePrevLoading: Bool
+    let enableNextLoading: Bool
     
     @ViewBuilder let makeLoader: () -> Loader
     @ViewBuilder let content: (Data.Element) -> Content
@@ -26,7 +25,7 @@ where Data: RandomAccessCollection, ID: Hashable, Content: View, Loader: View {
     @State private var loading: Bool = false
     @State private var topAppeared = false
     @State private var loadPrevViewHeight: CGFloat?
-    @State private var loadMoreViewHeight: CGFloat?
+    @State private var loadNextViewHeight: CGFloat?
     @State private var topOffset: CGFloat?
     @State private var bottomOffset: CGFloat?
     @State private var scrollToInitial = true
@@ -44,8 +43,8 @@ extension InfiniteScroll {
                 }
             }
             .scrollTargetLayout()
-            .padding(.top, enableLoadPrev ? loadPrevViewHeight : nil)
-            .padding(.bottom, enableLoadMore ? loadMoreViewHeight : nil)
+            .padding(.top, enablePrevLoading ? loadPrevViewHeight : nil)
+            .padding(.bottom, enableNextLoading ? loadNextViewHeight : nil)
             .background {
                 GeometryReader { proxy -> Color in
                     onScroll(proxy: proxy)
@@ -57,7 +56,7 @@ extension InfiniteScroll {
         .scrollPosition(id: $scrollPosition)
         .coordinateSpace(name: coordinateSpace)
         .overlay(alignment: .top) {
-            if enableLoadPrev {
+            if enablePrevLoading {
                 makeLoader()
                     .readGeometry {
                         if loadPrevViewHeight != $0.height {
@@ -68,11 +67,11 @@ extension InfiniteScroll {
             }
         }
         .overlay(alignment: .bottom) {
-            if enableLoadMore {
+            if enableNextLoading {
                 makeLoader()
                     .readGeometry {
-                        if loadMoreViewHeight != $0.height {
-                            loadMoreViewHeight = $0.height
+                        if loadNextViewHeight != $0.height {
+                            loadNextViewHeight = $0.height
                         }
                     }
                     .offset(y: bottomOffset ?? 1000)
@@ -112,7 +111,7 @@ extension InfiniteScroll {
             if loading { return }
             
             // TODO: fix hard code 0.8
-            if let loadPrevViewHeight, enableLoadPrev {
+            if let loadPrevViewHeight, enablePrevLoading {
                 if topOffset <= loadPrevViewHeight * 0.8 && topOffset >= 0 {
                     if topAppeared {
                         loading = true
@@ -120,10 +119,10 @@ extension InfiniteScroll {
                     }
                 }
             }
-            if let loadPrevViewHeight, enableLoadMore {
+            if let loadPrevViewHeight, enableNextLoading {
                 if bottomOffset <= loadPrevViewHeight * 0.8 && topOffset >= 0 {
                     loading = true
-                    onLoadMore()
+                    onLoadNext()
                 }
             }
         }

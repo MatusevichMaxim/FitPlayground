@@ -21,7 +21,7 @@ struct MainTabView: View {
                                 .tag(item.rawValue)
                             
                         case .calendar:
-                            CalendarTabView()
+                            CalendarTabView(viewModel: viewModel.calendarTabViewModel)
                                 .tag(item.rawValue)
                             
                         case .workouts:

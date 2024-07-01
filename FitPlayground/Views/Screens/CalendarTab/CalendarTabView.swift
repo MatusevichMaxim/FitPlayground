@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CalendarTabView: View {
-    @State private var data: [Int] = Array(0..<21)
+    @ObservedObject var viewModel: CalendarTabViewModel
     
     var body: some View {
         ZStack {
@@ -16,26 +16,12 @@ struct CalendarTabView: View {
                 .ignoresSafeArea()
             
             AutoInfiniteScroll(
-                data,
+                viewModel.calendarData,
                 id: \.self,
                 initialFirstVisibleItem: 3,
-                onLoadPrev: {
-                    Task {
-                        try? await Task.sleep(nanoseconds: 1_000_000_000)
-                        let min = data.min() ?? 0
-                        data.insert(contentsOf: (min-14..<min), at: 0)
-                    }
-                },
-                onLoadMore: {
-                    Task {
-                        try? await Task.sleep(nanoseconds: 1_000_000_000)
-                        let max = data.max() ?? 0
-                        data.append(contentsOf: (max+1..<max+15))
-                    }
-                },
+                onLoadPrev: viewModel.loadPrevWeeks,
+                onLoadNext: viewModel.loadNextWeeks,
                 spacing: StyleManager.cellSpacing,
-                enableLoadPrev: true,
-                enableLoadMore: true,
                 loader: {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle())
@@ -53,5 +39,5 @@ struct CalendarTabView: View {
 }
 
 #Preview {
-    CalendarTabView()
+    CalendarTabView(viewModel: .init())
 }
