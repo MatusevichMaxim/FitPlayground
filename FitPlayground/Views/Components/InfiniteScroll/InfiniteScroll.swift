@@ -41,7 +41,6 @@ extension InfiniteScroll {
                 ForEach(data, id: id) {
                     content($0)
                         .id($0[keyPath: id])
-                        .background(Color.orange)
                 }
             }
             .scrollTargetLayout()

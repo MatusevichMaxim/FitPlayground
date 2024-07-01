@@ -45,7 +45,7 @@ struct CalendarTabView: View {
             ) { data in
                 AddWorkoutCell(action: {})
                     .frame(maxWidth: .infinity)
-                    .frame(height: StyleManager.cellHeight+4)
+                    .frame(height: StyleManager.cellHeight)
             }
             .padding(.horizontal, 16)
         }
