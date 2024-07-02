@@ -32,6 +32,7 @@ struct CalendarTabView: View {
                 DayPlanCell(date: data.date, workouts: data.workouts)
             }
             .padding(.horizontal, 16)
+            .scrollIndicators(.hidden)
         }
     }
 }
