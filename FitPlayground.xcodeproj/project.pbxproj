@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		56049F512C33A0E2008728A5 /* DayPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049F502C33A0E2008728A5 /* DayPlan.swift */; };
+		56049F562C34845A008728A5 /* WorkoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049F552C34845A008728A5 /* WorkoutBuilder.swift */; };
+		56049F582C3485DC008728A5 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56049F572C3485DC008728A5 /* Montserrat-SemiBold.ttf */; };
 		5604D0512C2F4651006B8BE6 /* InfiniteScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5604D04F2C2F4651006B8BE6 /* InfiniteScroll.swift */; };
 		5604D0522C2F4651006B8BE6 /* AutoInfiniteScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5604D0502C2F4651006B8BE6 /* AutoInfiniteScroll.swift */; };
 		5604D0552C2F4B22006B8BE6 /* HuggingGeometryModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5604D0542C2F4B22006B8BE6 /* HuggingGeometryModifier.swift */; };
@@ -70,6 +72,8 @@
 
 /* Begin PBXFileReference section */
 		56049F502C33A0E2008728A5 /* DayPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlan.swift; sourceTree = "<group>"; };
+		56049F552C34845A008728A5 /* WorkoutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutBuilder.swift; sourceTree = "<group>"; };
+		56049F572C3485DC008728A5 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		5604D04F2C2F4651006B8BE6 /* InfiniteScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScroll.swift; sourceTree = "<group>"; };
 		5604D0502C2F4651006B8BE6 /* AutoInfiniteScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoInfiniteScroll.swift; sourceTree = "<group>"; };
 		5604D0542C2F4B22006B8BE6 /* HuggingGeometryModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuggingGeometryModifier.swift; sourceTree = "<group>"; };
@@ -143,6 +147,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56049F522C34841D008728A5 /* WorkoutBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				56049F552C34845A008728A5 /* WorkoutBuilder.swift */,
+			);
+			path = WorkoutBuilder;
+			sourceTree = "<group>";
+		};
 		5604D04E2C2F4604006B8BE6 /* InfiniteScroll */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +178,7 @@
 				565BA4622AF445D700A1E4AA /* Font+Fonts.swift */,
 				56BE88682C1B86AC005EFED9 /* Montserrat-ExtraBold.ttf */,
 				56BE88832C21F66F005EFED9 /* Montserrat-Bold.ttf */,
+				56049F572C3485DC008728A5 /* Montserrat-SemiBold.ttf */,
 				5604D0582C33483F006B8BE6 /* Cabin-SemiBold.ttf */,
 				56BE886E2C1B9231005EFED9 /* Cabin-Medium.ttf */,
 				56BE88812C21F522005EFED9 /* Cabin-Regular.ttf */,
@@ -232,6 +245,7 @@
 				566D86482AEE1E6300293167 /* HomeTab */,
 				566D86452AEE1D8700293167 /* CalendarTab */,
 				566C0B922C1A3F9D00C4AF95 /* WorkoutsTab */,
+				56049F522C34841D008728A5 /* WorkoutBuilder */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -592,6 +606,7 @@
 				56BE88822C21F522005EFED9 /* Cabin-Regular.ttf in Resources */,
 				566D863E2AEE158500293167 /* Preview Assets.xcassets in Resources */,
 				566D86562AEE256400293167 /* Localizable.strings in Resources */,
+				56049F582C3485DC008728A5 /* Montserrat-SemiBold.ttf in Resources */,
 				56BE88842C21F66F005EFED9 /* Montserrat-Bold.ttf in Resources */,
 				56BE886F2C1B9231005EFED9 /* Cabin-Medium.ttf in Resources */,
 				566C0B8E2C1A38B600C4AF95 /* Assets.xcassets in Resources */,
@@ -645,6 +660,7 @@
 				566C0B952C1A420700C4AF95 /* WorkoutsTabView.swift in Sources */,
 				56FAD6132C27C446006CD568 /* TabItem.swift in Sources */,
 				56FAD6422C2A6385006CD568 /* Coordination.swift in Sources */,
+				56049F562C34845A008728A5 /* WorkoutBuilder.swift in Sources */,
 				56FAD63D2C2A52D7006CD568 /* AppDelegate.swift in Sources */,
 				5604D0572C3343E7006B8BE6 /* DayPlanCell.swift in Sources */,
 				56FAD63F2C2A566D006CD568 /* SceneDelegate.swift in Sources */,

@@ -13,8 +13,9 @@ extension Font {
     public static let appTextHeader3: Font = .custom(.montserrat_extraBold, size: 20)
     public static let appTextHeader4: Font = .custom(.montserrat_extraBold, size: 17)
     public static let appTextHeader5: Font = .custom(.montserrat_bold, size: 17)
-    public static let appTextHeader6: Font = .custom(.montserrat_bold, size: 15)
-    public static let appTextHeader7: Font = .custom(.montserrat_bold, size: 14)
+    public static let appTextHeader6: Font = .custom(.montserrat_semibold, size: 16)
+    public static let appTextHeader7: Font = .custom(.montserrat_bold, size: 15)
+    public static let appTextHeader8: Font = .custom(.montserrat_bold, size: 14)
     
     public static let appTextAltHeader1: Font = .custom(.cabin_regular, size: 26)
     
@@ -27,6 +28,7 @@ extension Font {
     fileprivate enum CustomFontResource: String {
         case montserrat_extraBold = "Montserrat-ExtraBold"
         case montserrat_bold = "Montserrat-Bold"
+        case montserrat_semibold = "Montserrat-SemiBold"
         case cabin_semibold = "Cabin-SemiBold"
         case cabin_medium = "Cabin-Medium"
         case cabin_regular = "Cabin-Regular"

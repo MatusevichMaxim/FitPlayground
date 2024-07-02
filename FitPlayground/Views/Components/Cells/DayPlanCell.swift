@@ -17,7 +17,7 @@ struct DayPlanCell: View {
         HStack(alignment: .top, spacing: 24) {
             VStack {
                 Text(date.dayOfWeek)
-                    .font(.appTextHeader6)
+                    .font(.appTextHeader7)
                     .foregroundStyle(dayTextColor)
                 
                 Text(date.formattedDate)
