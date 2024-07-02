@@ -13,10 +13,10 @@ where Data: RandomAccessCollection, ID: Hashable, Content: View, Loader: View {
     private let id: KeyPath<Data.Element, ID>
     private let initialFirstVisibleItem: ID?
     private let onLoadPrev: () -> Void
-    private let onLoadMore: () -> Void
+    private let onLoadNext: () -> Void
     private let spacing: CGFloat
-    private let enableLoadPrev: Bool
-    private let enableLoadMore: Bool
+    private let enablePrevLoading: Bool
+    private let enableNextLoading: Bool
     
     @ViewBuilder private let makeLoader: () -> Loader
     @ViewBuilder private let content: (Data.Element) -> Content
@@ -26,10 +26,10 @@ where Data: RandomAccessCollection, ID: Hashable, Content: View, Loader: View {
         id: KeyPath<Data.Element, ID>,
         initialFirstVisibleItem: ID? = nil,
         onLoadPrev: @escaping () -> Void,
-        onLoadMore: @escaping () -> Void,
+        onLoadNext: @escaping () -> Void,
         spacing: CGFloat = 0,
-        enableLoadPrev: Bool = true,
-        enableLoadMore: Bool = true,
+        enablePrevLoading: Bool = true,
+        enableNextLoading: Bool = true,
         @ViewBuilder loader: @escaping () -> Loader,
         @ViewBuilder content: @escaping (Data.Element) -> Content
     ) {
@@ -37,10 +37,10 @@ where Data: RandomAccessCollection, ID: Hashable, Content: View, Loader: View {
         self.id = id
         self.initialFirstVisibleItem = initialFirstVisibleItem
         self.onLoadPrev = onLoadPrev
-        self.onLoadMore = onLoadMore
+        self.onLoadNext = onLoadNext
         self.spacing = spacing
-        self.enableLoadPrev = enableLoadPrev
-        self.enableLoadMore = enableLoadMore
+        self.enablePrevLoading = enablePrevLoading
+        self.enableNextLoading = enableNextLoading
         self.makeLoader = loader
         self.content = content
     }
@@ -51,10 +51,10 @@ where Data: RandomAccessCollection, ID: Hashable, Content: View, Loader: View {
             id: id,
             initialFirstVisibleItem: initialFirstVisibleItem,
             onLoadPrev: onLoadPrev,
-            onLoadMore: onLoadMore,
+            onLoadNext: onLoadNext,
             spacing: spacing,
-            enableLoadPrev: enableLoadPrev,
-            enableLoadMore: enableLoadMore,
+            enablePrevLoading: enablePrevLoading,
+            enableNextLoading: enableNextLoading,
             makeLoader: makeLoader,
             content: content
         )
