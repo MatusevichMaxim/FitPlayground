@@ -44,6 +44,14 @@ struct PreviewData {
     ]
     
     static let scheduledWorkouts: [DayPlan] = [
+        .init(date: Calendar.current.date(byAdding: .day, value: -40, to: Date().erasedTime)!, workouts: [
+            .init(name: "Core Engager 🎯", duration: 27, muscleGroups: [.abs, .back, .chest], status: .completed),
+            .init(name: "Chair Rounds!", duration: 11, muscleGroups: [.legs, .back], status: .completed)
+        ]),
+        .init(date: Calendar.current.date(byAdding: .day, value: -30, to: Date().erasedTime)!, workouts: [
+            .init(name: "Core Engager 🎯", duration: 27, muscleGroups: [.abs, .back, .chest], status: .completed),
+            .init(name: "Chair Rounds!", duration: 11, muscleGroups: [.legs, .back], status: .completed)
+        ]),
         .init(date: Calendar.current.date(byAdding: .day, value: -20, to: Date().erasedTime)!, workouts: [
             .init(name: "Core Engager 🎯", duration: 27, muscleGroups: [.abs, .back, .chest], status: .completed),
             .init(name: "Chair Rounds!", duration: 11, muscleGroups: [.legs, .back], status: .completed)
