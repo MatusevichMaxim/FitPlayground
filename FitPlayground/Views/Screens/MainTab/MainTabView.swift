@@ -48,7 +48,7 @@ struct MainTabView: View {
     return MainTabView(viewModel: .init(
         defaultSelectedTab: .home,
         homeTabViewModel: .init(dialogCoordinator: coordinator),
-        calendarTabViewModel: .init(),
+        calendarTabViewModel: .init(dialogCoordinator: coordinator),
         workoutsTabViewModel: .init(),
         actionSheetViewModel: .init()
     ))

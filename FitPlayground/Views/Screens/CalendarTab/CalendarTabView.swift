@@ -26,10 +26,15 @@ struct CalendarTabView: View {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle())
                         .padding()
-                        .tint(.yellow)
+                        .tint(.textPrimary)
                 }
             ) { data in
-                DayPlanCell(date: data.date, workouts: data.workouts)
+                DayPlanCell(
+                    date: data.date,
+                    workouts: data.workouts,
+                    optionAction: viewModel.onItemTapped,
+                    addAction: viewModel.onAddNewWorkout
+                )
             }
             .padding(.horizontal, 16)
             .scrollIndicators(.hidden)
@@ -38,5 +43,7 @@ struct CalendarTabView: View {
 }
 
 #Preview {
-    CalendarTabView(viewModel: .init())
+    let coordinator = MainCoordinator(setRootView: {_ in })
+    
+    return CalendarTabView(viewModel: .init(dialogCoordinator: coordinator))
 }
