@@ -45,4 +45,5 @@
 "btn_edit_workout" = "Edit workout";
 
 /* Workouts */
+"workout_name_placeholder" = "Workout name";
 "workout_default_name" = "My workout";

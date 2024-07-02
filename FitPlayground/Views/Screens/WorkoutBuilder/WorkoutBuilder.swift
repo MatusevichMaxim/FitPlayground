@@ -18,7 +18,8 @@ struct WorkoutBuilder: View {
                 ScrollView {
                     VStack {
                         VStack {
-                            TextField(String.workoutDefaultName, text: $viewModel.name)
+                            TextField("", text: $viewModel.name, prompt: makeNamePlaceholder())
+                                .foregroundStyle(Color.textPrimary)
                                 .font(.ms_extrabold_24)
                             
                             HStack {
@@ -28,7 +29,7 @@ struct WorkoutBuilder: View {
                             }
                         }
                     }
-                    .padding(.vertical, 20)
+                    .padding(.vertical, 32)
                 }
                 .padding(.horizontal, 16)
             }
@@ -45,6 +46,14 @@ struct WorkoutBuilder: View {
                 }
             }
         }
+    }
+}
+
+extension WorkoutBuilder {
+    private func makeNamePlaceholder() -> Text {
+        Text("\(String.workoutNamePlaceholder) ")
+            .font(.ms_extrabold_24)
+            .foregroundStyle(Color.appPrimary800)
     }
 }
 
