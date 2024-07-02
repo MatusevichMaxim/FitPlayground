@@ -8,8 +8,7 @@
 import Foundation
 import Combine
 
-struct DayPlan: Identifiable, Hashable {
-    let id = UUID()
+struct DayPlan: Hashable {
     let date: Date
     let workouts: [Workout]
     
@@ -31,7 +30,7 @@ final class CalendarTabViewModel: ObservableObject {
 }
 
 extension CalendarTabViewModel {
-    var initialPlan: DayPlan { .init(date: today) }
+    var initialPlan: DayPlan? { planData.first(where: { $0.date == today }) }
     
     func loadPrevWeeks() {
         Task {
