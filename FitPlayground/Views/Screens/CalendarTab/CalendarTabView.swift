@@ -26,7 +26,7 @@ struct CalendarTabView: View {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle())
                         .padding()
-                        .tint(.yellow)
+                        .tint(.textPrimary)
                 }
             ) { data in
                 DayPlanCell(date: data.date, workouts: data.workouts)
