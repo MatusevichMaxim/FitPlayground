@@ -8,23 +8,16 @@
 import Foundation
 import Combine
 
-struct DayPlan: Hashable {
-    let date: Date
-    let workouts: [Workout]
-    
-    init(date: Date, workouts: [Workout] = []) {
-        self.date = date
-        self.workouts = workouts
-    }
-}
-
 final class CalendarTabViewModel: ObservableObject {
     @Published var planData: [DayPlan] = []
     
-    init() {
+    init(dialogCoordinator: DialogCoordination) {
+        self.dialogCoordinator = dialogCoordinator
+        
         initialLoading()
     }
     
+    private let dialogCoordinator: DialogCoordination
     private let today = Date().erasedTime
     private let calendar = Calendar.current
 }
@@ -54,6 +47,14 @@ extension CalendarTabViewModel {
             
             loadPlan(startDate: startDate, endDate: endDate)
         }
+    }
+    
+    func onItemTapped(isDone: Bool) {
+        dialogCoordinator.showDialog(type: .activityOption(isDone: isDone))
+    }
+    
+    func onAddNewWorkout() {
+        dialogCoordinator.showDialog(type: .createNew)
     }
 }
 

@@ -22,7 +22,7 @@ extension MainCoordinator: Coordination {
         actionSheetViewModel = ActionSheetViewModel()
         
         let homeTabViewModel = HomeTabViewModel(dialogCoordinator: self)
-        let calendarTabViewModel = CalendarTabViewModel()
+        let calendarTabViewModel = CalendarTabViewModel(dialogCoordinator: self)
         let workoutsTabViewModel = WorkoutsTabViewModel()
         
         let viewModel = MainTabViewModel(

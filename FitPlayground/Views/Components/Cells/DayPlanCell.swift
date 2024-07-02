@@ -10,6 +10,8 @@ import SwiftUI
 struct DayPlanCell: View {
     let date: Date
     let workouts: [Workout]
+    let optionAction: (Bool) -> Void
+    let addAction: () -> Void
     
     var body: some View {
         HStack(alignment: .top, spacing: 24) {
@@ -27,10 +29,12 @@ struct DayPlanCell: View {
             
             LazyVStack(spacing: StyleManager.cellSpacing) {
                 ForEach(workouts) { workout in
-                    WorkoutCell(data: workout, optionAction: {})
+                    WorkoutCell(data: workout, optionAction: {
+                        optionAction(workout.status == .completed)
+                    })
                 }
                 
-                AddWorkoutCell(action: {})
+                AddWorkoutCell(action: addAction)
             }
         }
     }
@@ -49,7 +53,12 @@ extension DayPlanCell {
 }
 
 #Preview {
-    DayPlanCell(date: .now, workouts: PreviewData.workoutsPlanPreset)
+    DayPlanCell(
+        date: .now,
+        workouts: PreviewData.workoutsPlanPreset,
+        optionAction: {_ in },
+        addAction: {}
+    )
         .previewLayout(.sizeThatFits)
         .padding()
 }
