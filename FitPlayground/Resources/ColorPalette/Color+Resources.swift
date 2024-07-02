@@ -18,6 +18,8 @@ extension Color {
     public static let appPrimary800 = Color(.appPrimary800)
     public static let appPrimary300 = Color(.appPrimary300)
     
+    public static let appSecondary600 = Color(.appSecondary600)
+    
     public static let appAccent100 = Color(.appAccent100)
     
     // MARK: - Accents+Tints

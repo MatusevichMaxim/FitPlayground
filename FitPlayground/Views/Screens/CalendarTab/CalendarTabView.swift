@@ -16,9 +16,9 @@ struct CalendarTabView: View {
                 .ignoresSafeArea()
             
             AutoInfiniteScroll(
-                viewModel.calendarData,
+                viewModel.planData,
                 id: \.self,
-                initialFirstVisibleItem: 3,
+                initialFirstVisibleItem: viewModel.initialPlan,
                 onLoadPrev: viewModel.loadPrevWeeks,
                 onLoadNext: viewModel.loadNextWeeks,
                 spacing: StyleManager.cellSpacing,
@@ -29,9 +29,7 @@ struct CalendarTabView: View {
                         .tint(.yellow)
                 }
             ) { data in
-                AddWorkoutCell(action: {})
-                    .frame(maxWidth: .infinity)
-                    .frame(height: StyleManager.cellHeight)
+                DayPlanCell(date: data.date, workouts: [])
             }
             .padding(.horizontal, 16)
         }

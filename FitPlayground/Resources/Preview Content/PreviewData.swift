@@ -37,5 +37,10 @@ struct PreviewData {
         .init(name: "Upper Focus Flex!", duration: 29, muscleGroups: [.arms, .shoulders], status: .active),
         .init(name: "Squat Posture Perfection 🏋🏼", duration: 39, muscleGroups: [.legs], status: .active)
     ]
+    
+    static let workoutsPlanPreset: [Workout] = [
+        .init(name: "Core Engager 🎯", duration: 27, muscleGroups: [.abs, .back, .chest], status: .completed),
+        .init(name: "Chair Rounds!", duration: 11, muscleGroups: [.legs, .back], status: .active)
+    ]
 }
 #endif

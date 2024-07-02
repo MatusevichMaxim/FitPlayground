@@ -135,7 +135,7 @@ extension HomeTabView {
                             .frame(maxWidth: .infinity, alignment: .leading)
                         
                         Text("User Name")
-                            .font(.appTextHeader6)
+                            .font(.appTextHeader7)
                             .foregroundStyle(Color.textPrimary)
                             .frame(maxWidth: .infinity, alignment: .leading)
                     }
