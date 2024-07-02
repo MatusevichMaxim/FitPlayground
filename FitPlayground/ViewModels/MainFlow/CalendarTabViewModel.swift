@@ -11,6 +11,12 @@ import Combine
 struct DayPlan: Identifiable, Hashable {
     let id = UUID()
     let date: Date
+    let workouts: [Workout]
+    
+    init(date: Date, workouts: [Workout] = []) {
+        self.date = date
+        self.workouts = workouts
+    }
 }
 
 final class CalendarTabViewModel: ObservableObject {
@@ -57,7 +63,7 @@ extension CalendarTabViewModel {
     private var laterPlan: DayPlan? { planData.last }
     
     private func initialLoading() {
-        guard let startDate = calendar.date(byAdding: .day, value: -6, to: today),
+        guard let startDate = calendar.date(byAdding: .day, value: -7, to: today),
               let endDate = calendar.date(byAdding: .day, value: 7, to: today) else { return }
         
         loadPlan(startDate: startDate, endDate: endDate)
@@ -68,7 +74,9 @@ extension CalendarTabViewModel {
         var currentDate = startDate
         
         while currentDate <= endDate {
-            newPlans.append(.init(date: currentDate))
+            newPlans.append(
+                PreviewData.scheduledWorkouts.first(where: { $0.date == currentDate }) ?? .init(date: currentDate)
+            )
             currentDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)!
         }
         

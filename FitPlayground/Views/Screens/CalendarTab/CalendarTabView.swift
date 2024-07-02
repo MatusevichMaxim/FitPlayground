@@ -29,7 +29,7 @@ struct CalendarTabView: View {
                         .tint(.yellow)
                 }
             ) { data in
-                DayPlanCell(date: data.date, workouts: [])
+                DayPlanCell(date: data.date, workouts: data.workouts)
             }
             .padding(.horizontal, 16)
         }
