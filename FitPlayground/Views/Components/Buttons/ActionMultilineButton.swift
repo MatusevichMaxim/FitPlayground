@@ -29,12 +29,12 @@ struct ActionMultilineButton: View {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(data.title)
                         .foregroundStyle(Color.textPrimary)
-                        .font(.appTextHeader5)
+                        .font(.ms_bold_17)
                         .scaledToFit()
             
                     Text(data.subtitle)
                         .foregroundStyle(Color.textTertiary)
-                        .font(.appTextCaption1)
+                        .font(.cb_medium_14)
                         .scaledToFit()
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)

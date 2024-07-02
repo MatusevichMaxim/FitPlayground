@@ -38,7 +38,7 @@ struct ActionDialogButton: View {
         ActionButton(action: {}) {
             Text(data.title)
                 .foregroundStyle(Color.textPrimary)
-                .font(.appTextHeader5)
+                .font(.ms_bold_17)
                 .frame(
                     maxWidth: .infinity,
                     maxHeight: StyleManager.actionButtonHeight,

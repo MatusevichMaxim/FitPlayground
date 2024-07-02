@@ -16,12 +16,12 @@ struct WorkoutCell: View {
             VStack(alignment: .leading, spacing: 12) {
                 Text(data.name)
                     .foregroundStyle(Color.textPrimary)
-                    .font(.appTextHeader3)
+                    .font(.ms_extrabold_20)
                     .frame(height: 18)
                 
                 Text(data.localizedDescription)
                     .foregroundStyle(Color.textSecondary)
-                    .font(.appTextCaption1)
+                    .font(.cb_medium_14)
                     .frame(height: 10)
             }
             .frame(maxWidth: .infinity, alignment: .leading)

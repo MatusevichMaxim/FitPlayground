@@ -17,11 +17,11 @@ struct DayPlanCell: View {
         HStack(alignment: .top, spacing: 24) {
             VStack {
                 Text(date.dayOfWeek)
-                    .font(.appTextHeader7)
+                    .font(.ms_bold_15)
                     .foregroundStyle(dayTextColor)
                 
                 Text(date.formattedDate)
-                    .font(.appTextCaption3)
+                    .font(.cb_semibold_10)
                     .foregroundStyle(dateTextColor)
             }
             .padding(.top, 12)

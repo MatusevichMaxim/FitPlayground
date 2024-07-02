@@ -34,7 +34,7 @@ struct HomeTabView: View {
                     
                     VStack(alignment: .leading, spacing: 18) {
                         Text("\(.today)")
-                            .font(.appTextHeader2)
+                            .font(.ms_extrabold_22)
                             .foregroundStyle(Color.textPrimary)
                             .padding(.top, 24)
                             .padding(.horizontal, 32)
@@ -84,18 +84,18 @@ extension HomeTabView {
     private func makeSloganHeaderView() -> some View {
         VStack {
             Text(String.firstSloganTitle)
-                .font(.appTextAltHeader1)
+                .font(.cb_regular_26)
                 .foregroundStyle(Color.textPrimary)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             HStack(spacing: 8) {
                 Text(String.firstSloganSubtitle)
-                    .font(.appTextHeader1)
+                    .font(.ms_extrabold_34)
                     .foregroundStyle(Color.textPrimary)
                     .scaledToFit()
                 
                 Text(String.potential.lowercased())
-                    .font(.appTextHeader1)
+                    .font(.ms_extrabold_34)
                     .foregroundStyle(Color.appAccent100)
                     .scaledToFit()
                 
@@ -130,12 +130,12 @@ extension HomeTabView {
                     
                     VStack {
                         Text("\(String.greetingsMorning),")
-                            .font(.appTextCaption2)
+                            .font(.cb_regular_14)
                             .foregroundStyle(Color.textSecondary)
                             .frame(maxWidth: .infinity, alignment: .leading)
                         
                         Text("User Name")
-                            .font(.appTextHeader8)
+                            .font(.ms_bold_14)
                             .foregroundStyle(Color.textPrimary)
                             .frame(maxWidth: .infinity, alignment: .leading)
                     }

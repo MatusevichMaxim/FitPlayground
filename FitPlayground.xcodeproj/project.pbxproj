@@ -10,6 +10,7 @@
 		56049F512C33A0E2008728A5 /* DayPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049F502C33A0E2008728A5 /* DayPlan.swift */; };
 		56049F562C34845A008728A5 /* WorkoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049F552C34845A008728A5 /* WorkoutBuilder.swift */; };
 		56049F582C3485DC008728A5 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56049F572C3485DC008728A5 /* Montserrat-SemiBold.ttf */; };
+		56049F5A2C348AA4008728A5 /* WorkoutBuilderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049F592C348AA4008728A5 /* WorkoutBuilderViewModel.swift */; };
 		5604D0512C2F4651006B8BE6 /* InfiniteScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5604D04F2C2F4651006B8BE6 /* InfiniteScroll.swift */; };
 		5604D0522C2F4651006B8BE6 /* AutoInfiniteScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5604D0502C2F4651006B8BE6 /* AutoInfiniteScroll.swift */; };
 		5604D0552C2F4B22006B8BE6 /* HuggingGeometryModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5604D0542C2F4B22006B8BE6 /* HuggingGeometryModifier.swift */; };
@@ -74,6 +75,7 @@
 		56049F502C33A0E2008728A5 /* DayPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlan.swift; sourceTree = "<group>"; };
 		56049F552C34845A008728A5 /* WorkoutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutBuilder.swift; sourceTree = "<group>"; };
 		56049F572C3485DC008728A5 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		56049F592C348AA4008728A5 /* WorkoutBuilderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutBuilderViewModel.swift; sourceTree = "<group>"; };
 		5604D04F2C2F4651006B8BE6 /* InfiniteScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScroll.swift; sourceTree = "<group>"; };
 		5604D0502C2F4651006B8BE6 /* AutoInfiniteScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoInfiniteScroll.swift; sourceTree = "<group>"; };
 		5604D0542C2F4B22006B8BE6 /* HuggingGeometryModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuggingGeometryModifier.swift; sourceTree = "<group>"; };
@@ -524,6 +526,7 @@
 				56FAD64D2C2A6BB6006CD568 /* HomeTabViewModel.swift */,
 				56FAD6522C2B4CF0006CD568 /* CalendarTabViewModel.swift */,
 				56FAD6542C2B4D12006CD568 /* WorkoutsTabViewModel.swift */,
+				56049F592C348AA4008728A5 /* WorkoutBuilderViewModel.swift */,
 			);
 			path = MainFlow;
 			sourceTree = "<group>";
@@ -644,6 +647,7 @@
 				5604D0522C2F4651006B8BE6 /* AutoInfiniteScroll.swift in Sources */,
 				56BE889A2C24AE9B005EFED9 /* ActionMultilineButton.swift in Sources */,
 				565BA4632AF445D700A1E4AA /* Font+Fonts.swift in Sources */,
+				56049F5A2C348AA4008728A5 /* WorkoutBuilderViewModel.swift in Sources */,
 				56BE888A2C221F56005EFED9 /* View+Extensions.swift in Sources */,
 				56FAD6682C2DE514006CD568 /* UserDefaultsKey.swift in Sources */,
 				56BE88732C1BA035005EFED9 /* MuscleGroup.swift in Sources */,

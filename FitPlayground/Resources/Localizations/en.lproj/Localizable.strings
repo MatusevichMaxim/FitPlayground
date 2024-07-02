@@ -12,9 +12,9 @@
 "cancel" = "Cancel";
 "minutes_short" = "Min";
 
-"new_wrkt" = "New workout";
-"existing_wrkt" = "Existing workout";
-"instant_act" = "Instant activity";
+"new_workout" = "New workout";
+"existing_workout" = "Existing workout";
+"instant_activity" = "Instant activity";
 
 /* Tabs */
 "home_tab_title" = "Home";
@@ -37,9 +37,12 @@
 "slogan_1_ln2" = "Strength";
 
 /* Actions */
-"btn_desc_new_wrkt" = "Create a new workout from scratch.";
-"btn_desc_instant_act" = "Add a quick activity to your schedule.";
-"btn_desc_existing_wrkt" = "Select a workout from your library.";
+"btn_desc_new_workout" = "Create a new workout from scratch.";
+"btn_desc_instant_activity" = "Add a quick activity to your schedule.";
+"btn_desc_existing_workout" = "Select a workout from your library.";
 "btn_mark_done" = "Mark done";
 "btn_mark_undone" = "Mark undone";
-"btn_edit_wrkt" = "Edit workout";
+"btn_edit_workout" = "Edit workout";
+
+/* Workouts */
+"workout_default_name" = "My workout";

@@ -14,9 +14,9 @@ extension String {
     public static let cancel = localizedString(for: "cancel")
     public static let min = localizedString(for: "minutes_short")
     
-    public static let newWorkout = localizedString(for: "new_wrkt")
-    public static let existingWorkout = localizedString(for: "existing_wrkt")
-    public static let instantActivity = localizedString(for: "instant_act")
+    public static let newWorkout = localizedString(for: "new_workout")
+    public static let existingWorkout = localizedString(for: "existing_workout")
+    public static let instantActivity = localizedString(for: "instant_activity")
     
     // MARK: - Tabs
     public static let homeTabTitle = localizedString(for: "home_tab_title")
@@ -39,12 +39,15 @@ extension String {
     public static let firstSloganSubtitle = localizedString(for: "slogan_1_ln2")
     
     // MARK: - Actions
-    public static let newWorkoutActionDesc = localizedString(for: "btn_desc_new_wrkt")
-    public static let instantActivityActionDesc = localizedString(for: "btn_desc_instant_act")
-    public static let existingWorkoutActionDesc = localizedString(for: "btn_desc_existing_wrkt")
+    public static let newWorkoutActionDesc = localizedString(for: "btn_desc_new_workout")
+    public static let instantActivityActionDesc = localizedString(for: "btn_desc_instant_activity")
+    public static let existingWorkoutActionDesc = localizedString(for: "btn_desc_existing_workout")
     public static let markDoneAction = localizedString(for: "btn_mark_done")
     public static let markUndoneAction = localizedString(for: "btn_mark_undone")
-    public static let editWorkoutAction = localizedString(for: "btn_edit_wrkt")
+    public static let editWorkoutAction = localizedString(for: "btn_edit_workout")
+    
+    // MARK: Workouts
+    public static let workoutDefaultName = localizedString(for: "workout_default_name")
     
     private static func localizedString(for key: String) -> String {
         NSLocalizedString(String(describing: key), comment: "")
