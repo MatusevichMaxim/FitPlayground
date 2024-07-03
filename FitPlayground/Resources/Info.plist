@@ -7,9 +7,10 @@
 		<string>Montserrat-ExtraBold.ttf</string>
 		<string>Montserrat-Bold.ttf</string>
 		<string>Montserrat-SemiBold.ttf</string>
+		<string>Cabin-Bold.ttf</string>
+		<string>Cabin-SemiBold.ttf</string>
 		<string>Cabin-Medium.ttf</string>
 		<string>Cabin-Regular.ttf</string>
-		<string>Cabin-SemiBold.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

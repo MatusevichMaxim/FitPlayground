@@ -43,6 +43,7 @@
 "btn_mark_done" = "Mark done";
 "btn_mark_undone" = "Mark undone";
 "btn_edit_workout" = "Edit workout";
+"btn_add_exercise" = "Add exercise";
 
 /* Workouts */
 "workout_name_placeholder" = "Workout name";

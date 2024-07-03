@@ -8,7 +8,14 @@
 import Foundation
 
 final class WorkoutBuilderViewModel: ObservableObject {
-    @Published var name: String = ""
+    @Published var name: String = "My Workout 1"
+    
+    @Published var workout: Workout = .init(
+        name: "",
+        duration: 11,
+        muscleGroups: [.chest, .back, .shoulders],
+        status: .active
+    )
 }
 
 extension WorkoutBuilderViewModel {

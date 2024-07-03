@@ -11,6 +11,8 @@
 		56049F562C34845A008728A5 /* WorkoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049F552C34845A008728A5 /* WorkoutBuilder.swift */; };
 		56049F582C3485DC008728A5 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56049F572C3485DC008728A5 /* Montserrat-SemiBold.ttf */; };
 		56049F5A2C348AA4008728A5 /* WorkoutBuilderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049F592C348AA4008728A5 /* WorkoutBuilderViewModel.swift */; };
+		56049F602C34B3EB008728A5 /* Cabin-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56049F5F2C34B3EB008728A5 /* Cabin-Bold.ttf */; };
+		56049F642C35CA07008728A5 /* AddExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049F632C35CA07008728A5 /* AddExerciseCell.swift */; };
 		5604D0512C2F4651006B8BE6 /* InfiniteScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5604D04F2C2F4651006B8BE6 /* InfiniteScroll.swift */; };
 		5604D0522C2F4651006B8BE6 /* AutoInfiniteScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5604D0502C2F4651006B8BE6 /* AutoInfiniteScroll.swift */; };
 		5604D0552C2F4B22006B8BE6 /* HuggingGeometryModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5604D0542C2F4B22006B8BE6 /* HuggingGeometryModifier.swift */; };
@@ -76,6 +78,8 @@
 		56049F552C34845A008728A5 /* WorkoutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutBuilder.swift; sourceTree = "<group>"; };
 		56049F572C3485DC008728A5 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		56049F592C348AA4008728A5 /* WorkoutBuilderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutBuilderViewModel.swift; sourceTree = "<group>"; };
+		56049F5F2C34B3EB008728A5 /* Cabin-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Bold.ttf"; sourceTree = "<group>"; };
+		56049F632C35CA07008728A5 /* AddExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseCell.swift; sourceTree = "<group>"; };
 		5604D04F2C2F4651006B8BE6 /* InfiniteScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScroll.swift; sourceTree = "<group>"; };
 		5604D0502C2F4651006B8BE6 /* AutoInfiniteScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoInfiniteScroll.swift; sourceTree = "<group>"; };
 		5604D0542C2F4B22006B8BE6 /* HuggingGeometryModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuggingGeometryModifier.swift; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 				56BE88682C1B86AC005EFED9 /* Montserrat-ExtraBold.ttf */,
 				56BE88832C21F66F005EFED9 /* Montserrat-Bold.ttf */,
 				56049F572C3485DC008728A5 /* Montserrat-SemiBold.ttf */,
+				56049F5F2C34B3EB008728A5 /* Cabin-Bold.ttf */,
 				5604D0582C33483F006B8BE6 /* Cabin-SemiBold.ttf */,
 				56BE886E2C1B9231005EFED9 /* Cabin-Medium.ttf */,
 				56BE88812C21F522005EFED9 /* Cabin-Regular.ttf */,
@@ -432,6 +437,7 @@
 				56BE886C2C1B8D36005EFED9 /* WorkoutCell.swift */,
 				56BE887A2C20C622005EFED9 /* AddWorkoutCell.swift */,
 				5604D0562C3343E7006B8BE6 /* DayPlanCell.swift */,
+				56049F632C35CA07008728A5 /* AddExerciseCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -611,6 +617,7 @@
 				566D86562AEE256400293167 /* Localizable.strings in Resources */,
 				56049F582C3485DC008728A5 /* Montserrat-SemiBold.ttf in Resources */,
 				56BE88842C21F66F005EFED9 /* Montserrat-Bold.ttf in Resources */,
+				56049F602C34B3EB008728A5 /* Cabin-Bold.ttf in Resources */,
 				56BE886F2C1B9231005EFED9 /* Cabin-Medium.ttf in Resources */,
 				566C0B8E2C1A38B600C4AF95 /* Assets.xcassets in Resources */,
 				5604D0592C33483F006B8BE6 /* Cabin-SemiBold.ttf in Resources */,
@@ -655,6 +662,7 @@
 				56BE88802C20D207005EFED9 /* StyleManager.swift in Sources */,
 				56BE88A52C260C3E005EFED9 /* Alignment+Hashable.swift in Sources */,
 				56FAD6642C2D0E68006CD568 /* ActionSheet+Builder.swift in Sources */,
+				56049F642C35CA07008728A5 /* AddExerciseCell.swift in Sources */,
 				56BE887B2C20C622005EFED9 /* AddWorkoutCell.swift in Sources */,
 				56FAD64E2C2A6BB6006CD568 /* HomeTabViewModel.swift in Sources */,
 				56049F512C33A0E2008728A5 /* DayPlan.swift in Sources */,

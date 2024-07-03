@@ -16,18 +16,10 @@ struct WorkoutBuilder: View {
                 Color.appBg.ignoresSafeArea()
                 
                 ScrollView {
-                    VStack {
-                        VStack {
-                            TextField("", text: $viewModel.name, prompt: makeNamePlaceholder())
-                                .foregroundStyle(Color.textPrimary)
-                                .font(.ms_extrabold_24)
-                            
-                            HStack {
-                                Text("11 min")
-                                
-                                Text(" · Chest, Lower Back, Shoulders")
-                            }
-                        }
+                    VStack(spacing: 20) {
+                        makeHeader()
+                        
+                        AddExerciseCell(action: {})
                     }
                     .padding(.vertical, 32)
                 }
@@ -50,8 +42,27 @@ struct WorkoutBuilder: View {
 }
 
 extension WorkoutBuilder {
+    private func makeHeader() -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            TextField("", text: $viewModel.name, prompt: makeNamePlaceholder())
+                .font(.ms_extrabold_24)
+                .foregroundStyle(Color.textPrimary)
+            
+            HStack(spacing: 0) {
+                Text("\(viewModel.workout.duration) \(String.min.lowercased())")
+                    .font(.cb_bold_18)
+                    .foregroundStyle(Color.appGreen)
+                
+                Text("  ·  \(viewModel.workout.localizedDescription)")
+                    .font(.cb_bold_18)
+                    .foregroundStyle(Color.appPrimary800)
+            }
+        }
+        .padding(.horizontal, 12)
+    }
+    
     private func makeNamePlaceholder() -> Text {
-        Text("\(String.workoutNamePlaceholder) ")
+        Text("\(String.workoutNamePlaceholder.capitalized) ")
             .font(.ms_extrabold_24)
             .foregroundStyle(Color.appPrimary800)
     }

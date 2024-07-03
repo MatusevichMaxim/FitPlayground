@@ -45,6 +45,7 @@ extension String {
     public static let markDoneAction = localizedString(for: "btn_mark_done")
     public static let markUndoneAction = localizedString(for: "btn_mark_undone")
     public static let editWorkoutAction = localizedString(for: "btn_edit_workout")
+    public static let addExerciseAction = localizedString(for: "btn_add_exercise")
     
     // MARK: Workouts
     public static let workoutNamePlaceholder = localizedString(for: "workout_name_placeholder")
