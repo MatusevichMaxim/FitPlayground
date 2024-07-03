@@ -85,7 +85,7 @@ final class ActivityOptionActionSheetBuilder: ActionSheet, ActionSheetBuilder {
             : .defaultButton(.init(title: .markDoneAction.capitalized, background: .green, action: {})),
             .defaultButton(.init(title: .editWorkoutAction.capitalized, background: .default, action: {})),
             .separator,
-            .cancelButton(.init(title: .cancel, showsDeleteOption: true, action: {}))
+            .cancelButton(.init(title: .cancel, showsDeleteOption: true, action: dialogCoordinator.hideDialog))
         ]
         
         return self
