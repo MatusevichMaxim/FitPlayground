@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ActionDialogButtonModel: Hashable {
+struct ActionDialogButtonModel {
     enum ActionType {
         case `default`
         case green
@@ -22,37 +22,44 @@ struct ActionDialogButtonModel: Hashable {
 
     let title: String
     let background: ActionType
+    let action: () -> Void
     let alignment: ContentAlignment
     
-    init(title: String, background: ActionType, alignment: ContentAlignment = .leading) {
+    init(
+        title: String,
+        background: ActionType,
+        action: @escaping () -> Void,
+        alignment: ContentAlignment = .leading
+    ) {
         self.title = title
         self.background = background
+        self.action = action
         self.alignment = alignment
     }
 }
 
 struct ActionDialogButton: View {
-    let data: ActionDialogButtonModel
+    let model: ActionDialogButtonModel
     
     var body: some View {
-        ActionButton(action: {}) {
-            Text(data.title)
+        ActionButton(action: model.action) {
+            Text(model.title)
                 .foregroundStyle(Color.textPrimary)
-                .font(.appTextHeader5)
+                .font(.ms_bold_17)
                 .frame(
                     maxWidth: .infinity,
                     maxHeight: StyleManager.actionButtonHeight,
-                    alignment: data.alignment.rawValue
+                    alignment: model.alignment.rawValue
                 )
                 .padding(.horizontal, 22)
-                .background(data.background.color)
+                .background(model.background.color)
                 .cornerRadius(StyleManager.cellRadius)
         }
     }
 }
 
 #Preview {
-    ActionDialogButton(data: PreviewData.actionDialogButtonModel)
+    ActionDialogButton(model: PreviewData.actionDialogButtonModel)
         .previewLayout(.sizeThatFits)
         .padding()
 }

@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		56049F512C33A0E2008728A5 /* DayPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049F502C33A0E2008728A5 /* DayPlan.swift */; };
+		56049F562C34845A008728A5 /* WorkoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049F552C34845A008728A5 /* WorkoutBuilder.swift */; };
+		56049F582C3485DC008728A5 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56049F572C3485DC008728A5 /* Montserrat-SemiBold.ttf */; };
+		56049F5A2C348AA4008728A5 /* WorkoutBuilderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049F592C348AA4008728A5 /* WorkoutBuilderViewModel.swift */; };
+		56049F602C34B3EB008728A5 /* Cabin-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56049F5F2C34B3EB008728A5 /* Cabin-Bold.ttf */; };
+		56049F642C35CA07008728A5 /* AddExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049F632C35CA07008728A5 /* AddExerciseCell.swift */; };
+		56049F662C35CF9B008728A5 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049F652C35CF9B008728A5 /* ExerciseCell.swift */; };
+		56049F682C35D48E008728A5 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049F672C35D48E008728A5 /* Exercise.swift */; };
+		56049F6A2C35F649008728A5 /* MainCoordination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049F692C35F649008728A5 /* MainCoordination.swift */; };
 		5604D0512C2F4651006B8BE6 /* InfiniteScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5604D04F2C2F4651006B8BE6 /* InfiniteScroll.swift */; };
 		5604D0522C2F4651006B8BE6 /* AutoInfiniteScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5604D0502C2F4651006B8BE6 /* AutoInfiniteScroll.swift */; };
 		5604D0552C2F4B22006B8BE6 /* HuggingGeometryModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5604D0542C2F4B22006B8BE6 /* HuggingGeometryModifier.swift */; };
@@ -70,6 +78,14 @@
 
 /* Begin PBXFileReference section */
 		56049F502C33A0E2008728A5 /* DayPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlan.swift; sourceTree = "<group>"; };
+		56049F552C34845A008728A5 /* WorkoutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutBuilder.swift; sourceTree = "<group>"; };
+		56049F572C3485DC008728A5 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		56049F592C348AA4008728A5 /* WorkoutBuilderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutBuilderViewModel.swift; sourceTree = "<group>"; };
+		56049F5F2C34B3EB008728A5 /* Cabin-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cabin-Bold.ttf"; sourceTree = "<group>"; };
+		56049F632C35CA07008728A5 /* AddExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseCell.swift; sourceTree = "<group>"; };
+		56049F652C35CF9B008728A5 /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
+		56049F672C35D48E008728A5 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		56049F692C35F649008728A5 /* MainCoordination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordination.swift; sourceTree = "<group>"; };
 		5604D04F2C2F4651006B8BE6 /* InfiniteScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScroll.swift; sourceTree = "<group>"; };
 		5604D0502C2F4651006B8BE6 /* AutoInfiniteScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoInfiniteScroll.swift; sourceTree = "<group>"; };
 		5604D0542C2F4B22006B8BE6 /* HuggingGeometryModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuggingGeometryModifier.swift; sourceTree = "<group>"; };
@@ -143,6 +159,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56049F522C34841D008728A5 /* WorkoutBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				56049F552C34845A008728A5 /* WorkoutBuilder.swift */,
+			);
+			path = WorkoutBuilder;
+			sourceTree = "<group>";
+		};
 		5604D04E2C2F4604006B8BE6 /* InfiniteScroll */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +190,8 @@
 				565BA4622AF445D700A1E4AA /* Font+Fonts.swift */,
 				56BE88682C1B86AC005EFED9 /* Montserrat-ExtraBold.ttf */,
 				56BE88832C21F66F005EFED9 /* Montserrat-Bold.ttf */,
+				56049F572C3485DC008728A5 /* Montserrat-SemiBold.ttf */,
+				56049F5F2C34B3EB008728A5 /* Cabin-Bold.ttf */,
 				5604D0582C33483F006B8BE6 /* Cabin-SemiBold.ttf */,
 				56BE886E2C1B9231005EFED9 /* Cabin-Medium.ttf */,
 				56BE88812C21F522005EFED9 /* Cabin-Regular.ttf */,
@@ -204,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				56BE88702C1B9FD3005EFED9 /* Workout.swift */,
+				56049F672C35D48E008728A5 /* Exercise.swift */,
 				56BE88722C1BA035005EFED9 /* MuscleGroup.swift */,
 				56BE88742C1CC92A005EFED9 /* WorkoutStatus.swift */,
 				56BE88762C1CCAE4005EFED9 /* WorkoutStatus+Extension.swift */,
@@ -232,6 +259,7 @@
 				566D86482AEE1E6300293167 /* HomeTab */,
 				566D86452AEE1D8700293167 /* CalendarTab */,
 				566C0B922C1A3F9D00C4AF95 /* WorkoutsTab */,
+				56049F522C34841D008728A5 /* WorkoutBuilder */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -416,6 +444,8 @@
 				56BE886C2C1B8D36005EFED9 /* WorkoutCell.swift */,
 				56BE887A2C20C622005EFED9 /* AddWorkoutCell.swift */,
 				5604D0562C3343E7006B8BE6 /* DayPlanCell.swift */,
+				56049F632C35CA07008728A5 /* AddExerciseCell.swift */,
+				56049F652C35CF9B008728A5 /* ExerciseCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -481,6 +511,7 @@
 			isa = PBXGroup;
 			children = (
 				56FAD6412C2A6385006CD568 /* Coordination.swift */,
+				56049F692C35F649008728A5 /* MainCoordination.swift */,
 				56FAD65E2C2B7B1D006CD568 /* DialogCoordination.swift */,
 			);
 			path = API;
@@ -510,6 +541,7 @@
 				56FAD64D2C2A6BB6006CD568 /* HomeTabViewModel.swift */,
 				56FAD6522C2B4CF0006CD568 /* CalendarTabViewModel.swift */,
 				56FAD6542C2B4D12006CD568 /* WorkoutsTabViewModel.swift */,
+				56049F592C348AA4008728A5 /* WorkoutBuilderViewModel.swift */,
 			);
 			path = MainFlow;
 			sourceTree = "<group>";
@@ -592,7 +624,9 @@
 				56BE88822C21F522005EFED9 /* Cabin-Regular.ttf in Resources */,
 				566D863E2AEE158500293167 /* Preview Assets.xcassets in Resources */,
 				566D86562AEE256400293167 /* Localizable.strings in Resources */,
+				56049F582C3485DC008728A5 /* Montserrat-SemiBold.ttf in Resources */,
 				56BE88842C21F66F005EFED9 /* Montserrat-Bold.ttf in Resources */,
+				56049F602C34B3EB008728A5 /* Cabin-Bold.ttf in Resources */,
 				56BE886F2C1B9231005EFED9 /* Cabin-Medium.ttf in Resources */,
 				566C0B8E2C1A38B600C4AF95 /* Assets.xcassets in Resources */,
 				5604D0592C33483F006B8BE6 /* Cabin-SemiBold.ttf in Resources */,
@@ -618,6 +652,7 @@
 				56FAD6152C27C554006CD568 /* TabItemView.swift in Sources */,
 				56BE88752C1CC92A005EFED9 /* WorkoutStatus.swift in Sources */,
 				56BE88A72C260E22005EFED9 /* PreviewData.swift in Sources */,
+				56049F662C35CF9B008728A5 /* ExerciseCell.swift in Sources */,
 				56BE88932C238D53005EFED9 /* ScrollOffsetPreferenceKey.swift in Sources */,
 				56FAD65D2C2B5C7B006CD568 /* ActionSheetViewModel.swift in Sources */,
 				56FAD6482C2A64E3006CD568 /* MainCoordinator.swift in Sources */,
@@ -629,6 +664,7 @@
 				5604D0522C2F4651006B8BE6 /* AutoInfiniteScroll.swift in Sources */,
 				56BE889A2C24AE9B005EFED9 /* ActionMultilineButton.swift in Sources */,
 				565BA4632AF445D700A1E4AA /* Font+Fonts.swift in Sources */,
+				56049F5A2C348AA4008728A5 /* WorkoutBuilderViewModel.swift in Sources */,
 				56BE888A2C221F56005EFED9 /* View+Extensions.swift in Sources */,
 				56FAD6682C2DE514006CD568 /* UserDefaultsKey.swift in Sources */,
 				56BE88732C1BA035005EFED9 /* MuscleGroup.swift in Sources */,
@@ -636,6 +672,7 @@
 				56BE88802C20D207005EFED9 /* StyleManager.swift in Sources */,
 				56BE88A52C260C3E005EFED9 /* Alignment+Hashable.swift in Sources */,
 				56FAD6642C2D0E68006CD568 /* ActionSheet+Builder.swift in Sources */,
+				56049F642C35CA07008728A5 /* AddExerciseCell.swift in Sources */,
 				56BE887B2C20C622005EFED9 /* AddWorkoutCell.swift in Sources */,
 				56FAD64E2C2A6BB6006CD568 /* HomeTabViewModel.swift in Sources */,
 				56049F512C33A0E2008728A5 /* DayPlan.swift in Sources */,
@@ -645,14 +682,17 @@
 				566C0B952C1A420700C4AF95 /* WorkoutsTabView.swift in Sources */,
 				56FAD6132C27C446006CD568 /* TabItem.swift in Sources */,
 				56FAD6422C2A6385006CD568 /* Coordination.swift in Sources */,
+				56049F562C34845A008728A5 /* WorkoutBuilder.swift in Sources */,
 				56FAD63D2C2A52D7006CD568 /* AppDelegate.swift in Sources */,
 				5604D0572C3343E7006B8BE6 /* DayPlanCell.swift in Sources */,
 				56FAD63F2C2A566D006CD568 /* SceneDelegate.swift in Sources */,
 				56BE888D2C2366C1005EFED9 /* AnimatedGradientView.swift in Sources */,
 				566D86472AEE1E5800293167 /* CalendarTabView.swift in Sources */,
+				56049F6A2C35F649008728A5 /* MainCoordination.swift in Sources */,
 				56BE88772C1CCAE4005EFED9 /* WorkoutStatus+Extension.swift in Sources */,
 				56BE88A32C25FBA4005EFED9 /* ActionDialogButton.swift in Sources */,
 				566C0B912C1A3C3E00C4AF95 /* Image+Resources.swift in Sources */,
+				56049F682C35D48E008728A5 /* Exercise.swift in Sources */,
 				56FAD6552C2B4D12006CD568 /* WorkoutsTabViewModel.swift in Sources */,
 				56BE88A12C24C6ED005EFED9 /* ActionButton.swift in Sources */,
 				56FAD6102C27C3A2006CD568 /* TabBarView.swift in Sources */,

@@ -17,7 +17,7 @@ final class MainCoordinator {
     private var actionSheetViewModel: ActionSheetViewModel?
 }
 
-extension MainCoordinator: Coordination {
+extension MainCoordinator: MainCoordination {
     func launch() {
         actionSheetViewModel = ActionSheetViewModel()
         
@@ -35,6 +35,10 @@ extension MainCoordinator: Coordination {
         let mainTabView = MainTabView(viewModel: viewModel)
         setRootView(AnyView(mainTabView))
     }
+    
+    func openWorkoutBuilder() {
+        
+    }
 }
 
 extension MainCoordinator: DialogCoordination {
@@ -43,9 +47,9 @@ extension MainCoordinator: DialogCoordination {
         
         switch type {
         case .createNew:
-            builder = CreateNewActionSheetBuilder()
+            builder = CreateNewActionSheetBuilder(mainCoordinator: self, dialogCoordinator: self)
         case .activityOption(let isDone):
-            builder = ActivityOptionActionSheetBuilder(isDone: isDone)
+            builder = ActivityOptionActionSheetBuilder(mainCoordinator: self, dialogCoordinator: self, isDone: isDone)
         }
         
         actionSheetViewModel?.elements = actionSheetManager.create(using: builder)
