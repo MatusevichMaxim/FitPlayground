@@ -13,6 +13,9 @@ extension String {
     public static let today = localizedString(for: "today")
     public static let cancel = localizedString(for: "cancel")
     public static let min = localizedString(for: "minutes_short")
+    public static let set = localizedString(for: "set_singular")
+    public static let sets = localizedString(for: "set_plural")
+    public static let lbs = localizedString(for: "lbs")
     
     public static let newWorkout = localizedString(for: "new_workout")
     public static let existingWorkout = localizedString(for: "existing_workout")

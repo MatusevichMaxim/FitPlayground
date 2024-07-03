@@ -11,6 +11,9 @@
 "today" = "Today";
 "cancel" = "Cancel";
 "minutes_short" = "Min";
+"set_singular" = "Set";
+"set_plural" = "Sets";
+"lbs" = "Lbs";
 
 "new_workout" = "New workout";
 "existing_workout" = "Existing workout";

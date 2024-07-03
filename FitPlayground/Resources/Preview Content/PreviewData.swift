@@ -76,5 +76,12 @@ struct PreviewData {
             .init(name: "Lower Focus Flex!", duration: 30, muscleGroups: [.legs, .back, .abs], status: .active)
         ]),
     ]
+    
+    // MARK: - Exercises
+    static let supersetPreset: [Exercise] = [
+        .init(id: UUID(), name: "Step-Up", muscleGroups: [.chest]),
+        .init(id: UUID(), name: "Barbell Row", muscleGroups: [.chest]),
+        .init(id: UUID(), name: "Barbell Shoulder Press (Extended)", muscleGroups: [.chest, .shoulders])
+    ]
 }
 #endif

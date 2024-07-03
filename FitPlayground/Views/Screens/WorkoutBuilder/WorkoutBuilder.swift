@@ -17,7 +17,7 @@ struct WorkoutBuilder: View {
                 
                 ScrollView {
                     VStack(spacing: 20) {
-                        makeHeader()
+                        makeHeaderView()
                         
                         AddExerciseCell(action: {})
                     }
@@ -42,7 +42,7 @@ struct WorkoutBuilder: View {
 }
 
 extension WorkoutBuilder {
-    private func makeHeader() -> some View {
+    private func makeHeaderView() -> some View {
         VStack(alignment: .leading, spacing: 12) {
             TextField("", text: $viewModel.name, prompt: makeNamePlaceholder())
                 .font(.ms_extrabold_24)
