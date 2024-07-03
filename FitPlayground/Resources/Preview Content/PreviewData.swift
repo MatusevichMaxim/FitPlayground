@@ -11,17 +11,17 @@ import SwiftUI
 struct PreviewData {
     // MARK: - Dialogs
     static let actionSheetCreateNew: [ActionSheetElement] = [
-        .multilineButton(.init(title: .newWorkout, subtitle: .newWorkoutActionDesc, icon: .square_pencil_icon)),
-        .multilineButton(.init(title: .instantActivity, subtitle: .instantActivityActionDesc, icon: .bolt_icon)),
-        .multilineButton(.init(title: .existingWorkout, subtitle: .existingWorkoutActionDesc, icon: .folder_icon)),
+        .multilineButton(.init(title: .newWorkout, subtitle: .newWorkoutActionDesc, icon: .square_pencil_icon, action: {})),
+        .multilineButton(.init(title: .instantActivity, subtitle: .instantActivityActionDesc, icon: .bolt_icon, action: {})),
+        .multilineButton(.init(title: .existingWorkout, subtitle: .existingWorkoutActionDesc, icon: .folder_icon, action: {})),
         .separator,
-        .cancelButton(.init(title: .cancel, showsDeleteOption: false))
+        .cancelButton(.init(title: .cancel, showsDeleteOption: false, action: {}))
     ]
     
     // MARK: - Buttons
-    static let actionDialogButtonModel = ActionDialogButtonModel(title: .cancel, background: .default, alignment: .center)
-    static let actionMultilineButtonModel = ActionMultilineButtonModel(title: .newWorkout, subtitle: .newWorkoutActionDesc, icon: .square_pencil_icon)
-    static let actionCancelModel = ActionCancelModel(title: .cancel, showsDeleteOption: true)
+    static let actionDialogButtonModel = ActionDialogButtonModel(title: .cancel, background: .default, action: {}, alignment: .center)
+    static let actionMultilineButtonModel = ActionMultilineButtonModel(title: .newWorkout, subtitle: .newWorkoutActionDesc, icon: .square_pencil_icon, action: {})
+    static let actionCancelModel = ActionCancelModel(title: .cancel, showsDeleteOption: true, action: {})
     
     // MARK: - Cells
     static let workout = Workout(name: "Core Engager 🎯", duration: 55, muscleGroups: [.arms, .back, .shoulders], status: .active)

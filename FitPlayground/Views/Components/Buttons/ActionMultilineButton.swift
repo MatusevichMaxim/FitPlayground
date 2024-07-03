@@ -7,19 +7,20 @@
 
 import SwiftUI
 
-struct ActionMultilineButtonModel: Hashable {
+struct ActionMultilineButtonModel {
     let title: String
     let subtitle: String
     let icon: AppImageResourse
+    let action: () -> Void
 }
 
 struct ActionMultilineButton: View {
-    let data: ActionMultilineButtonModel
+    let model: ActionMultilineButtonModel
     
     var body: some View {
-        ActionButton(action: {}) {
+        ActionButton(action: model.action) {
             HStack() {
-                Image(data.icon)
+                Image(model.icon)
                     .symbolRenderingMode(.hierarchical)
                     .foregroundStyle(Color.textSecondary)
                     .font(.system(size: 20))
@@ -27,12 +28,12 @@ struct ActionMultilineButton: View {
                     .frame(width: 40, height: 40)
             
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(data.title)
+                    Text(model.title)
                         .foregroundStyle(Color.textPrimary)
                         .font(.ms_bold_17)
                         .scaledToFit()
             
-                    Text(data.subtitle)
+                    Text(model.subtitle)
                         .foregroundStyle(Color.textTertiary)
                         .font(.cb_medium_14)
                         .scaledToFit()
@@ -48,7 +49,7 @@ struct ActionMultilineButton: View {
 }
 
 #Preview {
-    ActionMultilineButton(data: PreviewData.actionMultilineButtonModel)
+    ActionMultilineButton(model: PreviewData.actionMultilineButtonModel)
         .previewLayout(.sizeThatFits)
         .padding()
 }

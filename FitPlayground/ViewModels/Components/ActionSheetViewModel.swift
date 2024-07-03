@@ -7,20 +7,11 @@
 
 import Foundation
 
-enum ActionSheetElement: Hashable {
+enum ActionSheetElement {
     case defaultButton(ActionDialogButtonModel)
     case multilineButton(ActionMultilineButtonModel)
     case cancelButton(ActionCancelModel)
     case separator
-    
-    func hash(into hasher: inout Hasher) {
-        switch self {
-        case .defaultButton(let model): hasher.combine(model)
-        case .multilineButton(let model): hasher.combine(model)
-        case .cancelButton(let model): hasher.combine(model)
-        case .separator: hasher.combine("separator")
-        }
-    }
 }
 
 final class ActionSheetViewModel: ObservableObject {

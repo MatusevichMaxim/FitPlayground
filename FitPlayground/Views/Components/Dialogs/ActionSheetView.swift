@@ -17,16 +17,16 @@ struct ActionSheetView: View {
                     .zIndex(1)
                 
                 VStack(spacing: 10) {
-                    ForEach(viewModel.elements, id: \.self) { element in
-                        switch element {
+                    ForEach(0..<viewModel.elements.count, id: \.self) { index in
+                        switch viewModel.elements[index] {
                         case .defaultButton(let model):
-                            ActionDialogButton(data: model)
+                            ActionDialogButton(model: model)
                             
                         case .multilineButton(let model):
-                            ActionMultilineButton(data: model)
+                            ActionMultilineButton(model: model)
                             
                         case .cancelButton(let model):
-                            ActionCancelButton(data: model)
+                            ActionCancelButton(model: model)
                             
                         case .separator:
                             Divider()

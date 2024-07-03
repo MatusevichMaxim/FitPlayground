@@ -7,18 +7,32 @@
 
 import SwiftUI
 
-struct ActionCancelModel: Hashable {
+struct ActionCancelModel {
     let title: String
     let showsDeleteOption: Bool
+    let action: () -> Void
+    let deleteAction: () -> Void
+    
+    init(
+        title: String,
+        showsDeleteOption: Bool,
+        action: @escaping () -> Void,
+        deleteAction: @escaping () -> Void = {}
+    ) {
+        self.title = title
+        self.showsDeleteOption = showsDeleteOption
+        self.action = action
+        self.deleteAction = deleteAction
+    }
 }
 
 struct ActionCancelButton: View {
-    let data: ActionCancelModel
+    let model: ActionCancelModel
     
     var body: some View {
         HStack(spacing: 16) {
-            if data.showsDeleteOption {
-                ActionButton(action: {}) {
+            if model.showsDeleteOption {
+                ActionButton(action: model.action) {
                     ZStack {
                         Image(.bin_icon)
                             .foregroundStyle(Color.appRed)
@@ -33,7 +47,12 @@ struct ActionCancelButton: View {
                 }
             }
             
-            ActionDialogButton(data: .init(title: data.title, background: .default, alignment: .center))
+            ActionDialogButton(model: .init(
+                title: model.title,
+                background: .default,
+                action: model.deleteAction,
+                alignment: .center
+            ))
         }
         .frame(height: StyleManager.actionButtonHeight)
     }
@@ -46,7 +65,7 @@ extension ActionCancelButton {
 }
 
 #Preview {
-    ActionCancelButton(data: PreviewData.actionCancelModel)
+    ActionCancelButton(model: PreviewData.actionCancelModel)
         .previewLayout(.sizeThatFits)
         .padding()
 }
