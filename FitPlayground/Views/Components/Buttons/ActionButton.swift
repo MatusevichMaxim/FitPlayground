@@ -17,10 +17,14 @@ struct ActionButton<Content: View>: View {
     }
     
     var body: some View {
-        Button(action: action) {
+        Button(action: executeAction) {
             content
         }
         .buttonStyle(ActionButtonStyle())
+    }
+    
+    private func executeAction() {
+        withAnimation { action() }
     }
 }
 
