@@ -7,9 +7,31 @@
 
 import SwiftUI
 
+enum TransitionType {
+    case modal
+    case push
+}
+
+enum TransitionDirection {
+    case left
+    case right
+    case top
+    case bottom
+}
+
 final class MainCoordinator {
+    var isWorkoutBuilderPresented = ValueSubject(false)
+    
     init(setRootView: @escaping (AnyView) -> Void) {
         self.setRootView = setRootView
+    }
+    
+    private var rootView: AnyView? {
+        didSet {
+            guard let rootView else { return }
+            
+            setRootView(rootView)
+        }
     }
     
     private let setRootView: (AnyView) -> Void
@@ -26,6 +48,7 @@ extension MainCoordinator: MainCoordination {
         let workoutsTabViewModel = WorkoutsTabViewModel()
         
         let viewModel = MainTabViewModel(
+            coordinator: self,
             defaultSelectedTab: .home,
             homeTabViewModel: homeTabViewModel,
             calendarTabViewModel: calendarTabViewModel,
@@ -33,11 +56,11 @@ extension MainCoordinator: MainCoordination {
             actionSheetViewModel: actionSheetViewModel!
         )
         let mainTabView = MainTabView(viewModel: viewModel)
-        setRootView(AnyView(mainTabView))
+        rootView = AnyView(mainTabView)
     }
     
     func openWorkoutBuilder() {
-        
+        isWorkoutBuilderPresented.send(true)
     }
 }
 

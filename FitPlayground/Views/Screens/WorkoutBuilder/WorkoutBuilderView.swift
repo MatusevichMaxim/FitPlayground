@@ -1,5 +1,5 @@
 //
-//  WorkoutBuilder.swift
+//  WorkoutBuilderView.swift
 //  FitPlayground
 //
 //  Created by Maksim Matusevich on 7/2/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WorkoutBuilder: View {
+struct WorkoutBuilderView: View {
     @ObservedObject var viewModel: WorkoutBuilderViewModel
     
     var body: some View {
@@ -44,7 +44,7 @@ struct WorkoutBuilder: View {
     }
 }
 
-extension WorkoutBuilder {
+extension WorkoutBuilderView {
     private func makeHeaderView() -> some View {
         VStack(alignment: .leading, spacing: 12) {
             TextField("", text: $viewModel.name, prompt: makeNamePlaceholder())
@@ -72,5 +72,5 @@ extension WorkoutBuilder {
 }
 
 #Preview {
-    WorkoutBuilder(viewModel: .init())
+    WorkoutBuilderView(viewModel: .init())
 }

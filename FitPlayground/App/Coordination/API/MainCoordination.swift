@@ -6,5 +6,5 @@
 //
 
 protocol MainCoordination: Coordination {
-    func openWorkoutBuilder()
+    var isWorkoutBuilderPresented: ValueSubject<Bool> { get set }
 }

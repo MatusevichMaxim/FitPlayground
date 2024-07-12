@@ -34,6 +34,9 @@ struct MainTabView: View {
                 .toolbarBackground(Color.appPrimary, for: .tabBar)
                 .toolbarColorScheme(.dark, for: .tabBar)
             }
+            .fullScreenCover(isPresented: viewModel.coordinator.isWorkoutBuilderPresented.toBinding()) {
+                WorkoutBuilderView(viewModel: WorkoutBuilderViewModel())
+            }
             
             TabBarView(selectedTab: $viewModel.selectedTab)
             
@@ -46,6 +49,7 @@ struct MainTabView: View {
     let coordinator = MainCoordinator(setRootView: {_ in })
     
     return MainTabView(viewModel: .init(
+        coordinator:  coordinator,
         defaultSelectedTab: .home,
         homeTabViewModel: .init(dialogCoordinator: coordinator),
         calendarTabViewModel: .init(dialogCoordinator: coordinator),
