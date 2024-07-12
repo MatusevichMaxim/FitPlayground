@@ -36,13 +36,11 @@ final class MainCoordinator {
     
     private let setRootView: (AnyView) -> Void
     private let actionSheetManager = ActionSheetManager()
-    private var actionSheetViewModel: ActionSheetViewModel?
+    private var actionSheetViewModel = ActionSheetViewModel()
 }
 
 extension MainCoordinator: MainCoordination {
     func launch() {
-        actionSheetViewModel = ActionSheetViewModel()
-        
         let homeTabViewModel = HomeTabViewModel(dialogCoordinator: self)
         let calendarTabViewModel = CalendarTabViewModel(dialogCoordinator: self)
         let workoutsTabViewModel = WorkoutsTabViewModel()
@@ -53,14 +51,10 @@ extension MainCoordinator: MainCoordination {
             homeTabViewModel: homeTabViewModel,
             calendarTabViewModel: calendarTabViewModel,
             workoutsTabViewModel: workoutsTabViewModel,
-            actionSheetViewModel: actionSheetViewModel!
+            actionSheetViewModel: actionSheetViewModel
         )
         let mainTabView = MainTabView(viewModel: viewModel)
         rootView = AnyView(mainTabView)
-    }
-    
-    func openWorkoutBuilder() {
-        isWorkoutBuilderPresented.send(true)
     }
 }
 
@@ -75,11 +69,11 @@ extension MainCoordinator: DialogCoordination {
             builder = ActivityOptionActionSheetBuilder(mainCoordinator: self, dialogCoordinator: self, isDone: isDone)
         }
         
-        actionSheetViewModel?.elements = actionSheetManager.create(using: builder)
-        actionSheetViewModel?.isVisible = true
+        actionSheetViewModel.elements = actionSheetManager.create(using: builder)
+        actionSheetViewModel.isVisible = true
     }
     
     func hideDialog() {
-        actionSheetViewModel?.isVisible = false
+        actionSheetViewModel.isVisible = false
     }
 }

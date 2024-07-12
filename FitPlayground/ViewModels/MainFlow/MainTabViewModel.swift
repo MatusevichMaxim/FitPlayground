@@ -9,13 +9,13 @@ import Foundation
 import Combine
 
 final class MainTabViewModel: ObservableObject {
+    @Published var selectedTab: TabItem
+    
     let homeTabViewModel: HomeTabViewModel
     let calendarTabViewModel: CalendarTabViewModel
     let workoutsTabViewModel: WorkoutsTabViewModel
     let actionSheetViewModel: ActionSheetViewModel
     let coordinator: MainCoordination
-    
-    @Published var selectedTab: TabItem
     
     init(
         coordinator: MainCoordination,
@@ -25,12 +25,12 @@ final class MainTabViewModel: ObservableObject {
         workoutsTabViewModel: WorkoutsTabViewModel,
         actionSheetViewModel: ActionSheetViewModel
     ) {
+        self.coordinator = coordinator
         self.selectedTab = defaultSelectedTab
         self.homeTabViewModel = homeTabViewModel
         self.calendarTabViewModel = calendarTabViewModel
         self.workoutsTabViewModel = workoutsTabViewModel
         self.actionSheetViewModel = actionSheetViewModel
-        self.coordinator = coordinator
         
         subscribe()
     }
