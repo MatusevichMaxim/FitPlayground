@@ -15,6 +15,7 @@ final class MainTabViewModel: ObservableObject {
     let calendarTabViewModel: CalendarTabViewModel
     let workoutsTabViewModel: WorkoutsTabViewModel
     let actionSheetViewModel: ActionSheetViewModel
+    let workoutBuilderViewModel: WorkoutBuilderViewModel
     let coordinator: MainCoordination
     
     init(
@@ -23,7 +24,8 @@ final class MainTabViewModel: ObservableObject {
         homeTabViewModel: HomeTabViewModel,
         calendarTabViewModel: CalendarTabViewModel,
         workoutsTabViewModel: WorkoutsTabViewModel,
-        actionSheetViewModel: ActionSheetViewModel
+        actionSheetViewModel: ActionSheetViewModel,
+        workoutBuilderViewModel: WorkoutBuilderViewModel
     ) {
         self.coordinator = coordinator
         self.selectedTab = defaultSelectedTab
@@ -31,6 +33,7 @@ final class MainTabViewModel: ObservableObject {
         self.calendarTabViewModel = calendarTabViewModel
         self.workoutsTabViewModel = workoutsTabViewModel
         self.actionSheetViewModel = actionSheetViewModel
+        self.workoutBuilderViewModel = workoutBuilderViewModel
         
         subscribe()
     }

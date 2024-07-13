@@ -44,6 +44,7 @@ extension MainCoordinator: MainCoordination {
         let homeTabViewModel = HomeTabViewModel(dialogCoordinator: self)
         let calendarTabViewModel = CalendarTabViewModel(dialogCoordinator: self)
         let workoutsTabViewModel = WorkoutsTabViewModel()
+        let workoutBuilderViewModel = WorkoutBuilderViewModel()
         
         let viewModel = MainTabViewModel(
             coordinator: self,
@@ -51,7 +52,8 @@ extension MainCoordinator: MainCoordination {
             homeTabViewModel: homeTabViewModel,
             calendarTabViewModel: calendarTabViewModel,
             workoutsTabViewModel: workoutsTabViewModel,
-            actionSheetViewModel: actionSheetViewModel
+            actionSheetViewModel: actionSheetViewModel,
+            workoutBuilderViewModel: workoutBuilderViewModel
         )
         let mainTabView = MainTabView(viewModel: viewModel)
         rootView = AnyView(mainTabView)
