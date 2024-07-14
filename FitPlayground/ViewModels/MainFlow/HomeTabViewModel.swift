@@ -32,6 +32,6 @@ extension HomeTabViewModel {
 
 extension HomeTabViewModel {
     private func loadWorkouts() {
-        workouts = PreviewData.workoutsPreset
+        workouts = PreviewData.workoutsPlanPreset
     }
 }
