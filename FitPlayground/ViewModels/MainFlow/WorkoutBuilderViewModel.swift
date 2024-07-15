@@ -19,5 +19,7 @@ final class WorkoutBuilderViewModel: ObservableObject {
 }
 
 extension WorkoutBuilderViewModel {
-    
+    func onCloseTapped() {
+        
+    }
 }
