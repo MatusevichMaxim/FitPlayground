@@ -55,6 +55,6 @@ struct MainTabView: View {
         calendarTabViewModel: .init(dialogCoordinator: coordinator),
         workoutsTabViewModel: .init(),
         actionSheetViewModel: .init(),
-        workoutBuilderViewModel: .init()
+        workoutBuilderViewModel: .init(mainCoordinator: coordinator)
     ))
 }

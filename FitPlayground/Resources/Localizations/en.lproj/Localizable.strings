@@ -14,6 +14,7 @@
 "set_singular" = "Set";
 "set_plural" = "Sets";
 "lbs" = "Lbs";
+"save" = "Save";
 
 "new_workout" = "New workout";
 "existing_workout" = "Existing workout";

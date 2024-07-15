@@ -31,15 +31,11 @@ struct WorkoutBuilderView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(Color.appPrimary900, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    HStack {
-                        Text(String.newWorkout.capitalized)
-                            .font(.ms_semibold_16)
-                            .foregroundColor(.textPrimary)
-                    }
-                }
-            }
+            .navigationBar(
+                title: String.newWorkout.capitalized,
+                leftItem: .close(action: viewModel.onCloseTapped),
+                rightItem: .text(text: String.save, color: .appGreen, action: {})
+            )
         }
     }
 }
@@ -72,5 +68,7 @@ extension WorkoutBuilderView {
 }
 
 #Preview {
-    WorkoutBuilderView(viewModel: .init())
+    let coordinator = MainCoordinator(setRootView: {_ in })
+    
+    return WorkoutBuilderView(viewModel: .init(mainCoordinator: coordinator))
 }
