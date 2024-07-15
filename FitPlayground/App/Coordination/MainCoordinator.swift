@@ -7,37 +7,56 @@
 
 import SwiftUI
 
+enum TransitionType {
+    case modal
+    case push
+}
+
+enum TransitionDirection {
+    case left
+    case right
+    case top
+    case bottom
+}
+
 final class MainCoordinator {
+    var isWorkoutBuilderPresented = ValueSubject(false)
+    
     init(setRootView: @escaping (AnyView) -> Void) {
         self.setRootView = setRootView
     }
     
+    private var rootView: AnyView? {
+        didSet {
+            guard let rootView else { return }
+            
+            setRootView(rootView)
+        }
+    }
+    
     private let setRootView: (AnyView) -> Void
     private let actionSheetManager = ActionSheetManager()
-    private var actionSheetViewModel: ActionSheetViewModel?
+    private var actionSheetViewModel = ActionSheetViewModel()
 }
 
 extension MainCoordinator: MainCoordination {
     func launch() {
-        actionSheetViewModel = ActionSheetViewModel()
-        
         let homeTabViewModel = HomeTabViewModel(dialogCoordinator: self)
         let calendarTabViewModel = CalendarTabViewModel(dialogCoordinator: self)
         let workoutsTabViewModel = WorkoutsTabViewModel()
+        let workoutBuilderViewModel = WorkoutBuilderViewModel()
         
         let viewModel = MainTabViewModel(
+            coordinator: self,
             defaultSelectedTab: .home,
             homeTabViewModel: homeTabViewModel,
             calendarTabViewModel: calendarTabViewModel,
             workoutsTabViewModel: workoutsTabViewModel,
-            actionSheetViewModel: actionSheetViewModel!
+            actionSheetViewModel: actionSheetViewModel,
+            workoutBuilderViewModel: workoutBuilderViewModel
         )
         let mainTabView = MainTabView(viewModel: viewModel)
-        setRootView(AnyView(mainTabView))
-    }
-    
-    func openWorkoutBuilder() {
-        
+        rootView = AnyView(mainTabView)
     }
 }
 
@@ -52,11 +71,11 @@ extension MainCoordinator: DialogCoordination {
             builder = ActivityOptionActionSheetBuilder(mainCoordinator: self, dialogCoordinator: self, isDone: isDone)
         }
         
-        actionSheetViewModel?.elements = actionSheetManager.create(using: builder)
-        actionSheetViewModel?.isVisible = true
+        actionSheetViewModel.elements = actionSheetManager.create(using: builder)
+        actionSheetViewModel.isVisible = true
     }
     
     func hideDialog() {
-        actionSheetViewModel?.isVisible = false
+        actionSheetViewModel.isVisible = false
     }
 }

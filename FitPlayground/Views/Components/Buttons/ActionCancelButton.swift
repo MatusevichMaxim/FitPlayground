@@ -32,7 +32,7 @@ struct ActionCancelButton: View {
     var body: some View {
         HStack(spacing: 16) {
             if model.showsDeleteOption {
-                ActionButton(action: model.action) {
+                ActionButton(action: model.deleteAction) {
                     ZStack {
                         Image(.bin_icon)
                             .foregroundStyle(Color.appRed)
@@ -50,7 +50,7 @@ struct ActionCancelButton: View {
             ActionDialogButton(model: .init(
                 title: model.title,
                 background: .default,
-                action: model.deleteAction,
+                action: model.action,
                 alignment: .center
             ))
         }
