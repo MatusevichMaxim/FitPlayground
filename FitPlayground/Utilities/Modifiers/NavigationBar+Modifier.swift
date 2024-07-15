@@ -52,7 +52,8 @@ struct NavigationBarModifier: ViewModifier {
             case .text(let text, let color, let action):
                 Button(action: action, label: {
                     Text(text)
-                        .backgroundStyle(color)
+                        .font(.ms_bold_16)
+                        .foregroundStyle(color)
                 })
             }
         })

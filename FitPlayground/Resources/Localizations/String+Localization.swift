@@ -16,6 +16,7 @@ extension String {
     public static let set = localizedString(for: "set_singular")
     public static let sets = localizedString(for: "set_plural")
     public static let lbs = localizedString(for: "lbs")
+    public static let save = localizedString(for: "save")
     
     public static let newWorkout = localizedString(for: "new_workout")
     public static let existingWorkout = localizedString(for: "existing_workout")

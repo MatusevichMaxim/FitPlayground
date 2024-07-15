@@ -34,7 +34,7 @@ struct WorkoutBuilderView: View {
             .navigationBar(
                 title: String.newWorkout.capitalized,
                 leftItem: .close(action: viewModel.onCloseTapped),
-                rightItem: .text(text: "Save", color: .appGreen, action: {})
+                rightItem: .text(text: String.save, color: .appGreen, action: {})
             )
         }
     }
@@ -68,5 +68,7 @@ extension WorkoutBuilderView {
 }
 
 #Preview {
-    WorkoutBuilderView(viewModel: .init())
+    let coordinator = MainCoordinator(setRootView: {_ in })
+    
+    return WorkoutBuilderView(viewModel: .init(mainCoordinator: coordinator))
 }
