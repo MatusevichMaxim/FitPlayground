@@ -47,6 +47,7 @@ struct NavigationBarModifier: ViewModifier {
             case .close(let action):
                 Button(action: action, label: {
                     Image(systemName: "xmark")
+                        .font(.system(size: 16, weight: .medium))
                         .foregroundStyle(Color.textPrimary)
                 })
             case .text(let text, let color, let action):
