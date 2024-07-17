@@ -19,6 +19,8 @@
 "new_workout" = "New workout";
 "existing_workout" = "Existing workout";
 "instant_activity" = "Instant activity";
+"add_exercises" = "Add exercises";
+"search_by_name" = "Search by name";
 
 /* Tabs */
 "home_tab_title" = "Home";

@@ -33,7 +33,7 @@ struct WorkoutBuilderView: View {
             .toolbarBackground(.visible, for: .navigationBar)
             .navigationBar(
                 title: String.newWorkout.capitalized,
-                leftItem: .close(action: viewModel.onCloseTapped),
+                leftItem: .image(.xmark, action: viewModel.onCloseTapped),
                 rightItem: .text(text: String.save, color: .appGreen, action: {})
             )
         }

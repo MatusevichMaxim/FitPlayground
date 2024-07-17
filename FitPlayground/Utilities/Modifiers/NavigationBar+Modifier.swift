@@ -7,8 +7,13 @@
 
 import SwiftUI
 
+enum NavigationBarImage: String {
+    case xmark = "xmark"
+    case backArrow = "arrow.backward"
+}
+
 enum NavigationBarItem {
-    case close(action: VoidClosure)
+    case image(NavigationBarImage, action: VoidClosure)
     case text(text: String, color: Color, action: VoidClosure)
 }
 
@@ -44,12 +49,13 @@ struct NavigationBarModifier: ViewModifier {
     private func makeToolbarItem(using item: NavigationBarItem, placement: ToolbarItemPlacement) -> some ToolbarContent {
         ToolbarItem(placement: placement, content: {
             switch item {
-            case .close(let action):
+            case .image(let icon, let action):
                 Button(action: action, label: {
-                    Image(systemName: "xmark")
+                    Image(systemName: icon.rawValue)
                         .font(.system(size: 16, weight: .medium))
                         .foregroundStyle(Color.textPrimary)
                 })
+                
             case .text(let text, let color, let action):
                 Button(action: action, label: {
                     Text(text)

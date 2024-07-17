@@ -20,6 +20,10 @@
 		56049F702C41F43C008728A5 /* ValueSubject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049F6F2C41F43C008728A5 /* ValueSubject+Extensions.swift */; };
 		56049FCA2C45C7F4008728A5 /* NavigationBar+Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049FC92C45C7F4008728A5 /* NavigationBar+Modifier.swift */; };
 		56049FCC2C45CDA4008728A5 /* VoidClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049FCB2C45CDA4008728A5 /* VoidClosure.swift */; };
+		56049FCF2C4617CC008728A5 /* ExerciseSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049FCE2C4617CC008728A5 /* ExerciseSelectorView.swift */; };
+		56049FD12C4617DA008728A5 /* ExerciseSelectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049FD02C4617DA008728A5 /* ExerciseSelectorViewModel.swift */; };
+		56049FD42C46FB7A008728A5 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049FD32C46FB7A008728A5 /* SearchBar.swift */; };
+		56049FD82C47473B008728A5 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049FD72C47473B008728A5 /* FilterButton.swift */; };
 		5604D0512C2F4651006B8BE6 /* InfiniteScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5604D04F2C2F4651006B8BE6 /* InfiniteScroll.swift */; };
 		5604D0522C2F4651006B8BE6 /* AutoInfiniteScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5604D0502C2F4651006B8BE6 /* AutoInfiniteScroll.swift */; };
 		5604D0552C2F4B22006B8BE6 /* HuggingGeometryModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5604D0542C2F4B22006B8BE6 /* HuggingGeometryModifier.swift */; };
@@ -94,6 +98,10 @@
 		56049F6F2C41F43C008728A5 /* ValueSubject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ValueSubject+Extensions.swift"; sourceTree = "<group>"; };
 		56049FC92C45C7F4008728A5 /* NavigationBar+Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationBar+Modifier.swift"; sourceTree = "<group>"; };
 		56049FCB2C45CDA4008728A5 /* VoidClosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoidClosure.swift; sourceTree = "<group>"; };
+		56049FCE2C4617CC008728A5 /* ExerciseSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSelectorView.swift; sourceTree = "<group>"; };
+		56049FD02C4617DA008728A5 /* ExerciseSelectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSelectorViewModel.swift; sourceTree = "<group>"; };
+		56049FD32C46FB7A008728A5 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		56049FD72C47473B008728A5 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		5604D04F2C2F4651006B8BE6 /* InfiniteScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScroll.swift; sourceTree = "<group>"; };
 		5604D0502C2F4651006B8BE6 /* AutoInfiniteScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoInfiniteScroll.swift; sourceTree = "<group>"; };
 		5604D0542C2F4B22006B8BE6 /* HuggingGeometryModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuggingGeometryModifier.swift; sourceTree = "<group>"; };
@@ -175,6 +183,22 @@
 			path = WorkoutBuilder;
 			sourceTree = "<group>";
 		};
+		56049FCD2C4617B2008728A5 /* ExerciseSelector */ = {
+			isa = PBXGroup;
+			children = (
+				56049FCE2C4617CC008728A5 /* ExerciseSelectorView.swift */,
+			);
+			path = ExerciseSelector;
+			sourceTree = "<group>";
+		};
+		56049FD22C46FB69008728A5 /* SearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				56049FD32C46FB7A008728A5 /* SearchBar.swift */,
+			);
+			path = SearchBar;
+			sourceTree = "<group>";
+		};
 		5604D04E2C2F4604006B8BE6 /* InfiniteScroll */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +275,7 @@
 		566C0B822C1A24EB00C4AF95 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				56049FD22C46FB69008728A5 /* SearchBar */,
 				5604D04E2C2F4604006B8BE6 /* InfiniteScroll */,
 				56FAD6112C27C439006CD568 /* TabBar */,
 				56BE88982C24AE7A005EFED9 /* Buttons */,
@@ -269,6 +294,7 @@
 				566D86452AEE1D8700293167 /* CalendarTab */,
 				566C0B922C1A3F9D00C4AF95 /* WorkoutsTab */,
 				56049F522C34841D008728A5 /* WorkoutBuilder */,
+				56049FCD2C4617B2008728A5 /* ExerciseSelector */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -486,6 +512,7 @@
 				56BE88A22C25FBA4005EFED9 /* ActionDialogButton.swift */,
 				56BE88992C24AE9B005EFED9 /* ActionMultilineButton.swift */,
 				56BE889E2C24C5B4005EFED9 /* ActionCancelButton.swift */,
+				56049FD72C47473B008728A5 /* FilterButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -554,6 +581,7 @@
 				56FAD6522C2B4CF0006CD568 /* CalendarTabViewModel.swift */,
 				56FAD6542C2B4D12006CD568 /* WorkoutsTabViewModel.swift */,
 				56049F592C348AA4008728A5 /* WorkoutBuilderViewModel.swift */,
+				56049FD02C4617DA008728A5 /* ExerciseSelectorViewModel.swift */,
 			);
 			path = MainFlow;
 			sourceTree = "<group>";
@@ -667,6 +695,9 @@
 				56BE88A72C260E22005EFED9 /* PreviewData.swift in Sources */,
 				56049F662C35CF9B008728A5 /* ExerciseCell.swift in Sources */,
 				56BE88932C238D53005EFED9 /* ScrollOffsetPreferenceKey.swift in Sources */,
+				56049FD42C46FB7A008728A5 /* SearchBar.swift in Sources */,
+				56049FD82C47473B008728A5 /* FilterButton.swift in Sources */,
+				56049FCF2C4617CC008728A5 /* ExerciseSelectorView.swift in Sources */,
 				56FAD65D2C2B5C7B006CD568 /* ActionSheetViewModel.swift in Sources */,
 				56FAD6482C2A64E3006CD568 /* MainCoordinator.swift in Sources */,
 				566D86532AEE224900293167 /* String+Localization.swift in Sources */,
@@ -699,6 +730,7 @@
 				56049F562C34845A008728A5 /* WorkoutBuilderView.swift in Sources */,
 				56FAD63D2C2A52D7006CD568 /* AppDelegate.swift in Sources */,
 				5604D0572C3343E7006B8BE6 /* DayPlanCell.swift in Sources */,
+				56049FD12C4617DA008728A5 /* ExerciseSelectorViewModel.swift in Sources */,
 				56FAD63F2C2A566D006CD568 /* SceneDelegate.swift in Sources */,
 				56BE888D2C2366C1005EFED9 /* AnimatedGradientView.swift in Sources */,
 				566D86472AEE1E5800293167 /* CalendarTabView.swift in Sources */,
