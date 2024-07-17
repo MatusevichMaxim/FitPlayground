@@ -18,6 +18,7 @@ extension Font {
     public static let ms_bold_15: Font = .custom(.montserrat_bold, size: 15)
     public static let ms_bold_14: Font = .custom(.montserrat_bold, size: 14)
     public static let ms_semibold_16: Font = .custom(.montserrat_semibold, size: 16)
+    public static let ms_semibold_17: Font = .custom(.montserrat_semibold, size: 17)
     
     public static let cb_bold_18: Font = .custom(.cabin_bold, size: 18)
     public static let cb_bold_14: Font = .custom(.cabin_bold, size: 14)

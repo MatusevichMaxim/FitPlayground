@@ -21,6 +21,8 @@ extension String {
     public static let newWorkout = localizedString(for: "new_workout")
     public static let existingWorkout = localizedString(for: "existing_workout")
     public static let instantActivity = localizedString(for: "instant_activity")
+    public static let addExercises = localizedString(for: "add_exercises")
+    public static let searchByName = localizedString(for: "search_by_name")
     
     // MARK: - Tabs
     public static let homeTabTitle = localizedString(for: "home_tab_title")

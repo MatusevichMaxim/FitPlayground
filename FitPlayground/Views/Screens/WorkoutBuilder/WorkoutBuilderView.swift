@@ -11,32 +11,31 @@ struct WorkoutBuilderView: View {
     @ObservedObject var viewModel: WorkoutBuilderViewModel
     
     var body: some View {
-        NavigationStack {
-            ZStack {
-                Color.appBg.ignoresSafeArea()
-                
-                ScrollView {
-                    VStack(spacing: 20) {
-                        makeHeaderView()
-                        
-                        ExerciseCell(exercises: [.init(id: UUID(), name: "Step-Up", muscleGroups: [.chest])])
-                        ExerciseCell(exercises: PreviewData.supersetPreset)
-                        
-                        AddExerciseCell(action: {})
-                    }
-                    .padding(.vertical, 32)
+        ZStack {
+            Color.appBg.ignoresSafeArea()
+            
+            ScrollView {
+                VStack(spacing: 20) {
+                    makeHeaderView()
+                    
+                    ExerciseCell(exercises: [.init(id: UUID(), name: "Step-Up", muscleGroups: [.chest])])
+                    ExerciseCell(exercises: PreviewData.supersetPreset)
+                    
+                    AddExerciseCell(action: {})
                 }
-                .padding(.horizontal, 16)
+                .padding(.vertical, 32)
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(Color.appPrimary900, for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
-            .navigationBar(
-                title: String.newWorkout.capitalized,
-                leftItem: .close(action: viewModel.onCloseTapped),
-                rightItem: .text(text: String.save, color: .appGreen, action: {})
-            )
+            .padding(.horizontal, 16)
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarBackground(Color.appPrimary900, for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .navigationBar(
+            title: String.newWorkout.capitalized,
+            leftItem: .image(.xmark, action: viewModel.onCloseTapped),
+            rightItem: .text(text: String.save, color: .appGreen, action: {})
+        )
     }
 }
 

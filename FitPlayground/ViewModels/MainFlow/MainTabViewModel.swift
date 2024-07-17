@@ -16,37 +16,49 @@ final class MainTabViewModel: ObservableObject {
     let workoutsTabViewModel: WorkoutsTabViewModel
     let actionSheetViewModel: ActionSheetViewModel
     let workoutBuilderViewModel: WorkoutBuilderViewModel
-    let coordinator: MainCoordination
+    let exerciseSelectorViewModel: ExerciseSelectorViewModel
     
     init(
-        coordinator: MainCoordination,
+        mainCoordinator: MainCoordination,
+        dialogCoordinator: DialogCoordination,
         defaultSelectedTab: TabItem,
         homeTabViewModel: HomeTabViewModel,
         calendarTabViewModel: CalendarTabViewModel,
         workoutsTabViewModel: WorkoutsTabViewModel,
         actionSheetViewModel: ActionSheetViewModel,
-        workoutBuilderViewModel: WorkoutBuilderViewModel
+        workoutBuilderViewModel: WorkoutBuilderViewModel,
+        exerciseSelectorViewModel: ExerciseSelectorViewModel
     ) {
-        self.coordinator = coordinator
+        self.mainCoordinator = mainCoordinator
+        self.dialogCoordinator = dialogCoordinator
         self.selectedTab = defaultSelectedTab
         self.homeTabViewModel = homeTabViewModel
         self.calendarTabViewModel = calendarTabViewModel
         self.workoutsTabViewModel = workoutsTabViewModel
         self.actionSheetViewModel = actionSheetViewModel
         self.workoutBuilderViewModel = workoutBuilderViewModel
+        self.exerciseSelectorViewModel = exerciseSelectorViewModel
         
         subscribe()
     }
     
+    private let mainCoordinator: MainCoordination
+    private let dialogCoordinator: DialogCoordination
     private var subscriptions = [Cancellable]()
 }
 
 extension MainTabViewModel {
     private func subscribe() {
         subscriptions = [
-            coordinator.isWorkoutBuilderPresented.sink { [weak self] _ in
+            mainCoordinator.isExerciseSelectorPresented.sink { [weak self] _ in
                 self?.objectWillChange.send()
             }
         ]
+    }
+}
+
+extension MainTabViewModel {
+    func onDisappear() {
+        dialogCoordinator.hideDialog(animated: false)
     }
 }

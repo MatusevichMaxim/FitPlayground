@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+typealias RoutableView = any View & Routing
+
 final class AppCoordinator {
     init(window: UIWindow) {
         self.window = window

@@ -12,5 +12,5 @@ enum DialogType {
 
 protocol DialogCoordination {
     func showDialog(type: DialogType)
-    func hideDialog()
+    func hideDialog(animated: Bool)
 }
