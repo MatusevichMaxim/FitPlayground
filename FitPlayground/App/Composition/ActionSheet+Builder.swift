@@ -39,10 +39,7 @@ final class CreateNewActionSheetBuilder: ActionSheet, ActionSheetBuilder {
                 title: .newWorkout,
                 subtitle: .newWorkoutActionDesc,
                 icon: .square_pencil_icon,
-                action: {
-                    self.mainCoordinator.navigate(to: .workoutBuilder)
-                    self.dialogCoordinator.hideDialog()
-                }
+                action: { self.mainCoordinator.navigate(to: .workoutBuilder) }
             )),
             .multilineButton(.init(
                 title: .instantActivity,
@@ -57,7 +54,7 @@ final class CreateNewActionSheetBuilder: ActionSheet, ActionSheetBuilder {
             .cancelButton(.init(
                 title: .cancel,
                 showsDeleteOption: false,
-                action: dialogCoordinator.hideDialog,
+                action: { self.dialogCoordinator.hideDialog(animated: true) },
                 deleteAction: {}
             ))
         ]
@@ -91,7 +88,11 @@ final class ActivityOptionActionSheetBuilder: ActionSheet, ActionSheetBuilder {
             : .defaultButton(.init(title: .markDoneAction.capitalized, background: .green, action: {})),
             .defaultButton(.init(title: .editWorkoutAction.capitalized, background: .default, action: {})),
             .separator,
-            .cancelButton(.init(title: .cancel, showsDeleteOption: true, action: dialogCoordinator.hideDialog))
+            .cancelButton(.init(
+                title: .cancel,
+                showsDeleteOption: true,
+                action: { self.dialogCoordinator.hideDialog(animated: true) }
+            ))
         ]
         
         return self

@@ -50,6 +50,7 @@ struct MainTabView: View {
                     ExerciseSelectorView(viewModel: viewModel.exerciseSelectorViewModel)
                 }
             }
+            .onDisappear(perform: viewModel.onDisappear)
         }
         .environmentObject(router)
     }
@@ -73,7 +74,8 @@ extension MainTabView: Routing {
     let coordinator = MainCoordinator(setRootView: {_ in })
     
     return MainTabView(viewModel: .init(
-        coordinator:  coordinator,
+        mainCoordinator: coordinator,
+        dialogCoordinator: coordinator,
         defaultSelectedTab: .home,
         homeTabViewModel: .init(dialogCoordinator: coordinator),
         calendarTabViewModel: .init(dialogCoordinator: coordinator),

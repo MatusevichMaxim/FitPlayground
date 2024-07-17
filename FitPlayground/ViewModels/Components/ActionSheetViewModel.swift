@@ -16,5 +16,6 @@ enum ActionSheetElement {
 
 final class ActionSheetViewModel: ObservableObject {
     @Published var isVisible: Bool = false
+    @Published var animationDuration: TimeInterval = StyleManager.dialogAnimationDuration
     var elements: [ActionSheetElement] = []
 }

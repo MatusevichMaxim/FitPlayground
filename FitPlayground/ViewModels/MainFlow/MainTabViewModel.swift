@@ -17,10 +17,10 @@ final class MainTabViewModel: ObservableObject {
     let actionSheetViewModel: ActionSheetViewModel
     let workoutBuilderViewModel: WorkoutBuilderViewModel
     let exerciseSelectorViewModel: ExerciseSelectorViewModel
-    let coordinator: MainCoordination
     
     init(
-        coordinator: MainCoordination,
+        mainCoordinator: MainCoordination,
+        dialogCoordinator: DialogCoordination,
         defaultSelectedTab: TabItem,
         homeTabViewModel: HomeTabViewModel,
         calendarTabViewModel: CalendarTabViewModel,
@@ -29,7 +29,8 @@ final class MainTabViewModel: ObservableObject {
         workoutBuilderViewModel: WorkoutBuilderViewModel,
         exerciseSelectorViewModel: ExerciseSelectorViewModel
     ) {
-        self.coordinator = coordinator
+        self.mainCoordinator = mainCoordinator
+        self.dialogCoordinator = dialogCoordinator
         self.selectedTab = defaultSelectedTab
         self.homeTabViewModel = homeTabViewModel
         self.calendarTabViewModel = calendarTabViewModel
@@ -41,15 +42,23 @@ final class MainTabViewModel: ObservableObject {
         subscribe()
     }
     
+    private let mainCoordinator: MainCoordination
+    private let dialogCoordinator: DialogCoordination
     private var subscriptions = [Cancellable]()
 }
 
 extension MainTabViewModel {
     private func subscribe() {
         subscriptions = [
-            coordinator.isExerciseSelectorPresented.sink { [weak self] _ in
+            mainCoordinator.isExerciseSelectorPresented.sink { [weak self] _ in
                 self?.objectWillChange.send()
             }
         ]
+    }
+}
+
+extension MainTabViewModel {
+    func onDisappear() {
+        dialogCoordinator.hideDialog(animated: false)
     }
 }

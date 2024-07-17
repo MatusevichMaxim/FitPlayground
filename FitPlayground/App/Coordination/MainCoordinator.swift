@@ -51,7 +51,8 @@ extension MainCoordinator: MainCoordination {
         let exerciseSelectorViewModel = ExerciseSelectorViewModel(mainCoordinator: self)
         
         let viewModel = MainTabViewModel(
-            coordinator: self,
+            mainCoordinator: self,
+            dialogCoordinator: self,
             defaultSelectedTab: .home,
             homeTabViewModel: homeTabViewModel,
             calendarTabViewModel: calendarTabViewModel,
@@ -89,10 +90,12 @@ extension MainCoordinator: DialogCoordination {
         }
         
         actionSheetViewModel.elements = actionSheetManager.create(using: builder)
+        actionSheetViewModel.animationDuration = StyleManager.dialogAnimationDuration
         actionSheetViewModel.isVisible = true
     }
     
-    func hideDialog() {
+    func hideDialog(animated: Bool) {
+        actionSheetViewModel.animationDuration = animated ? StyleManager.dialogAnimationDuration : 0
         actionSheetViewModel.isVisible = false
     }
 }
