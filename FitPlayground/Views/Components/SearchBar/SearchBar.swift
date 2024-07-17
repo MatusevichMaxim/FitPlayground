@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SearchBar: View {
-    @State private var isEditing = false
     @Binding var text: String
     
     var body: some View {
@@ -31,7 +30,7 @@ struct SearchBar: View {
                 .background(Color.appPrimary)
                 .cornerRadius(Constants.cornerRadius)
                 
-                FilterButton(activeFilters: 3)
+                FilterButton(activeFilters: 0)
             }
             .padding(.horizontal, 16)
         }
