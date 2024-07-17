@@ -39,7 +39,10 @@ final class CreateNewActionSheetBuilder: ActionSheet, ActionSheetBuilder {
                 title: .newWorkout,
                 subtitle: .newWorkoutActionDesc,
                 icon: .square_pencil_icon,
-                action: { self.mainCoordinator.isWorkoutBuilderPresented.send(true) }
+                action: {
+                    self.mainCoordinator.navigate(to: .workoutBuilder)
+                    self.dialogCoordinator.hideDialog()
+                }
             )),
             .multilineButton(.init(
                 title: .instantActivity,

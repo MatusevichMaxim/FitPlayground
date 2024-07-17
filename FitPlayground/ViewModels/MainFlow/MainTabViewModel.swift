@@ -47,10 +47,6 @@ final class MainTabViewModel: ObservableObject {
 extension MainTabViewModel {
     private func subscribe() {
         subscriptions = [
-            coordinator.isWorkoutBuilderPresented.sink { [weak self] _ in
-                self?.objectWillChange.send()
-            },
-            
             coordinator.isExerciseSelectorPresented.sink { [weak self] _ in
                 self?.objectWillChange.send()
             }

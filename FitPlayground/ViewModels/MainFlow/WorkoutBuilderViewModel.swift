@@ -25,7 +25,7 @@ final class WorkoutBuilderViewModel: ObservableObject {
 
 extension WorkoutBuilderViewModel {
     func onCloseTapped() {
-        mainCoordinator.isWorkoutBuilderPresented.send(false)
+        mainCoordinator.navigateBack()
     }
     
     func onAddExerciseTapped() {

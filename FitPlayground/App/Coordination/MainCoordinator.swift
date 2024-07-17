@@ -27,17 +27,19 @@ final class MainCoordinator {
         self.setRootView = setRootView
     }
     
-    private var rootView: AnyView? {
+    private var rootView: RoutableView? {
         didSet {
             guard let rootView else { return }
             
-            setRootView(rootView)
+            router = rootView
+            setRootView(AnyView(rootView))
         }
     }
     
     private let setRootView: (AnyView) -> Void
     private let actionSheetManager = ActionSheetManager()
     private var actionSheetViewModel = ActionSheetViewModel()
+    private var router: Routing?
 }
 
 extension MainCoordinator: MainCoordination {
@@ -59,7 +61,19 @@ extension MainCoordinator: MainCoordination {
             exerciseSelectorViewModel: exerciseSelectorViewModel
         )
         let mainTabView = MainTabView(viewModel: viewModel)
-        rootView = AnyView(mainTabView)
+        rootView = mainTabView
+    }
+    
+    func navigate(to destination: NavigationDestination) {
+        router?.navigate(to: destination)
+    }
+    
+    func navigateBack() {
+        router?.navigateBack()
+    }
+    
+    func navigateToRoot() {
+        router?.navigateToRoot()
     }
 }
 
