@@ -16,6 +16,7 @@ final class MainTabViewModel: ObservableObject {
     let workoutsTabViewModel: WorkoutsTabViewModel
     let actionSheetViewModel: ActionSheetViewModel
     let workoutBuilderViewModel: WorkoutBuilderViewModel
+    let exerciseSelectorViewModel: ExerciseSelectorViewModel
     let coordinator: MainCoordination
     
     init(
@@ -25,7 +26,8 @@ final class MainTabViewModel: ObservableObject {
         calendarTabViewModel: CalendarTabViewModel,
         workoutsTabViewModel: WorkoutsTabViewModel,
         actionSheetViewModel: ActionSheetViewModel,
-        workoutBuilderViewModel: WorkoutBuilderViewModel
+        workoutBuilderViewModel: WorkoutBuilderViewModel,
+        exerciseSelectorViewModel: ExerciseSelectorViewModel
     ) {
         self.coordinator = coordinator
         self.selectedTab = defaultSelectedTab
@@ -34,6 +36,7 @@ final class MainTabViewModel: ObservableObject {
         self.workoutsTabViewModel = workoutsTabViewModel
         self.actionSheetViewModel = actionSheetViewModel
         self.workoutBuilderViewModel = workoutBuilderViewModel
+        self.exerciseSelectorViewModel = exerciseSelectorViewModel
         
         subscribe()
     }
@@ -45,6 +48,10 @@ extension MainTabViewModel {
     private func subscribe() {
         subscriptions = [
             coordinator.isWorkoutBuilderPresented.sink { [weak self] _ in
+                self?.objectWillChange.send()
+            },
+            
+            coordinator.isExerciseSelectorPresented.sink { [weak self] _ in
                 self?.objectWillChange.send()
             }
         ]

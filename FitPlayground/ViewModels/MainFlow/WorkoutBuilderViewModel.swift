@@ -27,4 +27,8 @@ extension WorkoutBuilderViewModel {
     func onCloseTapped() {
         mainCoordinator.isWorkoutBuilderPresented.send(false)
     }
+    
+    func onAddExerciseTapped() {
+        
+    }
 }

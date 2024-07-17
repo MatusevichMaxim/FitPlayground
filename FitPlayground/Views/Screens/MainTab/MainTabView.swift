@@ -37,6 +37,9 @@ struct MainTabView: View {
             .fullScreenCover(isPresented: viewModel.coordinator.isWorkoutBuilderPresented.toBinding()) {
                 WorkoutBuilderView(viewModel: viewModel.workoutBuilderViewModel)
             }
+            .fullScreenCover(isPresented: viewModel.coordinator.isExerciseSelectorPresented.toBinding()) {
+                ExerciseSelectorView(viewModel: viewModel.exerciseSelectorViewModel)
+            }
             
             TabBarView(selectedTab: $viewModel.selectedTab)
             
@@ -55,6 +58,7 @@ struct MainTabView: View {
         calendarTabViewModel: .init(dialogCoordinator: coordinator),
         workoutsTabViewModel: .init(),
         actionSheetViewModel: .init(),
-        workoutBuilderViewModel: .init(mainCoordinator: coordinator)
+        workoutBuilderViewModel: .init(mainCoordinator: coordinator),
+        exerciseSelectorViewModel: .init(mainCoordinator: coordinator)
     ))
 }

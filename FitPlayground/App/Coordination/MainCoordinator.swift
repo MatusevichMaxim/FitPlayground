@@ -21,6 +21,7 @@ enum TransitionDirection {
 
 final class MainCoordinator {
     var isWorkoutBuilderPresented = ValueSubject(false)
+    var isExerciseSelectorPresented = ValueSubject(false)
     
     init(setRootView: @escaping (AnyView) -> Void) {
         self.setRootView = setRootView
@@ -45,6 +46,7 @@ extension MainCoordinator: MainCoordination {
         let calendarTabViewModel = CalendarTabViewModel(dialogCoordinator: self)
         let workoutsTabViewModel = WorkoutsTabViewModel()
         let workoutBuilderViewModel = WorkoutBuilderViewModel(mainCoordinator: self)
+        let exerciseSelectorViewModel = ExerciseSelectorViewModel(mainCoordinator: self)
         
         let viewModel = MainTabViewModel(
             coordinator: self,
@@ -53,7 +55,8 @@ extension MainCoordinator: MainCoordination {
             calendarTabViewModel: calendarTabViewModel,
             workoutsTabViewModel: workoutsTabViewModel,
             actionSheetViewModel: actionSheetViewModel,
-            workoutBuilderViewModel: workoutBuilderViewModel
+            workoutBuilderViewModel: workoutBuilderViewModel,
+            exerciseSelectorViewModel: exerciseSelectorViewModel
         )
         let mainTabView = MainTabView(viewModel: viewModel)
         rootView = AnyView(mainTabView)
