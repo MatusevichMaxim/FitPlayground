@@ -10,9 +10,5 @@ import Combine
 protocol MainCoordination: Coordination {
     var isWorkoutBuilderFlowPresented: ValueSubject<Bool> { get set }
     
-    func navigate(to destination: NavigationDestination)
-    func navigateBack()
-    func navigateToRoot()
-    
     func launchWorkoutBuilderFlow()
 }

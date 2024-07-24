@@ -42,14 +42,6 @@ struct MainTabView: View {
                 
                 ActionSheetView(viewModel: viewModel.actionSheetViewModel)
             }
-            .navigationDestination(for: NavigationDestination.self) { destination in
-                switch destination {
-                case .workoutBuilder:
-                    WorkoutBuilderView(viewModel: viewModel.workoutBuilderViewModel)
-                case .exerciseSelector:
-                    ExerciseSelectorView(viewModel: viewModel.exerciseSelectorViewModel)
-                }
-            }
             .fullScreenCover(isPresented: viewModel.mainCoordinator.isWorkoutBuilderFlowPresented.toBinding()) {
                 WorkoutBuilderView(viewModel: viewModel.workoutBuilderViewModel)
             }
@@ -71,7 +63,7 @@ struct MainTabView: View {
 
 #Preview {
     let mainCoordinator = MainCoordinator(setRootView: {_ in })
-    let workoutBuilderCoordinator = WorkoutBuilderCoordinator(isWorkoutBuilderPresented: ValueSubject(false))
+    let workoutBuilderCoordinator = WorkoutBuilderCoordinator(isWorkoutBuilderFlowPresented: ValueSubject(false))
     
     return MainTabView(viewModel: .init(
         mainCoordinator: mainCoordinator,

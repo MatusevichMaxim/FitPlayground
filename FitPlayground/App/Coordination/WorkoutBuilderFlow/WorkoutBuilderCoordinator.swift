@@ -6,19 +6,25 @@
 //
 
 final class WorkoutBuilderCoordinator {
-    init(isWorkoutBuilderPresented: ValueSubject<Bool>) {
-        self.isWorkoutBuilderPresentedValue = isWorkoutBuilderPresented
+    var router: Routing?
+    
+    init(isWorkoutBuilderFlowPresented: ValueSubject<Bool>) {
+        self.isWorkoutBuilderFlowPresented = isWorkoutBuilderFlowPresented
     }
     
-    private var isWorkoutBuilderPresentedValue: ValueSubject<Bool>
+    private var isWorkoutBuilderFlowPresented: ValueSubject<Bool>
 }
 
 extension WorkoutBuilderCoordinator: WorkoutBuilderCoordination {
     func launch() {
-        isWorkoutBuilderPresentedValue.send(true)
+        isWorkoutBuilderFlowPresented.send(true)
     }
     
     func end() {
-        isWorkoutBuilderPresentedValue.send(false)
+        isWorkoutBuilderFlowPresented.send(false)
+    }
+    
+    func openExerciseSelector() {
+        router?.perform(action: .push(destination: .exerciseSelector))
     }
 }

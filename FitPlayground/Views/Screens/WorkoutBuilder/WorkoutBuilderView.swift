@@ -38,6 +38,13 @@ struct WorkoutBuilderView: View {
                 leftItem: .image(.xmark, action: viewModel.onCloseTapped),
                 rightItem: .text(text: String.save, color: .appGreen, action: {})
             )
+            .navigationDestination(for: WorkoutFlowDestination.self) { destination in
+                switch destination {
+                case .exerciseSelector:
+                    break
+                    //ExerciseSelectorView(viewModel: viewModel.exerciseSelectorViewModel)
+                }
+            }
         }
     }
 }
@@ -69,14 +76,8 @@ extension WorkoutBuilderView {
     }
 }
 
-extension WorkoutBuilderView: Routing {
-    func perform(action: RoutingAction) {
-        
-    }
-}
-
 #Preview {
-    let coordinator = WorkoutBuilderCoordinator(isWorkoutBuilderPresented: ValueSubject(false))
+    let coordinator = WorkoutBuilderCoordinator(isWorkoutBuilderFlowPresented: ValueSubject(false))
     
     return WorkoutBuilderView(viewModel: .init(coordinator: coordinator))
 }

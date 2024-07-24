@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 final class WorkoutBuilderViewModel: ObservableObject {
     @Published var name: String = "My Workout 1"
@@ -15,6 +16,8 @@ final class WorkoutBuilderViewModel: ObservableObject {
         muscleGroups: [.chest, .back, .shoulders],
         status: .active
     )
+    
+    var routingAction = PassthroughSubject<RoutingAction, Never>()
     
     init(coordinator: WorkoutBuilderCoordination) {
         self.coordinator = coordinator
@@ -29,6 +32,12 @@ extension WorkoutBuilderViewModel {
     }
     
     func onAddExerciseTapped() {
+        coordinator.openExerciseSelector()
+    }
+}
 
+extension WorkoutBuilderViewModel: Routing {
+    func perform(action: RoutingAction) {
+        routingAction.send(action)
     }
 }

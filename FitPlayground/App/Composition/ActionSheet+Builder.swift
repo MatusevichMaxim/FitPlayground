@@ -45,7 +45,7 @@ final class CreateNewActionSheetBuilder: ActionSheet, ActionSheetBuilder {
                 title: .instantActivity,
                 subtitle: .instantActivityActionDesc,
                 icon: .bolt_icon,
-                action: { self.mainCoordinator.navigate(to: .exerciseSelector) }
+                action: { }
             )),
             .multilineButton(
                 .init(title: .existingWorkout, subtitle: .existingWorkoutActionDesc, icon: .folder_icon, action: {})

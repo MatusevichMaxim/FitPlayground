@@ -12,12 +12,10 @@ final class MainCoordinator {
     
     init(setRootView: @escaping (AnyView) -> Void) {
         self.setRootView = setRootView
-        
-        workoutBuilderCoordinator = WorkoutBuilderCoordinator(isWorkoutBuilderPresented: isWorkoutBuilderFlowPresented)
     }
     
     private let setRootView: (AnyView) -> Void
-    private let workoutBuilderCoordinator: WorkoutBuilderCoordination
+    private var workoutBuilderCoordinator: WorkoutBuilderCoordination?
     private var router: Routing?
     private let actionSheetManager = ActionSheetManager()
     private var actionSheetViewModel = ActionSheetViewModel()
@@ -28,9 +26,12 @@ extension MainCoordinator: MainCoordination {
         let homeTabViewModel = HomeTabViewModel(dialogCoordinator: self)
         let calendarTabViewModel = CalendarTabViewModel(dialogCoordinator: self)
         let workoutsTabViewModel = WorkoutsTabViewModel()
-        
-        let workoutBuilderViewModel = WorkoutBuilderViewModel(coordinator: workoutBuilderCoordinator)
         let exerciseSelectorViewModel = ExerciseSelectorViewModel(mainCoordinator: self)
+        
+        let workoutBuilderCoordinator = WorkoutBuilderCoordinator(isWorkoutBuilderFlowPresented: isWorkoutBuilderFlowPresented)
+        let routingWorkoutBuilderViewModel = WorkoutBuilderViewModel(coordinator: workoutBuilderCoordinator)
+        workoutBuilderCoordinator.router = routingWorkoutBuilderViewModel
+        self.workoutBuilderCoordinator = workoutBuilderCoordinator
         
         let routingViewModel = MainTabViewModel(
             mainCoordinator: self,
@@ -40,7 +41,7 @@ extension MainCoordinator: MainCoordination {
             calendarTabViewModel: calendarTabViewModel,
             workoutsTabViewModel: workoutsTabViewModel,
             actionSheetViewModel: actionSheetViewModel,
-            workoutBuilderViewModel: workoutBuilderViewModel,
+            workoutBuilderViewModel: routingWorkoutBuilderViewModel,
             exerciseSelectorViewModel: exerciseSelectorViewModel
         )
         router = routingViewModel
@@ -48,20 +49,8 @@ extension MainCoordinator: MainCoordination {
         setRootView(AnyView(mainTabView))
     }
     
-    func navigate(to destination: NavigationDestination) {
-        router?.perform(action: .push(destination: destination))
-    }
-    
-    func navigateBack() {
-        router?.perform(action: .pop)
-    }
-    
-    func navigateToRoot() {
-        router?.perform(action: .popToRoot)
-    }
-    
     func launchWorkoutBuilderFlow() {
-        workoutBuilderCoordinator.launch()
+        workoutBuilderCoordinator?.launch()
     }
 }
 

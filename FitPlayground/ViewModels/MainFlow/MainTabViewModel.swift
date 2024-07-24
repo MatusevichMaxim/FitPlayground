@@ -7,7 +7,6 @@
 
 import Foundation
 import Combine
-import SwiftUI
 
 final class MainTabViewModel: ObservableObject {
     @Published var selectedTab: TabItem

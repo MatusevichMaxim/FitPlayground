@@ -6,5 +6,5 @@
 //
 
 protocol WorkoutBuilderCoordination: Coordination {
-    
+    func openExerciseSelector()
 }
