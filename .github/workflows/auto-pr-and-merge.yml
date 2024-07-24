@@ -2,7 +2,7 @@ name: Auto PR and Merge
 
 on:
   schedule:
-    - cron: "0 18 * * *" # Every Day at 18:00 UTC
+    - cron: "0 1 * * *" # Every Day at 18:00 PDT
 
 jobs:
   auto-pr-and-merge:
