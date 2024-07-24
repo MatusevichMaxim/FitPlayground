@@ -1,0 +1,43 @@
+name: Auto PR and Merge
+
+on:
+  schedule:
+    - cron: "0 18 * * *" # Every Day at 18:00 UTC
+
+jobs:
+  auto-pr-and-merge:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Create Pull Request
+      id: create_pr
+      uses: peter-evans/create-pull-request@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: Update from develop branch
+        branch: auto-merge-branch
+        base: master
+        body: 'This PR is automatically created from develop to master'
+
+    - name: Merge Pull Request
+      if: success() && steps.create_pr.outputs.pull-request-operation != 'noop'
+      uses: actions/github-script@v4
+      with:
+        script: |
+          const pr = await github.pulls.get({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            pull_number: ${steps.create_pr.outputs.pull-request-number}
+          });
+
+          if (pr.data.mergeable) {
+            await github.pulls.merge({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pr.data.number,
+              merge_method: 'merge'
+            });
+          }
