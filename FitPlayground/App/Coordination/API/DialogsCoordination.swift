@@ -1,8 +1,8 @@
 //
-//  DialogCoordination.swift
+//  DialogsCoordination.swift
 //  FitPlayground
 //
-//  Created by Maksim Matusevich on 6/25/24.
+//  Created by Maksim Matusevich on 7/24/24.
 //
 
 enum DialogType {
