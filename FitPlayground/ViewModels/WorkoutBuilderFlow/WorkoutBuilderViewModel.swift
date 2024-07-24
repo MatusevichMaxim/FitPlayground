@@ -16,19 +16,19 @@ final class WorkoutBuilderViewModel: ObservableObject {
         status: .active
     )
     
-    init(mainCoordinator: MainCoordination) {
-        self.mainCoordinator = mainCoordinator
+    init(coordinator: WorkoutBuilderCoordination) {
+        self.coordinator = coordinator
     }
     
-    private let mainCoordinator: MainCoordination
+    private let coordinator: WorkoutBuilderCoordination
 }
 
 extension WorkoutBuilderViewModel {
     func onCloseTapped() {
-        mainCoordinator.navigateBack()
+        coordinator.end()
     }
     
     func onAddExerciseTapped() {
-        
+
     }
 }

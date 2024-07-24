@@ -27,6 +27,8 @@
 		56049FDC2C475BCD008728A5 /* NavigationDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049FDB2C475BCD008728A5 /* NavigationDestination.swift */; };
 		56049FDE2C48746E008728A5 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049FDD2C48746E008728A5 /* NavigationRouter.swift */; };
 		56049FE02C4874EF008728A5 /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049FDF2C4874EF008728A5 /* Routing.swift */; };
+		56049FE72C5181A9008728A5 /* WorkoutBuilderCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049FE62C5181A9008728A5 /* WorkoutBuilderCoordinator.swift */; };
+		56049FEB2C51829A008728A5 /* WorkoutBuilderCoordination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56049FEA2C51829A008728A5 /* WorkoutBuilderCoordination.swift */; };
 		5604D0512C2F4651006B8BE6 /* InfiniteScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5604D04F2C2F4651006B8BE6 /* InfiniteScroll.swift */; };
 		5604D0522C2F4651006B8BE6 /* AutoInfiniteScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5604D0502C2F4651006B8BE6 /* AutoInfiniteScroll.swift */; };
 		5604D0552C2F4B22006B8BE6 /* HuggingGeometryModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5604D0542C2F4B22006B8BE6 /* HuggingGeometryModifier.swift */; };
@@ -108,6 +110,8 @@
 		56049FDB2C475BCD008728A5 /* NavigationDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDestination.swift; sourceTree = "<group>"; };
 		56049FDD2C48746E008728A5 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		56049FDF2C4874EF008728A5 /* Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
+		56049FE62C5181A9008728A5 /* WorkoutBuilderCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutBuilderCoordinator.swift; sourceTree = "<group>"; };
+		56049FEA2C51829A008728A5 /* WorkoutBuilderCoordination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutBuilderCoordination.swift; sourceTree = "<group>"; };
 		5604D04F2C2F4651006B8BE6 /* InfiniteScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScroll.swift; sourceTree = "<group>"; };
 		5604D0502C2F4651006B8BE6 /* AutoInfiniteScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoInfiniteScroll.swift; sourceTree = "<group>"; };
 		5604D0542C2F4B22006B8BE6 /* HuggingGeometryModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HuggingGeometryModifier.swift; sourceTree = "<group>"; };
@@ -203,6 +207,56 @@
 				56049FD32C46FB7A008728A5 /* SearchBar.swift */,
 			);
 			path = SearchBar;
+			sourceTree = "<group>";
+		};
+		56049FE32C518167008728A5 /* MainFlow */ = {
+			isa = PBXGroup;
+			children = (
+				56049FEC2C5182C4008728A5 /* API */,
+				56FAD6472C2A64E3006CD568 /* MainCoordinator.swift */,
+			);
+			path = MainFlow;
+			sourceTree = "<group>";
+		};
+		56049FE42C518175008728A5 /* OnboardingFlow */ = {
+			isa = PBXGroup;
+			children = (
+				56FAD6452C2A64B7006CD568 /* OnboardingCoordinator.swift */,
+			);
+			path = OnboardingFlow;
+			sourceTree = "<group>";
+		};
+		56049FE52C51818E008728A5 /* WorkoutBuilderFlow */ = {
+			isa = PBXGroup;
+			children = (
+				56049FE82C518288008728A5 /* API */,
+				56049FE62C5181A9008728A5 /* WorkoutBuilderCoordinator.swift */,
+			);
+			path = WorkoutBuilderFlow;
+			sourceTree = "<group>";
+		};
+		56049FE82C518288008728A5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				56049FEA2C51829A008728A5 /* WorkoutBuilderCoordination.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		56049FEC2C5182C4008728A5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				56049F692C35F649008728A5 /* MainCoordination.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		56049FED2C518618008728A5 /* WorkoutBuilderFlow */ = {
+			isa = PBXGroup;
+			children = (
+				56049F592C348AA4008728A5 /* WorkoutBuilderViewModel.swift */,
+			);
+			path = WorkoutBuilderFlow;
 			sourceTree = "<group>";
 		};
 		5604D04E2C2F4604006B8BE6 /* InfiniteScroll */ = {
@@ -545,9 +599,10 @@
 			isa = PBXGroup;
 			children = (
 				56FAD6492C2A64F9006CD568 /* API */,
+				56049FE42C518175008728A5 /* OnboardingFlow */,
+				56049FE32C518167008728A5 /* MainFlow */,
+				56049FE52C51818E008728A5 /* WorkoutBuilderFlow */,
 				56FAD6432C2A63B6006CD568 /* AppCoordinator.swift */,
-				56FAD6452C2A64B7006CD568 /* OnboardingCoordinator.swift */,
-				56FAD6472C2A64E3006CD568 /* MainCoordinator.swift */,
 				56049FDD2C48746E008728A5 /* NavigationRouter.swift */,
 			);
 			path = Coordination;
@@ -557,7 +612,6 @@
 			isa = PBXGroup;
 			children = (
 				56FAD6412C2A6385006CD568 /* Coordination.swift */,
-				56049F692C35F649008728A5 /* MainCoordination.swift */,
 				56FAD65E2C2B7B1D006CD568 /* DialogCoordination.swift */,
 				56049FDB2C475BCD008728A5 /* NavigationDestination.swift */,
 				56049FDF2C4874EF008728A5 /* Routing.swift */,
@@ -569,6 +623,7 @@
 			isa = PBXGroup;
 			children = (
 				56FAD65A2C2B5C4D006CD568 /* MainFlow */,
+				56049FED2C518618008728A5 /* WorkoutBuilderFlow */,
 				56FAD65B2C2B5C5A006CD568 /* Components */,
 			);
 			path = ViewModels;
@@ -589,7 +644,6 @@
 				56FAD64D2C2A6BB6006CD568 /* HomeTabViewModel.swift */,
 				56FAD6522C2B4CF0006CD568 /* CalendarTabViewModel.swift */,
 				56FAD6542C2B4D12006CD568 /* WorkoutsTabViewModel.swift */,
-				56049F592C348AA4008728A5 /* WorkoutBuilderViewModel.swift */,
 				56049FD02C4617DA008728A5 /* ExerciseSelectorViewModel.swift */,
 			);
 			path = MainFlow;
@@ -741,9 +795,11 @@
 				56FAD6422C2A6385006CD568 /* Coordination.swift in Sources */,
 				56049F562C34845A008728A5 /* WorkoutBuilderView.swift in Sources */,
 				56FAD63D2C2A52D7006CD568 /* AppDelegate.swift in Sources */,
+				56049FE72C5181A9008728A5 /* WorkoutBuilderCoordinator.swift in Sources */,
 				5604D0572C3343E7006B8BE6 /* DayPlanCell.swift in Sources */,
 				56049FD12C4617DA008728A5 /* ExerciseSelectorViewModel.swift in Sources */,
 				56FAD63F2C2A566D006CD568 /* SceneDelegate.swift in Sources */,
+				56049FEB2C51829A008728A5 /* WorkoutBuilderCoordination.swift in Sources */,
 				56BE888D2C2366C1005EFED9 /* AnimatedGradientView.swift in Sources */,
 				566D86472AEE1E5800293167 /* CalendarTabView.swift in Sources */,
 				56049F6A2C35F649008728A5 /* MainCoordination.swift in Sources */,

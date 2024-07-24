@@ -7,16 +7,19 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 final class MainTabViewModel: ObservableObject {
     @Published var selectedTab: TabItem
     
+    let mainCoordinator: MainCoordination
     let homeTabViewModel: HomeTabViewModel
     let calendarTabViewModel: CalendarTabViewModel
     let workoutsTabViewModel: WorkoutsTabViewModel
     let actionSheetViewModel: ActionSheetViewModel
     let workoutBuilderViewModel: WorkoutBuilderViewModel
     let exerciseSelectorViewModel: ExerciseSelectorViewModel
+    var routingAction = PassthroughSubject<RoutingAction, Never>()
     
     init(
         mainCoordinator: MainCoordination,
@@ -42,23 +45,28 @@ final class MainTabViewModel: ObservableObject {
         subscribe()
     }
     
-    private let mainCoordinator: MainCoordination
     private let dialogCoordinator: DialogCoordination
     private var subscriptions = [Cancellable]()
 }
 
 extension MainTabViewModel {
+    func onDisappear() {
+        dialogCoordinator.hideDialog(animated: false)
+    }
+}
+
+extension MainTabViewModel {
     private func subscribe() {
         subscriptions = [
-            mainCoordinator.isExerciseSelectorPresented.sink { [weak self] _ in
+            mainCoordinator.isWorkoutBuilderFlowPresented.sink { [weak self] _ in
                 self?.objectWillChange.send()
             }
         ]
     }
 }
 
-extension MainTabViewModel {
-    func onDisappear() {
-        dialogCoordinator.hideDialog(animated: false)
+extension MainTabViewModel: Routing {
+    func perform(action: RoutingAction) {
+        routingAction.send(action)
     }
 }

@@ -7,4 +7,9 @@
 
 protocol Coordination {
     func launch()
+    func end()
+}
+
+extension Coordination {
+    func end() {}
 }

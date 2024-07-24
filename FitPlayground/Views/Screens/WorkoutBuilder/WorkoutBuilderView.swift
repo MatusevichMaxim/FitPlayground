@@ -9,33 +9,36 @@ import SwiftUI
 
 struct WorkoutBuilderView: View {
     @ObservedObject var viewModel: WorkoutBuilderViewModel
+    @ObservedObject var router = NavigationRouter()
     
     var body: some View {
-        ZStack {
-            Color.appBg.ignoresSafeArea()
-            
-            ScrollView {
-                VStack(spacing: 20) {
-                    makeHeaderView()
-                    
-                    ExerciseCell(exercises: [.init(id: UUID(), name: "Step-Up", muscleGroups: [.chest])])
-                    ExerciseCell(exercises: PreviewData.supersetPreset)
-                    
-                    AddExerciseCell(action: {})
+        NavigationStack(path: $router.path) {
+            ZStack {
+                Color.appBg.ignoresSafeArea()
+                
+                ScrollView {
+                    VStack(spacing: 20) {
+                        makeHeaderView()
+                        
+                        ExerciseCell(exercises: [.init(id: UUID(), name: "Step-Up", muscleGroups: [.chest])])
+                        ExerciseCell(exercises: PreviewData.supersetPreset)
+                        
+                        AddExerciseCell(action: viewModel.onAddExerciseTapped)
+                    }
+                    .padding(.vertical, 32)
                 }
-                .padding(.vertical, 32)
+                .padding(.horizontal, 16)
             }
-            .padding(.horizontal, 16)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(Color.appPrimary900, for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .navigationBar(
+                title: String.newWorkout.capitalized,
+                leftItem: .image(.xmark, action: viewModel.onCloseTapped),
+                rightItem: .text(text: String.save, color: .appGreen, action: {})
+            )
         }
-        .navigationBarBackButtonHidden(true)
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbarBackground(Color.appPrimary900, for: .navigationBar)
-        .toolbarBackground(.visible, for: .navigationBar)
-        .navigationBar(
-            title: String.newWorkout.capitalized,
-            leftItem: .image(.xmark, action: viewModel.onCloseTapped),
-            rightItem: .text(text: String.save, color: .appGreen, action: {})
-        )
     }
 }
 
@@ -66,8 +69,14 @@ extension WorkoutBuilderView {
     }
 }
 
+extension WorkoutBuilderView: Routing {
+    func perform(action: RoutingAction) {
+        
+    }
+}
+
 #Preview {
-    let coordinator = MainCoordinator(setRootView: {_ in })
+    let coordinator = WorkoutBuilderCoordinator(isWorkoutBuilderPresented: ValueSubject(false))
     
-    return WorkoutBuilderView(viewModel: .init(mainCoordinator: coordinator))
+    return WorkoutBuilderView(viewModel: .init(coordinator: coordinator))
 }

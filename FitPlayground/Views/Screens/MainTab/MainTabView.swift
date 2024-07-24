@@ -50,38 +50,38 @@ struct MainTabView: View {
                     ExerciseSelectorView(viewModel: viewModel.exerciseSelectorViewModel)
                 }
             }
+            .fullScreenCover(isPresented: viewModel.mainCoordinator.isWorkoutBuilderFlowPresented.toBinding()) {
+                WorkoutBuilderView(viewModel: viewModel.workoutBuilderViewModel)
+            }
             .onDisappear(perform: viewModel.onDisappear)
+            .onReceive(viewModel.routingAction) { action in
+                switch action {
+                case .push(let destination):
+                    router.navigate(to: destination)
+                case .pop:
+                    router.navigateBack()
+                case .popToRoot:
+                    router.navigateToRoot()
+                }
+                
+            }
         }
-        .environmentObject(router)
-    }
-}
-
-extension MainTabView: Routing {
-    func navigate(to destination: NavigationDestination) {
-        router.navigate(to: destination)
-    }
-    
-    func navigateBack() {
-        router.navigateBack()
-    }
-    
-    func navigateToRoot() {
-        router.navigateToRoot()
     }
 }
 
 #Preview {
-    let coordinator = MainCoordinator(setRootView: {_ in })
+    let mainCoordinator = MainCoordinator(setRootView: {_ in })
+    let workoutBuilderCoordinator = WorkoutBuilderCoordinator(isWorkoutBuilderPresented: ValueSubject(false))
     
     return MainTabView(viewModel: .init(
-        mainCoordinator: coordinator,
-        dialogCoordinator: coordinator,
+        mainCoordinator: mainCoordinator,
+        dialogCoordinator: mainCoordinator,
         defaultSelectedTab: .home,
-        homeTabViewModel: .init(dialogCoordinator: coordinator),
-        calendarTabViewModel: .init(dialogCoordinator: coordinator),
+        homeTabViewModel: .init(dialogCoordinator: mainCoordinator),
+        calendarTabViewModel: .init(dialogCoordinator: mainCoordinator),
         workoutsTabViewModel: .init(),
         actionSheetViewModel: .init(),
-        workoutBuilderViewModel: .init(mainCoordinator: coordinator),
-        exerciseSelectorViewModel: .init(mainCoordinator: coordinator)
+        workoutBuilderViewModel: .init(coordinator: workoutBuilderCoordinator),
+        exerciseSelectorViewModel: .init(mainCoordinator: mainCoordinator)
     ))
 }
