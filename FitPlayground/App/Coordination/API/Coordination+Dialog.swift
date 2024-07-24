@@ -1,5 +1,6 @@
 //
 //  Coordination+Dialog.swift
+//  Specific file name because of issue
 //  FitPlayground
 //
 //  Created by Maksim Matusevich on 7/24/24.
