@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-final class NavigationRouter: ObservableObject {
+final class NavigationRouter<T: Destination>: ObservableObject {
     @Published var path = NavigationPath()
     
-    func navigate(to destination: NavigationDestination) {
+    func navigate(to destination: T) {
         path.append(destination)
     }
     

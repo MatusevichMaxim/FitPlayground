@@ -5,12 +5,12 @@
 //  Created by Maksim Matusevich on 7/17/24.
 //
 
-enum RoutingAction {
-    case push(destination: NavigationDestination)
+enum RoutingAction<T: Destination> {
+    case push(destination: T)
     case pop
     case popToRoot
 }
 
 protocol Routing {
-    func perform(action: RoutingAction)
+    func perform<T: Destination>(action: RoutingAction<T>)
 }

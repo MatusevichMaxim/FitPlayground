@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WorkoutBuilderView: View {
     @ObservedObject var viewModel: WorkoutBuilderViewModel
-    @ObservedObject var router = NavigationRouter()
+    @ObservedObject var router = NavigationRouter<WorkoutFlowDestination>()
     
     var body: some View {
         NavigationStack(path: $router.path) {
@@ -41,8 +41,17 @@ struct WorkoutBuilderView: View {
             .navigationDestination(for: WorkoutFlowDestination.self) { destination in
                 switch destination {
                 case .exerciseSelector:
-                    break
-                    //ExerciseSelectorView(viewModel: viewModel.exerciseSelectorViewModel)
+                    ExerciseSelectorView(viewModel: viewModel.exerciseSelectorViewModel)
+                }
+            }
+            .onReceive(viewModel.routingAction) { action in
+                switch action {
+                case .push(let destination):
+                    router.navigate(to: destination)
+                case .pop:
+                    router.navigateBack()
+                case .popToRoot:
+                    router.navigateToRoot()
                 }
             }
         }
@@ -77,7 +86,11 @@ extension WorkoutBuilderView {
 }
 
 #Preview {
-    let coordinator = WorkoutBuilderCoordinator(isWorkoutBuilderFlowPresented: ValueSubject(false))
+    let mainCoordinator = MainCoordinator(setRootView: {_ in })
+    let workoutBuilderCoordinator = WorkoutBuilderCoordinator(isWorkoutBuilderFlowPresented: ValueSubject(false))
     
-    return WorkoutBuilderView(viewModel: .init(coordinator: coordinator))
+    return WorkoutBuilderView(viewModel: .init(
+        coordinator: workoutBuilderCoordinator,
+        exerciseSelectorViewModel: .init(mainCoordinator: mainCoordinator)
+    ))
 }

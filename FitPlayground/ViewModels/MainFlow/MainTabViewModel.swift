@@ -17,8 +17,7 @@ final class MainTabViewModel: ObservableObject {
     let workoutsTabViewModel: WorkoutsTabViewModel
     let actionSheetViewModel: ActionSheetViewModel
     let workoutBuilderViewModel: WorkoutBuilderViewModel
-    let exerciseSelectorViewModel: ExerciseSelectorViewModel
-    var routingAction = PassthroughSubject<RoutingAction, Never>()
+    var routingAction = PassthroughSubject<RoutingAction<MainFlowDestination>, Never>()
     
     init(
         mainCoordinator: MainCoordination,
@@ -28,8 +27,7 @@ final class MainTabViewModel: ObservableObject {
         calendarTabViewModel: CalendarTabViewModel,
         workoutsTabViewModel: WorkoutsTabViewModel,
         actionSheetViewModel: ActionSheetViewModel,
-        workoutBuilderViewModel: WorkoutBuilderViewModel,
-        exerciseSelectorViewModel: ExerciseSelectorViewModel
+        workoutBuilderViewModel: WorkoutBuilderViewModel
     ) {
         self.mainCoordinator = mainCoordinator
         self.dialogCoordinator = dialogCoordinator
@@ -39,7 +37,6 @@ final class MainTabViewModel: ObservableObject {
         self.workoutsTabViewModel = workoutsTabViewModel
         self.actionSheetViewModel = actionSheetViewModel
         self.workoutBuilderViewModel = workoutBuilderViewModel
-        self.exerciseSelectorViewModel = exerciseSelectorViewModel
         
         subscribe()
     }
@@ -65,7 +62,9 @@ extension MainTabViewModel {
 }
 
 extension MainTabViewModel: Routing {
-    func perform(action: RoutingAction) {
+    func perform<T>(action: RoutingAction<T>) where T : Destination {
+        guard let action = action as? RoutingAction<MainFlowDestination> else { return }
+        
         routingAction.send(action)
     }
 }

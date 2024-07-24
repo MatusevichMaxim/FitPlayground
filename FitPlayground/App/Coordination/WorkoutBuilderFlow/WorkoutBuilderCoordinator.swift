@@ -25,6 +25,6 @@ extension WorkoutBuilderCoordinator: WorkoutBuilderCoordination {
     }
     
     func openExerciseSelector() {
-        router?.perform(action: .push(destination: .exerciseSelector))
+        router?.perform(action: .push(destination: WorkoutFlowDestination.exerciseSelector))
     }
 }

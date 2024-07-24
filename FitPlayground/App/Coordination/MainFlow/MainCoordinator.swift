@@ -29,7 +29,10 @@ extension MainCoordinator: MainCoordination {
         let exerciseSelectorViewModel = ExerciseSelectorViewModel(mainCoordinator: self)
         
         let workoutBuilderCoordinator = WorkoutBuilderCoordinator(isWorkoutBuilderFlowPresented: isWorkoutBuilderFlowPresented)
-        let routingWorkoutBuilderViewModel = WorkoutBuilderViewModel(coordinator: workoutBuilderCoordinator)
+        let routingWorkoutBuilderViewModel = WorkoutBuilderViewModel(
+            coordinator: workoutBuilderCoordinator,
+            exerciseSelectorViewModel: exerciseSelectorViewModel
+        )
         workoutBuilderCoordinator.router = routingWorkoutBuilderViewModel
         self.workoutBuilderCoordinator = workoutBuilderCoordinator
         
@@ -41,8 +44,7 @@ extension MainCoordinator: MainCoordination {
             calendarTabViewModel: calendarTabViewModel,
             workoutsTabViewModel: workoutsTabViewModel,
             actionSheetViewModel: actionSheetViewModel,
-            workoutBuilderViewModel: routingWorkoutBuilderViewModel,
-            exerciseSelectorViewModel: exerciseSelectorViewModel
+            workoutBuilderViewModel: routingWorkoutBuilderViewModel
         )
         router = routingViewModel
         let mainTabView = MainTabView(viewModel: routingViewModel)

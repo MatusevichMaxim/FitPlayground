@@ -17,10 +17,15 @@ final class WorkoutBuilderViewModel: ObservableObject {
         status: .active
     )
     
-    var routingAction = PassthroughSubject<RoutingAction, Never>()
+    let exerciseSelectorViewModel: ExerciseSelectorViewModel
+    var routingAction = PassthroughSubject<RoutingAction<WorkoutFlowDestination>, Never>()
     
-    init(coordinator: WorkoutBuilderCoordination) {
+    init(
+        coordinator: WorkoutBuilderCoordination,
+        exerciseSelectorViewModel: ExerciseSelectorViewModel
+    ) {
         self.coordinator = coordinator
+        self.exerciseSelectorViewModel = exerciseSelectorViewModel
     }
     
     private let coordinator: WorkoutBuilderCoordination
@@ -37,7 +42,9 @@ extension WorkoutBuilderViewModel {
 }
 
 extension WorkoutBuilderViewModel: Routing {
-    func perform(action: RoutingAction) {
+    func perform<T>(action: RoutingAction<T>) where T : Destination {
+        guard let action = action as? RoutingAction<WorkoutFlowDestination> else { return }
+        
         routingAction.send(action)
     }
 }

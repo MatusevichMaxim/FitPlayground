@@ -5,4 +5,4 @@
 //  Created by Maksim Matusevich on 7/24/24.
 //
 
-import Foundation
+protocol Destination: Codable, Hashable { }

@@ -10,7 +10,7 @@ import Combine
 
 struct MainTabView: View {
     @ObservedObject var viewModel: MainTabViewModel
-    @ObservedObject var router = NavigationRouter()
+    @ObservedObject var router = NavigationRouter<MainFlowDestination>()
     
     var body: some View {
         NavigationStack(path: $router.path) {
@@ -73,7 +73,9 @@ struct MainTabView: View {
         calendarTabViewModel: .init(dialogCoordinator: mainCoordinator),
         workoutsTabViewModel: .init(),
         actionSheetViewModel: .init(),
-        workoutBuilderViewModel: .init(coordinator: workoutBuilderCoordinator),
-        exerciseSelectorViewModel: .init(mainCoordinator: mainCoordinator)
+        workoutBuilderViewModel: .init(
+            coordinator: workoutBuilderCoordinator,
+            exerciseSelectorViewModel: .init(mainCoordinator: mainCoordinator)
+        )
     ))
 }
