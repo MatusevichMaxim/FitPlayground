@@ -48,7 +48,7 @@
 		566D86472AEE1E5800293167 /* CalendarTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D86462AEE1E5800293167 /* CalendarTabView.swift */; };
 		566D86532AEE224900293167 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566D86522AEE224800293167 /* String+Localization.swift */; };
 		566D86562AEE256400293167 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 566D86582AEE256400293167 /* Localizable.strings */; };
-		569684832C51B88F00420EDF /* DialogsCoordination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569684822C51B88F00420EDF /* DialogsCoordination.swift */; };
+		569684832C51B88F00420EDF /* Coordination+Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569684822C51B88F00420EDF /* Coordination+Dialog.swift */; };
 		56BE88692C1B86AC005EFED9 /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56BE88682C1B86AC005EFED9 /* Montserrat-ExtraBold.ttf */; };
 		56BE886D2C1B8D36005EFED9 /* WorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE886C2C1B8D36005EFED9 /* WorkoutCell.swift */; };
 		56BE886F2C1B9231005EFED9 /* Cabin-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56BE886E2C1B9231005EFED9 /* Cabin-Medium.ttf */; };
@@ -134,7 +134,7 @@
 		566D86492AEE1E7000293167 /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
 		566D86522AEE224800293167 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		566D86572AEE256400293167 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		569684822C51B88F00420EDF /* DialogsCoordination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogsCoordination.swift; sourceTree = "<group>"; };
+		569684822C51B88F00420EDF /* Coordination+Dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordination+Dialog.swift"; sourceTree = "<group>"; };
 		56BE88682C1B86AC005EFED9 /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
 		56BE886A2C1B86CD005EFED9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56BE886C2C1B8D36005EFED9 /* WorkoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCell.swift; sourceTree = "<group>"; };
@@ -620,7 +620,7 @@
 				56FAD6412C2A6385006CD568 /* Coordination.swift */,
 				56049FF02C51AE4E008728A5 /* Destination.swift */,
 				56049FDF2C4874EF008728A5 /* Routing.swift */,
-				569684822C51B88F00420EDF /* DialogsCoordination.swift */,
+				569684822C51B88F00420EDF /* Coordination+Dialog.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -797,7 +797,7 @@
 				56BE88A92C262A59005EFED9 /* OverlayView.swift in Sources */,
 				56049FCA2C45C7F4008728A5 /* NavigationBar+Modifier.swift in Sources */,
 				566C0B952C1A420700C4AF95 /* WorkoutsTabView.swift in Sources */,
-				569684832C51B88F00420EDF /* DialogsCoordination.swift in Sources */,
+				569684832C51B88F00420EDF /* Coordination+Dialog.swift in Sources */,
 				56FAD6132C27C446006CD568 /* TabItem.swift in Sources */,
 				56FAD6422C2A6385006CD568 /* Coordination.swift in Sources */,
 				56049F562C34845A008728A5 /* WorkoutBuilderView.swift in Sources */,
