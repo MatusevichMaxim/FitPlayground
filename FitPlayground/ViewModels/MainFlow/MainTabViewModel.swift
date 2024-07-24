@@ -11,12 +11,13 @@ import Combine
 final class MainTabViewModel: ObservableObject {
     @Published var selectedTab: TabItem
     
+    let mainCoordinator: MainCoordination
     let homeTabViewModel: HomeTabViewModel
     let calendarTabViewModel: CalendarTabViewModel
     let workoutsTabViewModel: WorkoutsTabViewModel
     let actionSheetViewModel: ActionSheetViewModel
     let workoutBuilderViewModel: WorkoutBuilderViewModel
-    let exerciseSelectorViewModel: ExerciseSelectorViewModel
+    var routingAction = PassthroughSubject<RoutingAction<MainFlowDestination>, Never>()
     
     init(
         mainCoordinator: MainCoordination,
@@ -26,8 +27,7 @@ final class MainTabViewModel: ObservableObject {
         calendarTabViewModel: CalendarTabViewModel,
         workoutsTabViewModel: WorkoutsTabViewModel,
         actionSheetViewModel: ActionSheetViewModel,
-        workoutBuilderViewModel: WorkoutBuilderViewModel,
-        exerciseSelectorViewModel: ExerciseSelectorViewModel
+        workoutBuilderViewModel: WorkoutBuilderViewModel
     ) {
         self.mainCoordinator = mainCoordinator
         self.dialogCoordinator = dialogCoordinator
@@ -37,28 +37,34 @@ final class MainTabViewModel: ObservableObject {
         self.workoutsTabViewModel = workoutsTabViewModel
         self.actionSheetViewModel = actionSheetViewModel
         self.workoutBuilderViewModel = workoutBuilderViewModel
-        self.exerciseSelectorViewModel = exerciseSelectorViewModel
         
         subscribe()
     }
     
-    private let mainCoordinator: MainCoordination
     private let dialogCoordinator: DialogCoordination
     private var subscriptions = [Cancellable]()
 }
 
 extension MainTabViewModel {
+    func onDisappear() {
+        dialogCoordinator.hideDialog(animated: false)
+    }
+}
+
+extension MainTabViewModel {
     private func subscribe() {
         subscriptions = [
-            mainCoordinator.isExerciseSelectorPresented.sink { [weak self] _ in
+            mainCoordinator.isWorkoutBuilderFlowPresented.sink { [weak self] _ in
                 self?.objectWillChange.send()
             }
         ]
     }
 }
 
-extension MainTabViewModel {
-    func onDisappear() {
-        dialogCoordinator.hideDialog(animated: false)
+extension MainTabViewModel: Routing {
+    func perform<T>(action: RoutingAction<T>) where T : Destination {
+        guard let action = action as? RoutingAction<MainFlowDestination> else { return }
+        
+        routingAction.send(action)
     }
 }
