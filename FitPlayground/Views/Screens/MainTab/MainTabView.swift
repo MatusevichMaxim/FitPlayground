@@ -46,17 +46,7 @@ struct MainTabView: View {
                 WorkoutBuilderView(viewModel: viewModel.workoutBuilderViewModel)
             }
             .onDisappear(perform: viewModel.onDisappear)
-            .onReceive(viewModel.routingAction) { action in
-                switch action {
-                case .push(let destination):
-                    router.navigate(to: destination)
-                case .pop:
-                    router.navigateBack()
-                case .popToRoot:
-                    router.navigateToRoot()
-                }
-                
-            }
+            .handleNavigationActions(viewModel.routingAction.eraseToAnyPublisher(), router: router)
         }
     }
 }
