@@ -10,10 +10,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout develop branch
+    - name: Checkout repository
       uses: actions/checkout@v2
       with:
-        ref: develop
+        fetch-depth: 0
+    
+    - name: Checkout develop branch
+      run: git checkout develop
 
     - name: Configure Git
       run: |
