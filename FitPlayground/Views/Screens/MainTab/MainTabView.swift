@@ -65,7 +65,7 @@ struct MainTabView: View {
         actionSheetViewModel: .init(),
         workoutBuilderViewModel: .init(
             coordinator: workoutBuilderCoordinator,
-            exerciseSelectorViewModel: .init(mainCoordinator: mainCoordinator)
+            exerciseSelectorViewModel: .init(coordinator: workoutBuilderCoordinator)
         )
     ))
 }

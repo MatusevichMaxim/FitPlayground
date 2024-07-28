@@ -23,12 +23,13 @@ final class MainCoordinator {
 
 extension MainCoordinator: MainCoordination {
     func launch() {
+        let workoutBuilderCoordinator = WorkoutBuilderCoordinator(isWorkoutBuilderFlowPresented: isWorkoutBuilderFlowPresented)
+        
         let homeTabViewModel = HomeTabViewModel(dialogCoordinator: self)
         let calendarTabViewModel = CalendarTabViewModel(dialogCoordinator: self)
         let workoutsTabViewModel = WorkoutsTabViewModel()
-        let exerciseSelectorViewModel = ExerciseSelectorViewModel(mainCoordinator: self)
+        let exerciseSelectorViewModel = ExerciseSelectorViewModel(coordinator: workoutBuilderCoordinator)
         
-        let workoutBuilderCoordinator = WorkoutBuilderCoordinator(isWorkoutBuilderFlowPresented: isWorkoutBuilderFlowPresented)
         let routingWorkoutBuilderViewModel = WorkoutBuilderViewModel(
             coordinator: workoutBuilderCoordinator,
             exerciseSelectorViewModel: exerciseSelectorViewModel
