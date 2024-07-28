@@ -5,40 +5,27 @@ on:
     - cron: "0 1 * * *" # Every Day at 18:00 PDT
 
 jobs:
-  auto-pr-and-merge:
+  merge:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - name: Checkout repository
+    - name: Checkout develop branch
       uses: actions/checkout@v2
-
-    - name: Create Pull Request
-      id: create_pr
-      uses: peter-evans/create-pull-request@v3
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        commit-message: Update from develop branch
-        branch: auto-merge-branch
-        base: master
-        body: 'This PR is automatically created from develop to master'
+        ref: develop
 
-    - name: Merge Pull Request
-      if: success() && steps.create_pr.outputs.pull-request-operation != 'noop'
-      uses: actions/github-script@v4
-      with:
-        script: |
-          const prNumber = ${steps.create_pr.outputs['pull-request-number']};
-          const { data: pr } = await github.pulls.get({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            pull_number: prNumber
-          });
+    - name: Configure Git
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
 
-          if (pr.mergeable) {
-            await github.pulls.merge({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: pr.number,
-              merge_method: 'merge'
-            });
-          }
+    - name: Checkout master branch
+      run: git checkout master
+
+    - name: Merge develop into master
+      run: git merge develop --no-ff --no-edit
+
+    - name: Push changes
+      run: git push origin master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
