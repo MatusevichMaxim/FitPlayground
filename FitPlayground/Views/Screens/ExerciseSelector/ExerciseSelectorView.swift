@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ExerciseSelectorView: View {
+    @Environment(\.dismiss) var dismiss
     @ObservedObject var viewModel: ExerciseSelectorViewModel
     @State private var searchText = ""
     
@@ -30,15 +31,16 @@ struct ExerciseSelectorView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(Color.appPrimary900, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
+        .navigationBarBackButtonHidden(true)
         .navigationBar(
             title: String.addExercises.capitalized,
-            leftItem: .image(.backArrow, action: {})
+            leftItem: .image(.backArrow, action: { dismiss() })
         )
     }
 }
 
 #Preview {
-    let coordinator = MainCoordinator(setRootView: {_ in })
+    let coordinator = WorkoutBuilderCoordinator(isWorkoutBuilderFlowPresented: .init(true))
     
-    return ExerciseSelectorView(viewModel: .init(mainCoordinator: coordinator))
+    return ExerciseSelectorView(viewModel: .init(coordinator: coordinator))
 }

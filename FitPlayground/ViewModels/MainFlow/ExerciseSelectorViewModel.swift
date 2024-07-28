@@ -8,11 +8,11 @@
 import Foundation
 
 final class ExerciseSelectorViewModel: ObservableObject {
-    init(mainCoordinator: MainCoordination) {
-        self.mainCoordinator = mainCoordinator
+    init(coordinator: WorkoutBuilderCoordinator) {
+        self.coordinator = coordinator
     }
     
-    private let mainCoordinator: MainCoordination
+    private let coordinator: WorkoutBuilderCoordinator
 }
 
 extension ExerciseSelectorViewModel {

@@ -29,7 +29,6 @@ struct WorkoutBuilderView: View {
                 }
                 .padding(.horizontal, 16)
             }
-            .navigationBarBackButtonHidden(true)
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(Color.appPrimary900, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
@@ -44,16 +43,7 @@ struct WorkoutBuilderView: View {
                     ExerciseSelectorView(viewModel: viewModel.exerciseSelectorViewModel)
                 }
             }
-            .onReceive(viewModel.routingAction) { action in
-                switch action {
-                case .push(let destination):
-                    router.navigate(to: destination)
-                case .pop:
-                    router.navigateBack()
-                case .popToRoot:
-                    router.navigateToRoot()
-                }
-            }
+            .handleNavigationActions(viewModel.routingAction.eraseToAnyPublisher(), router: router)
         }
     }
 }
@@ -86,11 +76,10 @@ extension WorkoutBuilderView {
 }
 
 #Preview {
-    let mainCoordinator = MainCoordinator(setRootView: {_ in })
-    let workoutBuilderCoordinator = WorkoutBuilderCoordinator(isWorkoutBuilderFlowPresented: ValueSubject(false))
+    let coordinator = WorkoutBuilderCoordinator(isWorkoutBuilderFlowPresented: ValueSubject(false))
     
     return WorkoutBuilderView(viewModel: .init(
-        coordinator: workoutBuilderCoordinator,
-        exerciseSelectorViewModel: .init(mainCoordinator: mainCoordinator)
+        coordinator: coordinator,
+        exerciseSelectorViewModel: .init(coordinator: coordinator)
     ))
 }
