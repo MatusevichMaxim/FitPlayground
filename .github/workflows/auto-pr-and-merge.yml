@@ -1,6 +1,7 @@
 name: Auto PR and Merge
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 1 * * *" # Every Day at 18:00 PDT
 
