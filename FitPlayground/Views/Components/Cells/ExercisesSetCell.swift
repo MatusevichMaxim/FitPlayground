@@ -1,5 +1,5 @@
 //
-//  ExerciseCell.swift
+//  ExercisesSetCell.swift
 //  FitPlayground
 //
 //  Created by Maksim Matusevich on 7/3/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ExerciseCell: View {
+struct ExercisesSetCell: View {
     let exercises: [Exercise]
     
     var body: some View {
@@ -29,7 +29,7 @@ struct ExerciseCell: View {
     }
 }
 
-extension ExerciseCell {
+extension ExercisesSetCell {
     private enum DescType {
         case regular
         case bold
@@ -76,7 +76,7 @@ extension ExerciseCell {
 }
 
 #Preview {
-    ExerciseCell(exercises: PreviewData.supersetPreset)
+    ExercisesSetCell(exercises: PreviewData.supersetPreset)
         .previewLayout(.sizeThatFits)
         .padding()
 }

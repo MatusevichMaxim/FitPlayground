@@ -20,8 +20,8 @@ struct WorkoutBuilderView: View {
                     VStack(spacing: 20) {
                         makeHeaderView()
                         
-                        ExerciseCell(exercises: [.init(id: UUID(), name: "Step-Up", muscleGroups: [.chest])])
-                        ExerciseCell(exercises: PreviewData.supersetPreset)
+                        ExercisesSetCell(exercises: [.init(id: UUID(), name: "Step-Up", muscleGroups: [.chest])])
+                        ExercisesSetCell(exercises: PreviewData.supersetPreset)
                         
                         AddExerciseCell(action: viewModel.onAddExerciseTapped)
                     }
