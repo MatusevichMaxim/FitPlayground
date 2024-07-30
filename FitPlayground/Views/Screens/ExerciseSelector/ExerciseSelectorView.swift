@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct ExerciseSelectorView: View {
+    @State private var searchText = ""
+    
     @Environment(\.dismiss) var dismiss
     @ObservedObject var viewModel: ExerciseSelectorViewModel
-    @State private var searchText = ""
     
     var body: some View {
         ZStack {
@@ -20,12 +21,22 @@ struct ExerciseSelectorView: View {
                 SearchBar(text: $searchText)
                 
                 List {
-                    ForEach(viewModel.exercises) { exercise in
-                        ExerciseCell(data: exercise, infoAction: {})
+                    Section(content: {
+                        ForEach(viewModel.exercises) { exercise in
+                            ExerciseCell(data: exercise, infoAction: {})
+                                .listRowInsets(EdgeInsets())
+                        }
+                    }, header: {
+                        Text(String.allExercises.capitalized)
+                            .font(.ms_bold_16)
+                            .foregroundStyle(Color.appPrimary800)
+                            .padding(.init(top: 16, leading: 16, bottom: 10, trailing: 16))
                             .listRowInsets(EdgeInsets())
-                    }
+                    })
+                    .headerProminence(.increased)
                 }
-                .listStyle(.plain)
+                .listStyle(.grouped)
+                .scrollContentBackground(.hidden)
             }
         }
         .navigationBarTitleDisplayMode(.inline)

@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct ExerciseCell: View {
+    @State private var isSelected = false
+    
     let data: Exercise
     let infoAction: () -> Void
     
     var body: some View {
         ZStack {
             Rectangle()
-                .foregroundStyle(Color.appBg)
+                .foregroundStyle(isSelected ? Color.appGreen : Color.appBg)
             
             HStack(spacing: 16) {
                 Image(uiImage: .init())
@@ -49,6 +51,7 @@ struct ExerciseCell: View {
         }
         .frame(height: 72)
         .onTapGesture {
+            isSelected.toggle()
         }
     }
 }
