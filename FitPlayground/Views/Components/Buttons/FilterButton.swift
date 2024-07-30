@@ -10,7 +10,7 @@ import SwiftUI
 struct FilterButton: View {
     private var isHighlighted: Bool { activeFilters > 0 }
     
-    @State var activeFilters: Int = 0
+    @Binding var activeFilters: Int
     
     var body: some View {
         ActionButton(action: {}) {
@@ -48,5 +48,5 @@ extension FilterButton {
 }
 
 #Preview {
-    FilterButton(activeFilters: 1)
+    FilterButton(activeFilters: .constant(1))
 }

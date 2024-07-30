@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ExerciseSelectorView: View {
     @State private var searchText = ""
+    @State private var selectedFiltersCount = 0
     
     @Environment(\.dismiss) var dismiss
     @ObservedObject var viewModel: ExerciseSelectorViewModel
@@ -18,12 +19,12 @@ struct ExerciseSelectorView: View {
             Color.appBg.ignoresSafeArea()
             
             VStack {
-                SearchBar(text: $searchText)
+                SearchBar(text: $searchText, filtersCount: $selectedFiltersCount)
                 
                 List {
                     Section(content: {
                         ForEach(viewModel.exercises) { exercise in
-                            ExerciseCell(data: exercise, infoAction: {})
+                            ExerciseCell(data: exercise, infoAction: { })
                                 .listRowInsets(EdgeInsets())
                         }
                     }, header: {
@@ -47,11 +48,15 @@ struct ExerciseSelectorView: View {
             title: String.addExercises.capitalized,
             leftItem: .image(.backArrow, action: { dismiss() })
         )
+        .onReceive(viewModel.filtersProvider.selectedFilters) { count in
+            selectedFiltersCount = count
+        }
     }
 }
 
 #Preview {
     let coordinator = WorkoutBuilderCoordinator(isWorkoutBuilderFlowPresented: .init(true))
+    let filtersManager = FiltersManager()
     
-    return ExerciseSelectorView(viewModel: .init(coordinator: coordinator))
+    return ExerciseSelectorView(viewModel: .init(coordinator: coordinator, filtersProvider: filtersManager))
 }

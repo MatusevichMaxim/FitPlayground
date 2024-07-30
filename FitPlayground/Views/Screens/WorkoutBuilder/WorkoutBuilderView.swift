@@ -77,9 +77,10 @@ extension WorkoutBuilderView {
 
 #Preview {
     let coordinator = WorkoutBuilderCoordinator(isWorkoutBuilderFlowPresented: ValueSubject(false))
+    let filtersManager = FiltersManager()
     
     return WorkoutBuilderView(viewModel: .init(
         coordinator: coordinator,
-        exerciseSelectorViewModel: .init(coordinator: coordinator)
+        exerciseSelectorViewModel: .init(coordinator: coordinator, filtersProvider: filtersManager)
     ))
 }

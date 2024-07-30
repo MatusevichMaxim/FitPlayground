@@ -18,6 +18,7 @@ final class MainCoordinator {
     private var workoutBuilderCoordinator: WorkoutBuilderCoordination?
     private var router: Routing?
     private let actionSheetManager = ActionSheetManager()
+    private let filtersManager = FiltersManager()
     private var actionSheetViewModel = ActionSheetViewModel()
 }
 
@@ -28,7 +29,10 @@ extension MainCoordinator: MainCoordination {
         let homeTabViewModel = HomeTabViewModel(dialogCoordinator: self)
         let calendarTabViewModel = CalendarTabViewModel(dialogCoordinator: self)
         let workoutsTabViewModel = WorkoutsTabViewModel()
-        let exerciseSelectorViewModel = ExerciseSelectorViewModel(coordinator: workoutBuilderCoordinator)
+        let exerciseSelectorViewModel = ExerciseSelectorViewModel(
+            coordinator: workoutBuilderCoordinator,
+            filtersProvider: filtersManager
+        )
         
         let routingWorkoutBuilderViewModel = WorkoutBuilderViewModel(
             coordinator: workoutBuilderCoordinator,

@@ -8,10 +8,16 @@
 import Foundation
 
 final class ExerciseSelectorViewModel: ObservableObject {
+    let filtersProvider: FiltersProviding
+    
     @Published var exercises: [Exercise] = []
     
-    init(coordinator: WorkoutBuilderCoordinator) {
+    init(
+        coordinator: WorkoutBuilderCoordinator,
+        filtersProvider: FiltersProviding
+    ) {
         self.coordinator = coordinator
+        self.filtersProvider = filtersProvider
         
         loadExercises()
     }
