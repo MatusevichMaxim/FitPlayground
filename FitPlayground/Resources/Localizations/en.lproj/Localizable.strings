@@ -15,6 +15,7 @@
 "set_plural" = "Sets";
 "lbs" = "Lbs";
 "save" = "Save";
+"other" = "Other";
 
 "new_workout" = "New workout";
 "existing_workout" = "Existing workout";
@@ -29,12 +30,23 @@
 "workouts_tab_title" = "Workouts";
 
 /* Muscle Groups */
+"mg_any" = "Any muscle";
 "mg_abs" = "Abs";
 "mg_arms" = "Arms";
 "mg_back" = "Back";
 "mg_chest" = "Chest";
 "mg_legs" = "Legs";
 "mg_shoulders" = "Shoulders";
+
+/* Equipment */
+"eq_any" = "Any equipment";
+"eq_no" = "No equipment";
+"eq_barbell" = "Barbell";
+"eq_dumbbell" = "Dumbbell";
+"eq_machines" = "Machines";
+"eq_resist_band" = "Resistance band";
+"eq_kettlebell" = "Kettlebell";
+"eq_cardio" = "Cardio";
 
 /* Greetings */
 "greetings_morning" = "Good morning";

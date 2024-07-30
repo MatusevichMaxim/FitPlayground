@@ -17,6 +17,7 @@ extension String {
     public static let sets = localizedString(for: "set_plural")
     public static let lbs = localizedString(for: "lbs")
     public static let save = localizedString(for: "save")
+    public static let other = localizedString(for: "other")
     
     public static let newWorkout = localizedString(for: "new_workout")
     public static let existingWorkout = localizedString(for: "existing_workout")
@@ -31,12 +32,23 @@ extension String {
     public static let workoutsTabTitle = localizedString(for: "workouts_tab_title")
     
     // MARK: - Muscle Groups
+    public static let anyMuscle = localizedString(for: "mg_any")
     public static let abs = localizedString(for: "mg_abs")
     public static let arms = localizedString(for: "mg_arms")
     public static let back = localizedString(for: "mg_back")
     public static let chest = localizedString(for: "mg_chest")
     public static let legs = localizedString(for: "mg_legs")
     public static let shoulders = localizedString(for: "mg_shoulders")
+    
+    // MARK: - Equipment
+    public static let anyEquipment = localizedString(for: "eq_any")
+    public static let noEqupment = localizedString(for: "eq_no")
+    public static let barbell = localizedString(for: "eq_barbell")
+    public static let dumbbell = localizedString(for: "eq_dumbbell")
+    public static let machines = localizedString(for: "eq_machines")
+    public static let resistanceBand = localizedString(for: "eq_resist_band")
+    public static let kettlebell = localizedString(for: "eq_kettlebell")
+    public static let cardio = localizedString(for: "eq_cardio")
     
     // MARK: - Greetings
     public static let greetingsMorning = localizedString(for: "greetings_morning")
