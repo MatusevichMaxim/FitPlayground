@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct ExerciseSelectorView: View {
+    @Environment(\.dismiss) private var dismiss
     @State private var searchText = ""
     @State private var selectedFiltersCount = 0
+    @State private var isShowingFilters = false
     
-    @Environment(\.dismiss) var dismiss
     @ObservedObject var viewModel: ExerciseSelectorViewModel
     
     var body: some View {
@@ -19,7 +20,11 @@ struct ExerciseSelectorView: View {
             Color.appBg.ignoresSafeArea()
             
             VStack {
-                SearchBar(text: $searchText, filtersCount: $selectedFiltersCount)
+                SearchBar(
+                    text: $searchText,
+                    filtersCount: $selectedFiltersCount,
+                    onFiltersTap: { isShowingFilters.toggle() }
+                )
                 
                 List {
                     Section(content: {
@@ -48,8 +53,9 @@ struct ExerciseSelectorView: View {
             title: String.addExercises.capitalized,
             leftItem: .image(.backArrow, action: { dismiss() })
         )
-        .onReceive(viewModel.filtersProvider.selectedFilters) { count in
-            selectedFiltersCount = count
+        .onReceive(viewModel.filtersProvider.selectedFilters) { selectedFiltersCount = $0 }
+        .sheet(isPresented: $isShowingFilters) {
+            FiltersSelectorView(viewModel: .init())
         }
     }
 }

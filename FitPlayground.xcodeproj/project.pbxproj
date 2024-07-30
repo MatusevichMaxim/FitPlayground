@@ -78,6 +78,8 @@
 		56EA30442C59725100CA6DAD /* FilterStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EA30432C59725100CA6DAD /* FilterStateModel.swift */; };
 		56EA30472C597A8600CA6DAD /* FiltersProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EA30462C597A8600CA6DAD /* FiltersProviding.swift */; };
 		56EA30492C597AE500CA6DAD /* ValuePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EA30482C597AE500CA6DAD /* ValuePublisher.swift */; };
+		56EA304C2C598E1B00CA6DAD /* FiltersSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EA304B2C598E1B00CA6DAD /* FiltersSelectorView.swift */; };
+		56EA304E2C598E9E00CA6DAD /* FiltersSelectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EA304D2C598E9E00CA6DAD /* FiltersSelectorViewModel.swift */; };
 		56FAD6102C27C3A2006CD568 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD60F2C27C3A2006CD568 /* TabBarView.swift */; };
 		56FAD6132C27C446006CD568 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6122C27C446006CD568 /* TabItem.swift */; };
 		56FAD6152C27C554006CD568 /* TabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6142C27C554006CD568 /* TabItemView.swift */; };
@@ -171,6 +173,8 @@
 		56EA30432C59725100CA6DAD /* FilterStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStateModel.swift; sourceTree = "<group>"; };
 		56EA30462C597A8600CA6DAD /* FiltersProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersProviding.swift; sourceTree = "<group>"; };
 		56EA30482C597AE500CA6DAD /* ValuePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuePublisher.swift; sourceTree = "<group>"; };
+		56EA304B2C598E1B00CA6DAD /* FiltersSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersSelectorView.swift; sourceTree = "<group>"; };
+		56EA304D2C598E9E00CA6DAD /* FiltersSelectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersSelectorViewModel.swift; sourceTree = "<group>"; };
 		56FAD60F2C27C3A2006CD568 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		56FAD6122C27C446006CD568 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		56FAD6142C27C554006CD568 /* TabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemView.swift; sourceTree = "<group>"; };
@@ -373,6 +377,7 @@
 				566C0B922C1A3F9D00C4AF95 /* WorkoutsTab */,
 				56049F522C34841D008728A5 /* WorkoutBuilder */,
 				56049FCD2C4617B2008728A5 /* ExerciseSelector */,
+				56EA304A2C598DFC00CA6DAD /* FiltersSelector */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -625,6 +630,14 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		56EA304A2C598DFC00CA6DAD /* FiltersSelector */ = {
+			isa = PBXGroup;
+			children = (
+				56EA304B2C598E1B00CA6DAD /* FiltersSelectorView.swift */,
+			);
+			path = FiltersSelector;
+			sourceTree = "<group>";
+		};
 		56FAD6112C27C439006CD568 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -685,6 +698,7 @@
 				56FAD6522C2B4CF0006CD568 /* CalendarTabViewModel.swift */,
 				56FAD6542C2B4D12006CD568 /* WorkoutsTabViewModel.swift */,
 				56049FD02C4617DA008728A5 /* ExerciseSelectorViewModel.swift */,
+				56EA304D2C598E9E00CA6DAD /* FiltersSelectorViewModel.swift */,
 			);
 			path = MainFlow;
 			sourceTree = "<group>";
@@ -795,6 +809,7 @@
 				56FAD6152C27C554006CD568 /* TabItemView.swift in Sources */,
 				56049F6E2C41F103008728A5 /* ValueSubject.swift in Sources */,
 				56BE88752C1CC92A005EFED9 /* WorkoutStatus.swift in Sources */,
+				56EA304C2C598E1B00CA6DAD /* FiltersSelectorView.swift in Sources */,
 				56BE88A72C260E22005EFED9 /* PreviewData.swift in Sources */,
 				56049F662C35CF9B008728A5 /* ExercisesSetCell.swift in Sources */,
 				56BE88932C238D53005EFED9 /* ScrollOffsetPreferenceKey.swift in Sources */,
@@ -821,6 +836,7 @@
 				566C0B932C1A40AE00C4AF95 /* HomeTabView.swift in Sources */,
 				56BE88802C20D207005EFED9 /* StyleManager.swift in Sources */,
 				56BE88A52C260C3E005EFED9 /* Alignment+Hashable.swift in Sources */,
+				56EA304E2C598E9E00CA6DAD /* FiltersSelectorViewModel.swift in Sources */,
 				56049FE02C4874EF008728A5 /* Routing.swift in Sources */,
 				56FAD6642C2D0E68006CD568 /* ActionSheet+Builder.swift in Sources */,
 				56049FEF2C51AD91008728A5 /* WorkoutFlowDestination.swift in Sources */,

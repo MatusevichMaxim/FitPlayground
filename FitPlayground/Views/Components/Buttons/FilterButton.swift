@@ -11,9 +11,10 @@ struct FilterButton: View {
     private var isHighlighted: Bool { activeFilters > 0 }
     
     @Binding var activeFilters: Int
+    let tapAction: VoidClosure
     
     var body: some View {
-        ActionButton(action: {}) {
+        ActionButton(action: tapAction) {
             HStack {
                 if isHighlighted {
                     Text("\(activeFilters)")
@@ -48,5 +49,5 @@ extension FilterButton {
 }
 
 #Preview {
-    FilterButton(activeFilters: .constant(1))
+    FilterButton(activeFilters: .constant(1), tapAction: {})
 }
