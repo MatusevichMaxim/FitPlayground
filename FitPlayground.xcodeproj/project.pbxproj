@@ -73,6 +73,9 @@
 		56BE88A72C260E22005EFED9 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88A62C260E22005EFED9 /* PreviewData.swift */; };
 		56BE88A92C262A59005EFED9 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BE88A82C262A59005EFED9 /* OverlayView.swift */; };
 		56EA303C2C56B8F600CA6DAD /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EA303B2C56B8F600CA6DAD /* ExerciseCell.swift */; };
+		56EA303F2C596AD200CA6DAD /* FiltersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EA303E2C596AD200CA6DAD /* FiltersManager.swift */; };
+		56EA30422C596F4100CA6DAD /* ExerciseFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EA30412C596F4100CA6DAD /* ExerciseFilter.swift */; };
+		56EA30442C59725100CA6DAD /* FilterStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EA30432C59725100CA6DAD /* FilterStateModel.swift */; };
 		56FAD6102C27C3A2006CD568 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD60F2C27C3A2006CD568 /* TabBarView.swift */; };
 		56FAD6132C27C446006CD568 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6122C27C446006CD568 /* TabItem.swift */; };
 		56FAD6152C27C554006CD568 /* TabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6142C27C554006CD568 /* TabItemView.swift */; };
@@ -161,6 +164,9 @@
 		56BE88A62C260E22005EFED9 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		56BE88A82C262A59005EFED9 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		56EA303B2C56B8F600CA6DAD /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
+		56EA303E2C596AD200CA6DAD /* FiltersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersManager.swift; sourceTree = "<group>"; };
+		56EA30412C596F4100CA6DAD /* ExerciseFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseFilter.swift; sourceTree = "<group>"; };
+		56EA30432C59725100CA6DAD /* FilterStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStateModel.swift; sourceTree = "<group>"; };
 		56FAD60F2C27C3A2006CD568 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		56FAD6122C27C446006CD568 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		56FAD6142C27C554006CD568 /* TabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemView.swift; sourceTree = "<group>"; };
@@ -370,6 +376,7 @@
 		566C0B852C1A252B00C4AF95 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				56EA303D2C596AC500CA6DAD /* FiltersManager */,
 				566C0B872C1A254200C4AF95 /* UserDefaults */,
 				566C0B862C1A253700C4AF95 /* Networking */,
 			);
@@ -594,6 +601,16 @@
 			path = Dialogs;
 			sourceTree = "<group>";
 		};
+		56EA303D2C596AC500CA6DAD /* FiltersManager */ = {
+			isa = PBXGroup;
+			children = (
+				56EA30412C596F4100CA6DAD /* ExerciseFilter.swift */,
+				56EA303E2C596AD200CA6DAD /* FiltersManager.swift */,
+				56EA30432C59725100CA6DAD /* FilterStateModel.swift */,
+			);
+			path = FiltersManager;
+			sourceTree = "<group>";
+		};
 		56FAD6112C27C439006CD568 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -756,6 +773,7 @@
 				5604D0552C2F4B22006B8BE6 /* HuggingGeometryModifier.swift in Sources */,
 				56FAD6442C2A63B6006CD568 /* AppCoordinator.swift in Sources */,
 				5604D05B2C334BE2006B8BE6 /* Date+Extensions.swift in Sources */,
+				56EA30422C596F4100CA6DAD /* ExerciseFilter.swift in Sources */,
 				56BE889D2C24BCDC005EFED9 /* ActionSheetView.swift in Sources */,
 				56BE886D2C1B8D36005EFED9 /* WorkoutCell.swift in Sources */,
 				56BE88792C1CCBB3005EFED9 /* Color+Resources.swift in Sources */,
@@ -817,8 +835,10 @@
 				56BE88772C1CCAE4005EFED9 /* WorkoutStatus+Extension.swift in Sources */,
 				56049F702C41F43C008728A5 /* ValueSubject+Extensions.swift in Sources */,
 				56BE88A32C25FBA4005EFED9 /* ActionDialogButton.swift in Sources */,
+				56EA30442C59725100CA6DAD /* FilterStateModel.swift in Sources */,
 				56049FF12C51AE4E008728A5 /* Destination.swift in Sources */,
 				566C0B912C1A3C3E00C4AF95 /* Image+Resources.swift in Sources */,
+				56EA303F2C596AD200CA6DAD /* FiltersManager.swift in Sources */,
 				56049F682C35D48E008728A5 /* Exercise.swift in Sources */,
 				56049FCC2C45CDA4008728A5 /* VoidClosure.swift in Sources */,
 				56FAD6552C2B4D12006CD568 /* WorkoutsTabViewModel.swift in Sources */,
