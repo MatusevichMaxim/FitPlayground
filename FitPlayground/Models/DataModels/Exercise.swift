@@ -11,4 +11,10 @@ struct Exercise: Identifiable {
     let id: UUID
     let name: String
     let muscleGroups: [MuscleGroup]
+    
+    var localizedDescription: String {
+        muscleGroups
+            .map { $0.description }
+            .joined(separator: ", ")
+    }
 }

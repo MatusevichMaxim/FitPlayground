@@ -19,13 +19,13 @@ struct ExerciseSelectorView: View {
             VStack {
                 SearchBar(text: $searchText)
                 
-                ScrollView {
-                    VStack(spacing: 20) {
-                        
+                List {
+                    ForEach(viewModel.exercises) { exercise in
+                        ExerciseCell(data: exercise, infoAction: {})
+                            .listRowInsets(EdgeInsets())
                     }
-                    .padding(.vertical, 32)
                 }
-                .padding(.horizontal, 16)
+                .listStyle(.plain)
             }
         }
         .navigationBarTitleDisplayMode(.inline)
