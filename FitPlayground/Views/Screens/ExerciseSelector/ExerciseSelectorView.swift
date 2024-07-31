@@ -8,24 +8,41 @@
 import SwiftUI
 
 struct ExerciseSelectorView: View {
-    @Environment(\.dismiss) var dismiss
-    @ObservedObject var viewModel: ExerciseSelectorViewModel
+    @Environment(\.dismiss) private var dismiss
     @State private var searchText = ""
+    @State private var selectedFiltersCount = 0
+    @State private var isShowingFilters = false
+    
+    @ObservedObject var viewModel: ExerciseSelectorViewModel
     
     var body: some View {
         ZStack {
             Color.appBg.ignoresSafeArea()
             
             VStack {
-                SearchBar(text: $searchText)
+                SearchBar(
+                    text: $searchText,
+                    filtersCount: $selectedFiltersCount,
+                    onFiltersTap: { isShowingFilters.toggle() }
+                )
                 
-                ScrollView {
-                    VStack(spacing: 20) {
-                        
-                    }
-                    .padding(.vertical, 32)
+                List {
+                    Section(content: {
+                        ForEach(viewModel.exercises) { exercise in
+                            ExerciseCell(data: exercise, infoAction: { })
+                                .listRowInsets(EdgeInsets())
+                        }
+                    }, header: {
+                        Text(String.allExercises.capitalized)
+                            .font(.ms_bold_16)
+                            .foregroundStyle(Color.appPrimary800)
+                            .padding(.init(top: 16, leading: 16, bottom: 10, trailing: 16))
+                            .listRowInsets(EdgeInsets())
+                    })
+                    .headerProminence(.increased)
                 }
-                .padding(.horizontal, 16)
+                .listStyle(.grouped)
+                .scrollContentBackground(.hidden)
             }
         }
         .navigationBarTitleDisplayMode(.inline)
@@ -36,11 +53,16 @@ struct ExerciseSelectorView: View {
             title: String.addExercises.capitalized,
             leftItem: .image(.backArrow, action: { dismiss() })
         )
+        .onReceive(viewModel.filtersProvider.selectedFilters) { selectedFiltersCount = $0 }
+        .sheet(isPresented: $isShowingFilters) {
+            FiltersSelectorView(viewModel: .init())
+        }
     }
 }
 
 #Preview {
     let coordinator = WorkoutBuilderCoordinator(isWorkoutBuilderFlowPresented: .init(true))
+    let filtersManager = FiltersManager()
     
-    return ExerciseSelectorView(viewModel: .init(coordinator: coordinator))
+    return ExerciseSelectorView(viewModel: .init(coordinator: coordinator, filtersProvider: filtersManager))
 }

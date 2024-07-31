@@ -54,6 +54,7 @@ struct MainTabView: View {
 #Preview {
     let mainCoordinator = MainCoordinator(setRootView: {_ in })
     let workoutBuilderCoordinator = WorkoutBuilderCoordinator(isWorkoutBuilderFlowPresented: ValueSubject(false))
+    let filtersManager = FiltersManager()
     
     return MainTabView(viewModel: .init(
         mainCoordinator: mainCoordinator,
@@ -65,7 +66,10 @@ struct MainTabView: View {
         actionSheetViewModel: .init(),
         workoutBuilderViewModel: .init(
             coordinator: workoutBuilderCoordinator,
-            exerciseSelectorViewModel: .init(coordinator: workoutBuilderCoordinator)
+            exerciseSelectorViewModel: .init(
+                coordinator: workoutBuilderCoordinator,
+                filtersProvider: filtersManager
+            )
         )
     ))
 }

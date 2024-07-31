@@ -37,7 +37,7 @@ extension ExercisesSetCell {
     
     private func makeExerciseView(for model: Exercise) -> some View {
         HStack(spacing: 8) {
-            Image(systemName: "")
+            Image(uiImage: .init())
                 .frame(width: 60, height: 60)
                 .background(.white)
                 .cornerRadius(18)

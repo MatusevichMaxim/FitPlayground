@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SearchBar: View {
     @Binding var text: String
+    @Binding var filtersCount: Int
+    let onFiltersTap: VoidClosure
     
     var body: some View {
         ZStack(alignment: .leading) {
@@ -30,7 +32,7 @@ struct SearchBar: View {
                 .background(Color.appPrimary)
                 .cornerRadius(Constants.cornerRadius)
                 
-                FilterButton(activeFilters: 0)
+                FilterButton(activeFilters: $filtersCount, tapAction: onFiltersTap)
             }
             .padding(.horizontal, 16)
         }
@@ -53,6 +55,6 @@ extension SearchBar {
 }
 
 #Preview {
-    SearchBar(text: .constant(""))
+    SearchBar(text: .constant(""), filtersCount: .constant(1), onFiltersTap: {})
         .previewLayout(.sizeThatFits)
 }
