@@ -8,5 +8,9 @@
 import Foundation
 
 final class FiltersSelectorViewModel: ObservableObject {
+    let filtersManager: FiltersManager
     
+    init(filtersManager: FiltersManager) {
+        self.filtersManager = filtersManager
+    }
 }

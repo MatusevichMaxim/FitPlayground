@@ -14,15 +14,24 @@ final class ExerciseSelectorViewModel: ObservableObject {
     
     init(
         coordinator: WorkoutBuilderCoordinator,
+        filtersManager: FiltersManager,
         filtersProvider: FiltersProviding
     ) {
         self.coordinator = coordinator
+        self.filtersManager = filtersManager
         self.filtersProvider = filtersProvider
         
         loadExercises()
     }
     
     private let coordinator: WorkoutBuilderCoordinator
+    private let filtersManager: FiltersManager
+}
+
+extension ExerciseSelectorViewModel {
+    func configureFiltersSelectorViewModel() -> FiltersSelectorViewModel {
+        .init(filtersManager: filtersManager)
+    }
 }
 
 extension ExerciseSelectorViewModel {

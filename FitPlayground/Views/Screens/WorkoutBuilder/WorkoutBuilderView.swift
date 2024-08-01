@@ -81,6 +81,10 @@ extension WorkoutBuilderView {
     
     return WorkoutBuilderView(viewModel: .init(
         coordinator: coordinator,
-        exerciseSelectorViewModel: .init(coordinator: coordinator, filtersProvider: filtersManager)
+        exerciseSelectorViewModel: .init(
+            coordinator: coordinator,
+            filtersManager: filtersManager,
+            filtersProvider: filtersManager
+        )
     ))
 }

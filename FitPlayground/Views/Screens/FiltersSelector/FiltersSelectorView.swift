@@ -17,12 +17,28 @@ struct FiltersSelectorView: View {
             Color.appPrimary900.ignoresSafeArea()
             
             List {
+                Section {
+                    ForEach(viewModel.filtersManager.muscleGroupFilterStateModels, id: \.filter) { model in
+                        FilterItemCell(resource: model.filter.icon, title: model.filter.localizedName)
+                    }
+                } header: {
+                    Text(String.muscleGroup)
+                }
                 
+                Section {
+                    ForEach(viewModel.filtersManager.equipmentFilterStateModels, id: \.filter) { model in
+                        FilterItemCell(resource: model.filter.icon, title: model.filter.localizedName)
+                    }
+                } header: {
+                    Text(String.equipment)
+                }
             }
         }
     }
 }
 
 #Preview {
-    FiltersSelectorView(viewModel: .init())
+    let filtersManager = FiltersManager()
+    
+    return FiltersSelectorView(viewModel: .init(filtersManager: filtersManager))
 }

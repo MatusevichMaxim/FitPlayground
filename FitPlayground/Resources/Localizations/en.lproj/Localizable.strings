@@ -16,6 +16,8 @@
 "lbs" = "Lbs";
 "save" = "Save";
 "other" = "Other";
+"muscle_group" = "Muscle group";
+"equipment" = "Equipment";
 
 "new_workout" = "New workout";
 "existing_workout" = "Existing workout";

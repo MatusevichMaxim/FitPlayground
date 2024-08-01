@@ -5,6 +5,8 @@
 //  Created by Maksim Matusevich on 7/30/24.
 //
 
+import Foundation
+
 protocol FilterType {}
 
 enum MuscleGroupFilter: CaseIterable, FilterType {
@@ -35,6 +37,18 @@ enum MuscleGroupFilter: CaseIterable, FilterType {
         case .chest: return String.chest
         case .legs: return String.legs
         case .shoulders: return String.shoulders
+        }
+    }
+    
+    var icon: AppImageResourse {
+        switch self {
+        case .any: return .human_filter_icon
+        case .abs: return .abs_filter_icon
+        case .arms: return .arm_filter_icon
+        case .back: return .back_filter_icon
+        case .chest: return .chest_filter_icon
+        case .legs: return .leg_filter_icon
+        case .shoulders: return .shoulder_filter_icon
         }
     }
 }
@@ -83,6 +97,20 @@ enum EquipmentFilter: CaseIterable, FilterType {
         case .kettlebell: return String.kettlebell
         case .cardio: return String.cardio
         case .other: return String.other
+        }
+    }
+    
+    var icon: AppImageResourse {
+        switch self {
+        case .any: return .equipment_filter_icon
+        case .no: return .no_filter_equipment_icon
+        case .barbell: return .barbell_filter_icon
+        case .dumbbell: return .dumbbell_filter_icon
+        case .machines: return .machine_filter_icon
+        case .resistanceBand: return .band_filter_icon
+        case .kettlebell: return .kettlebell_filter_icon
+        case .cardio: return .cardio_filter_icon
+        case .other: return .other_filter_icon
         }
     }
 }

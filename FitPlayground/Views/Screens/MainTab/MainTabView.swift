@@ -68,6 +68,7 @@ struct MainTabView: View {
             coordinator: workoutBuilderCoordinator,
             exerciseSelectorViewModel: .init(
                 coordinator: workoutBuilderCoordinator,
+                filtersManager: filtersManager,
                 filtersProvider: filtersManager
             )
         )

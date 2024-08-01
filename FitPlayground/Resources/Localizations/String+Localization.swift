@@ -18,6 +18,8 @@ extension String {
     public static let lbs = localizedString(for: "lbs")
     public static let save = localizedString(for: "save")
     public static let other = localizedString(for: "other")
+    public static let muscleGroup = localizedString(for: "muscle_group")
+    public static let equipment = localizedString(for: "equipment")
     
     public static let newWorkout = localizedString(for: "new_workout")
     public static let existingWorkout = localizedString(for: "existing_workout")
