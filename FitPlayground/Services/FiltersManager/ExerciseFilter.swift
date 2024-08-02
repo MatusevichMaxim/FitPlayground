@@ -16,17 +16,27 @@ enum MuscleGroupFilter: CaseIterable, FilterType {
          back,
          chest,
          legs,
-         shoulders
+         shoulders,
     
-    var subfilters: [GroupSubfilter?] {
-        switch self {
-        case .abs: return [.obliques]
-        case .arms: return [.biceps, .forearms, .triceps]
-        case .back: return [.lats, .lowerBack, .middleBack, .traps, .upperBack]
-        case .legs: return [.abductors, .adductors, .calves, .glutes, .hamstrings, .hipFlexors, .quads]
-        default: return []
-        }
-    }
+         obliques,
+         
+         biceps,
+         forearms,
+         triceps,
+         
+         lats,
+         lowerBack,
+         middleBack,
+         traps,
+         upperBack,
+         
+         abductors,
+         adductors,
+         calves,
+         glutes,
+         hamstrings,
+         hipFlexors,
+         quads
     
     var localizedName: String {
         switch self {
@@ -37,10 +47,26 @@ enum MuscleGroupFilter: CaseIterable, FilterType {
         case .chest: return String.chest
         case .legs: return String.legs
         case .shoulders: return String.shoulders
+        case .obliques: return String.obliques
+        case .biceps: return String.biceps
+        case .forearms: return String.forearms
+        case .triceps: return String.triceps
+        case .lats: return String.lats
+        case .lowerBack: return String.lowerBack
+        case .middleBack: return String.middleBack
+        case .traps: return String.traps
+        case .upperBack: return String.upperBack
+        case .abductors: return String.abductors
+        case .adductors: return String.adductors
+        case .calves: return String.calves
+        case .glutes: return String.glutes
+        case .hamstrings: return String.hamstrings
+        case .hipFlexors: return String.hipFlexors
+        case .quads: return String.quads
         }
     }
     
-    var icon: AppImageResourse {
+    var icon: AppImageResourse? {
         switch self {
         case .any: return .human_filter_icon
         case .abs: return .abs_filter_icon
@@ -49,30 +75,20 @@ enum MuscleGroupFilter: CaseIterable, FilterType {
         case .chest: return .chest_filter_icon
         case .legs: return .leg_filter_icon
         case .shoulders: return .shoulder_filter_icon
+        default: return nil
         }
     }
-}
+    
+    var subfilters: [MuscleGroupFilter]? {
+        switch self {
+        case .abs: return [.obliques]
+        case .arms: return [.biceps, .forearms, .triceps]
+        case .back: return [.lats, .lowerBack, .middleBack, .traps, .upperBack]
+        case .legs: return [.abductors, .adductors, .calves, .glutes, .hamstrings, .hipFlexors, .quads]
+        default: return nil
+        }
+    }
 
-enum GroupSubfilter {
-    case obliques,
-    
-         biceps,
-         forearms,
-         triceps,
-    
-         lats,
-         lowerBack,
-         middleBack,
-         traps,
-         upperBack,
-    
-         abductors,
-         adductors,
-         calves,
-         glutes,
-         hamstrings,
-         hipFlexors,
-         quads
 }
 
 enum EquipmentFilter: CaseIterable, FilterType {

@@ -10,6 +10,8 @@
 "potential" = "Potential";
 "today" = "Today";
 "cancel" = "Cancel";
+"reset" = "Reset";
+"done" = "Done";
 "minutes_short" = "Min";
 "set_singular" = "Set";
 "set_plural" = "Sets";
@@ -18,6 +20,7 @@
 "other" = "Other";
 "muscle_group" = "Muscle group";
 "equipment" = "Equipment";
+"filters" = "Filters";
 
 "new_workout" = "New workout";
 "existing_workout" = "Existing workout";
@@ -39,6 +42,22 @@
 "mg_chest" = "Chest";
 "mg_legs" = "Legs";
 "mg_shoulders" = "Shoulders";
+"mg_obliques" = "Obliques";
+"mg_biceps" = "Biceps";
+"mg_forearms" = "Forearms";
+"mg_triceps" = "Triceps";
+"mg_lats" = "Lats";
+"mg_lower_back" = "Lower back";
+"mg_middle_back" = "Middle back";
+"mg_traps" = "Traps";
+"mg_upper_back" = "Upper back";
+"mg_abductors" = "Abductors";
+"mg_adductors" = "Adductors";
+"mg_calves" = "Calves";
+"mg_glutes" = "Glutes";
+"mg_hamstrings" = "Hamstrings";
+"mg_hip_flexors" = "Hip flexors";
+"mg_quads" = "Quads";
 
 /* Equipment */
 "eq_any" = "Any equipment";
