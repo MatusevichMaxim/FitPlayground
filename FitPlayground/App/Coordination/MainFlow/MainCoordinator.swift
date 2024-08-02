@@ -31,6 +31,7 @@ extension MainCoordinator: MainCoordination {
         let workoutsTabViewModel = WorkoutsTabViewModel()
         let exerciseSelectorViewModel = ExerciseSelectorViewModel(
             coordinator: workoutBuilderCoordinator,
+            filtersManager: filtersManager,
             filtersProvider: filtersManager
         )
         

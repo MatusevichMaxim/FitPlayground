@@ -12,9 +12,9 @@ enum TabItem: Int, CaseIterable {
     
     var icon: AppImageResourse {
         switch self {
-        case .home: return .home_icon
-        case .calendar: return .calendar_icon
-        case .workouts: return .dumbbell_icon
+        case .home: return .home_tab_icon
+        case .calendar: return .calendar_tab_icon
+        case .workouts: return .dumbbell_tab_icon
         }
     }
 }

@@ -55,7 +55,7 @@ struct ExerciseSelectorView: View {
         )
         .onReceive(viewModel.filtersProvider.selectedFilters) { selectedFiltersCount = $0 }
         .sheet(isPresented: $isShowingFilters) {
-            FiltersSelectorView(viewModel: .init())
+            FiltersSelectorView(viewModel: viewModel.configureFiltersSelectorViewModel())
         }
     }
 }
@@ -64,5 +64,9 @@ struct ExerciseSelectorView: View {
     let coordinator = WorkoutBuilderCoordinator(isWorkoutBuilderFlowPresented: .init(true))
     let filtersManager = FiltersManager()
     
-    return ExerciseSelectorView(viewModel: .init(coordinator: coordinator, filtersProvider: filtersManager))
+    return ExerciseSelectorView(viewModel: .init(
+        coordinator: coordinator,
+        filtersManager: filtersManager,
+        filtersProvider: filtersManager
+    ))
 }
