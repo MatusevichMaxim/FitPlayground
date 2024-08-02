@@ -23,51 +23,57 @@ struct FiltersSelectorView: View {
                             if let subfilters = filter.subfilters {
                                 DisclosureGroup {
                                     ForEach(subfilters) { subfilter in
-                                        makeItemLabel(for: subfilter)
+                                        makeItem(for: subfilter)
                                     }
                                 } label: {
-                                    makeItemLabel(for: filter)
+                                    makeItem(for: filter)
                                 }
                             } else {
-                                makeItemLabel(for: filter)
+                                makeItem(for: filter)
                             }
                         }
                     } header: {
                         Text(String.muscleGroup)
                             .font(.ms_bold_17)
-                            .foregroundStyle(Color.textPrimary)
+                            .foregroundStyle(Color.appPrimary600)
                     }
                     .headerProminence(.increased)
                     
                     Section {
                         ForEach(viewModel.filtersManager.equipmentModels) { filter in
-                            makeItemLabel(for: filter)
+                            makeItem(for: filter)
                         }
                     } header: {
                         Text(String.equipment)
                             .font(.ms_bold_17)
-                            .foregroundStyle(Color.textPrimary)
+                            .foregroundStyle(Color.appPrimary600)
                     }
                     .headerProminence(.increased)
                 }
                 .tint(Color.textPrimary)
             }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBar(
+                title: String.filters,
+                leftItem: .text(text: String.reset, color: .appRed, action: {}),
+                rightItem: .text(text: String.done, color: .appGreen, action: {})
+            )
         }
     }
 }
 
 extension FiltersSelectorView {
-    private func makeItemLabel(for filter: FilterModel) -> Label<Text, Image> {
-        Label(
-            title: {
-                Text(filter.name)
-                    .font(.ms_bold_17)
+    private func makeItem(for filter: FilterModel) -> some View {
+        HStack {
+            if let icon = filter.icon {
+                Image(icon)
                     .foregroundStyle(Color.textPrimary)
-            },
-            icon: {
-                Image(filter.icon ?? .bin_icon)
             }
-        )
+            
+            Text(filter.name)
+                .font(.ms_bold_17)
+                .foregroundStyle(Color.textPrimary)
+        }
     }
 }
 
