@@ -39,6 +39,22 @@
 "mg_chest" = "Chest";
 "mg_legs" = "Legs";
 "mg_shoulders" = "Shoulders";
+"mg_obliques" = "Obliques";
+"mg_biceps" = "Biceps";
+"mg_forearms" = "Forearms";
+"mg_triceps" = "Triceps";
+"mg_lats" = "Lats";
+"mg_lower_back" = "Lower back";
+"mg_middle_back" = "Middle back";
+"mg_traps" = "Traps";
+"mg_upper_back" = "Upper back";
+"mg_abductors" = "Abductors";
+"mg_adductors" = "Adductors";
+"mg_calves" = "Calves";
+"mg_glutes" = "Glutes";
+"mg_hamstrings" = "Hamstrings";
+"mg_hip_flexors" = "Hip flexors";
+"mg_quads" = "Quads";
 
 /* Equipment */
 "eq_any" = "Any equipment";
