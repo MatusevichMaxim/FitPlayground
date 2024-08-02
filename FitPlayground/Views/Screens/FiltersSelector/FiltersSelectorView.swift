@@ -125,7 +125,8 @@ extension FiltersSelectorView {
                 
                 Spacer()
             }
-            .frame(width: 250)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .relativeProposed(width: 0.9)
             .contentShape(Rectangle())
             .onTapGesture(perform: action)
             
