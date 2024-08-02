@@ -31,6 +31,7 @@ struct FiltersSelectorView: View {
                                             action: { onMuscleGroupFilterTapped(subfilter) }
                                         )
                                         .listRowBackground(Color.appPrimary900.opacity(0.5))
+                                        .listRowInsets(.init(top: 6, leading: 38, bottom: 6, trailing: 20))
                                     }
                                 } label: {
                                     makeItem(
@@ -40,6 +41,7 @@ struct FiltersSelectorView: View {
                                     )
                                 }
                                 .listRowBackground(Color.appPrimary800)
+                                .listRowInsets(.init(top: 6, leading: 8, bottom: 6, trailing: 20))
                             } else {
                                 makeItem(
                                     for: filter,
@@ -47,6 +49,7 @@ struct FiltersSelectorView: View {
                                     action: { onMuscleGroupFilterTapped(filter) }
                                 )
                                 .listRowBackground(Color.appPrimary800)
+                                .listRowInsets(.init(top: 6, leading: 8, bottom: 6, trailing: 20))
                             }
                         }
                     } header: {
@@ -66,6 +69,7 @@ struct FiltersSelectorView: View {
                                 action: { onEquipmentFilterTapped(filter) }
                             )
                             .listRowBackground(Color.appPrimary800)
+                            .listRowInsets(.init(top: 6, leading: 8, bottom: 6, trailing: 20))
                         }
                     } header: {
                         Text(String.equipment)
@@ -110,13 +114,20 @@ extension FiltersSelectorView {
         action: @escaping () -> Void
     ) -> some View {
         HStack {
-            if let icon = filter.icon {
-                Image(icon).foregroundStyle(Color.textPrimary)
+            HStack {
+                if let icon = filter.icon {
+                    Image(icon).foregroundStyle(Color.textPrimary)
+                }
+                
+                Text(filter.name)
+                    .font(.ms_bold_17)
+                    .foregroundStyle(Color.textPrimary)
+                
+                Spacer()
             }
-            
-            Text(filter.name)
-                .font(.ms_bold_17)
-                .foregroundStyle(Color.textPrimary)
+            .frame(width: 250)
+            .contentShape(Rectangle())
+            .onTapGesture(perform: action)
             
             Spacer()
             
@@ -131,7 +142,6 @@ extension FiltersSelectorView {
             }
         }
         .frame(height: 40)
-        .onTapGesture(perform: action)
     }
 }
 
