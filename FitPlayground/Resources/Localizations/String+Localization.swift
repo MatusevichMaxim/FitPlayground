@@ -12,6 +12,8 @@ extension String {
     public static let potential = localizedString(for: "potential")
     public static let today = localizedString(for: "today")
     public static let cancel = localizedString(for: "cancel")
+    public static let reset = localizedString(for: "reset")
+    public static let done = localizedString(for: "done")
     public static let min = localizedString(for: "minutes_short")
     public static let set = localizedString(for: "set_singular")
     public static let sets = localizedString(for: "set_plural")
@@ -20,6 +22,7 @@ extension String {
     public static let other = localizedString(for: "other")
     public static let muscleGroup = localizedString(for: "muscle_group")
     public static let equipment = localizedString(for: "equipment")
+    public static let filters = localizedString(for: "filters")
     
     public static let newWorkout = localizedString(for: "new_workout")
     public static let existingWorkout = localizedString(for: "existing_workout")

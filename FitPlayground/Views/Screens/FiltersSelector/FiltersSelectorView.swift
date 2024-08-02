@@ -13,43 +13,45 @@ struct FiltersSelectorView: View {
     @ObservedObject var viewModel: FiltersSelectorViewModel
     
     var body: some View {
-        ZStack {
-            Color.appPrimary900.ignoresSafeArea()
-            
-            List {
-                Section {
-                    ForEach(viewModel.filtersManager.muscleGroupModels) { filter in
-                        if let subfilters = filter.subfilters {
-                            DisclosureGroup {
-                                ForEach(subfilters) { subfilter in
-                                    makeItemLabel(for: subfilter)
+        NavigationView {
+            ZStack {
+                Color.appPrimary900.ignoresSafeArea()
+                
+                List {
+                    Section {
+                        ForEach(viewModel.filtersManager.muscleGroupModels) { filter in
+                            if let subfilters = filter.subfilters {
+                                DisclosureGroup {
+                                    ForEach(subfilters) { subfilter in
+                                        makeItemLabel(for: subfilter)
+                                    }
+                                } label: {
+                                    makeItemLabel(for: filter)
                                 }
-                            } label: {
+                            } else {
                                 makeItemLabel(for: filter)
                             }
-                        } else {
+                        }
+                    } header: {
+                        Text(String.muscleGroup)
+                            .font(.ms_bold_17)
+                            .foregroundStyle(Color.textPrimary)
+                    }
+                    .headerProminence(.increased)
+                    
+                    Section {
+                        ForEach(viewModel.filtersManager.equipmentModels) { filter in
                             makeItemLabel(for: filter)
                         }
+                    } header: {
+                        Text(String.equipment)
+                            .font(.ms_bold_17)
+                            .foregroundStyle(Color.textPrimary)
                     }
-                } header: {
-                    Text(String.muscleGroup)
-                        .font(.ms_bold_17)
-                        .foregroundStyle(Color.textPrimary)
+                    .headerProminence(.increased)
                 }
-                .headerProminence(.increased)
-                
-                Section {
-                    ForEach(viewModel.filtersManager.equipmentModels) { filter in
-                        makeItemLabel(for: filter)
-                    }
-                } header: {
-                    Text(String.equipment)
-                        .font(.ms_bold_17)
-                        .foregroundStyle(Color.textPrimary)
-                }
-                .headerProminence(.increased)
+                .tint(Color.textPrimary)
             }
-            .tint(Color.textPrimary)
         }
     }
 }
