@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-struct FilterModel: Identifiable {
+struct FilterModel: Identifiable, Equatable {
     let id = UUID()
     let name: String
     let icon: AppImageResourse?

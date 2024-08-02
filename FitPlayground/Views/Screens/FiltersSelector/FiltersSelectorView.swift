@@ -11,6 +11,8 @@ struct FiltersSelectorView: View {
     @Environment(\.dismiss) private var dismiss
     
     @ObservedObject var viewModel: FiltersSelectorViewModel
+    @State private var selectedMuscleGroupFilter: FilterModel?
+    @State private var selectedEquipmentFilter: FilterModel?
     
     var body: some View {
         NavigationView {
@@ -23,13 +25,28 @@ struct FiltersSelectorView: View {
                             if let subfilters = filter.subfilters {
                                 DisclosureGroup {
                                     ForEach(subfilters) { subfilter in
-                                        makeItem(for: subfilter)
+                                        makeItem(
+                                            for: subfilter,
+                                            selectedItem: selectedMuscleGroupFilter,
+                                            action: { onMuscleGroupFilterTapped(subfilter) }
+                                        )
+                                        .listRowBackground(Color.appPrimary900.opacity(0.5))
                                     }
                                 } label: {
-                                    makeItem(for: filter)
+                                    makeItem(
+                                        for: filter,
+                                        selectedItem: selectedMuscleGroupFilter,
+                                        action: { onMuscleGroupFilterTapped(filter) }
+                                    )
                                 }
+                                .listRowBackground(Color.appPrimary800)
                             } else {
-                                makeItem(for: filter)
+                                makeItem(
+                                    for: filter,
+                                    selectedItem: selectedMuscleGroupFilter,
+                                    action: { onMuscleGroupFilterTapped(filter) }
+                                )
+                                .listRowBackground(Color.appPrimary800)
                             }
                         }
                     } header: {
@@ -38,10 +55,17 @@ struct FiltersSelectorView: View {
                             .foregroundStyle(Color.appPrimary600)
                     }
                     .headerProminence(.increased)
+                    .listRowSeparatorTint(Color.appPrimary600)
+                    .cornerRadius(16)
                     
                     Section {
                         ForEach(viewModel.filtersManager.equipmentModels) { filter in
-                            makeItem(for: filter)
+                            makeItem(
+                                for: filter,
+                                selectedItem: selectedEquipmentFilter,
+                                action: { onEquipmentFilterTapped(filter) }
+                            )
+                            .listRowBackground(Color.appPrimary800)
                         }
                     } header: {
                         Text(String.equipment)
@@ -49,6 +73,7 @@ struct FiltersSelectorView: View {
                             .foregroundStyle(Color.appPrimary600)
                     }
                     .headerProminence(.increased)
+                    .listRowSeparatorTint(Color.appPrimary600)
                 }
                 .tint(Color.textPrimary)
             }
@@ -60,21 +85,53 @@ struct FiltersSelectorView: View {
             )
         }
     }
+    
+    private func onMuscleGroupFilterTapped(_ filter: FilterModel) {
+        if filter == selectedMuscleGroupFilter {
+            selectedMuscleGroupFilter = nil
+        } else {
+            selectedMuscleGroupFilter = filter
+        }
+    }
+    
+    private func onEquipmentFilterTapped(_ filter: FilterModel) {
+        if filter == selectedEquipmentFilter {
+            selectedEquipmentFilter = nil
+        } else {
+            selectedEquipmentFilter = filter
+        }
+    }
 }
 
 extension FiltersSelectorView {
-    private func makeItem(for filter: FilterModel) -> some View {
+    private func makeItem(
+        for filter: FilterModel,
+        selectedItem: FilterModel?,
+        action: @escaping () -> Void
+    ) -> some View {
         HStack {
             if let icon = filter.icon {
-                Image(icon)
-                    .foregroundStyle(Color.textPrimary)
+                Image(icon).foregroundStyle(Color.textPrimary)
             }
             
             Text(filter.name)
                 .font(.ms_bold_17)
                 .foregroundStyle(Color.textPrimary)
+            
+            Spacer()
+            
+            if filter == selectedItem {
+                Image(systemName: "checkmark")
+                    .font(.system(size: 17, weight: .bold))
+                    .foregroundStyle(Color.appGreen)
+            } else if filter.subfilters?.first(where: { $0 == selectedItem }) != nil {
+                Image(systemName: "minus")
+                    .font(.system(size: 17, weight: .bold))
+                    .foregroundStyle(Color.appGreen)
+            }
         }
         .frame(height: 40)
+        .onTapGesture(perform: action)
     }
 }
 
