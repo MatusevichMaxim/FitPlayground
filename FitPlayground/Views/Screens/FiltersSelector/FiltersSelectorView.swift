@@ -74,6 +74,7 @@ extension FiltersSelectorView {
                 .font(.ms_bold_17)
                 .foregroundStyle(Color.textPrimary)
         }
+        .frame(height: 40)
     }
 }
 
