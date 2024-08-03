@@ -81,6 +81,7 @@
 		56EA304C2C598E1B00CA6DAD /* FiltersSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EA304B2C598E1B00CA6DAD /* FiltersSelectorView.swift */; };
 		56EA304E2C598E9E00CA6DAD /* FiltersSelectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EA304D2C598E9E00CA6DAD /* FiltersSelectorViewModel.swift */; };
 		56EA30502C5C3D6400CA6DAD /* FilterItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EA304F2C5C3D6400CA6DAD /* FilterItemCell.swift */; };
+		56EA30522C5CB15900CA6DAD /* RelativeSizeLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EA30512C5CB15900CA6DAD /* RelativeSizeLayout.swift */; };
 		56FAD6102C27C3A2006CD568 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD60F2C27C3A2006CD568 /* TabBarView.swift */; };
 		56FAD6132C27C446006CD568 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6122C27C446006CD568 /* TabItem.swift */; };
 		56FAD6152C27C554006CD568 /* TabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FAD6142C27C554006CD568 /* TabItemView.swift */; };
@@ -177,6 +178,7 @@
 		56EA304B2C598E1B00CA6DAD /* FiltersSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersSelectorView.swift; sourceTree = "<group>"; };
 		56EA304D2C598E9E00CA6DAD /* FiltersSelectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersSelectorViewModel.swift; sourceTree = "<group>"; };
 		56EA304F2C5C3D6400CA6DAD /* FilterItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterItemCell.swift; sourceTree = "<group>"; };
+		56EA30512C5CB15900CA6DAD /* RelativeSizeLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativeSizeLayout.swift; sourceTree = "<group>"; };
 		56FAD60F2C27C3A2006CD568 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		56FAD6122C27C446006CD568 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		56FAD6142C27C554006CD568 /* TabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemView.swift; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 				56049F6D2C41F103008728A5 /* ValueSubject.swift */,
 				56EA30482C597AE500CA6DAD /* ValuePublisher.swift */,
 				56049FCB2C45CDA4008728A5 /* VoidClosure.swift */,
+				56EA30512C5CB15900CA6DAD /* RelativeSizeLayout.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -868,6 +871,7 @@
 				56049F6A2C35F649008728A5 /* MainCoordination.swift in Sources */,
 				56BE88772C1CCAE4005EFED9 /* WorkoutStatus+Extension.swift in Sources */,
 				56049F702C41F43C008728A5 /* ValueSubject+Extensions.swift in Sources */,
+				56EA30522C5CB15900CA6DAD /* RelativeSizeLayout.swift in Sources */,
 				56BE88A32C25FBA4005EFED9 /* ActionDialogButton.swift in Sources */,
 				56EA30502C5C3D6400CA6DAD /* FilterItemCell.swift in Sources */,
 				56EA30442C59725100CA6DAD /* FilterStateModel.swift in Sources */,

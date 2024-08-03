@@ -14,6 +14,12 @@ extension View {
     func cornerRadius(_ radius: CGFloat) -> some View {
         return clipShape(.rect(cornerRadius: radius, style: .continuous))
     }
+    
+    func relativeProposed(width: Double = 1, height: Double = 1) -> some View {
+        RelativeSizeLayout(relativeWidth: width, relativeHeight: height) {
+            VStack { self }
+        }
+    }
 }
 
 // MARK: - Navigation
